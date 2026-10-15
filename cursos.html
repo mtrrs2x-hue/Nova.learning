@@ -48,34 +48,56 @@
 </head>
 <body class="bg-living-canvas text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
 
-  <!-- BOTÓN FLOTANTE MODO OSCURO -->
-  <button onclick="toggleTheme()" id="themeToggleBtn" title="Cambiar Modo Día / Noche" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-white/95 dark:bg-slate-800/95 backdrop-blur-md text-amber-600 dark:text-amber-300 border-2 border-amber-300 dark:border-slate-600 shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center">
-    <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
-  </button>
-
-  <!-- MENÚ LATERAL MÓVIL (BARRITAS IZQUIERDA) -->
-  <div id="mobileSidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between">
+  <!-- MENÚ LATERAL DESPLEGABLE (3 LÍNEAS IZQUIERDA + BOTÓN MODO OSCURO ADENTRO) -->
+  <div id="mobileSidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between border-r-2 border-sky-100 dark:border-slate-800 overflow-y-auto">
     <div>
-      <div class="flex items-center justify-between mb-8 pb-4 border-b dark:border-slate-800">
+      <div class="flex items-center justify-between mb-5 pb-4 border-b dark:border-slate-800">
         <div class="flex items-center gap-2">
-          <img src="img/Logo.jpeg" alt="Nova Learning" class="h-8 w-auto object-contain bg-white px-2 py-1 rounded-lg border">
-          <span class="font-display font-bold text-base text-slate-900 dark:text-white">Menú</span>
+          <img src="img/Logo.jpeg" alt="Nova Learning" class="h-9 w-auto object-contain bg-white px-2 py-1 rounded-xl border">
+          <span class="font-display font-bold text-base text-slate-900 dark:text-white">Navegación</span>
         </div>
-        <button onclick="toggleMobileMenu()" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center text-lg"><i class="fa-solid fa-xmark"></i></button>
+        <button onclick="toggleMobileMenu()" class="w-9 h-9 rounded-xl bg-rose-100 dark:bg-slate-800 text-rose-600 dark:text-rose-400 flex items-center justify-center text-lg hover:scale-105 transition-all">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
+
+      <!-- INTERRUPTOR DE MODO OSCURO DENTRO DE LAS 3 LÍNEAS -->
+      <div class="mb-5">
+        <button onclick="toggleTheme()" class="w-full p-3.5 rounded-2xl bg-amber-100/90 dark:bg-slate-800 border-2 border-amber-300 dark:border-slate-700 flex items-center justify-between font-extrabold text-xs text-slate-900 dark:text-amber-300 shadow-sm hover:scale-[1.02] transition-all">
+          <span class="flex items-center gap-2.5">
+            <i id="themeIcon" class="fa-solid fa-moon text-amber-600 dark:text-amber-300 text-base"></i>
+            <span id="themeText">Modo Noche / Oscuro</span>
+          </span>
+          <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 text-[10px] font-black uppercase shadow">Cambiar</span>
+        </button>
+      </div>
+
       <nav class="space-y-2.5 font-extrabold text-sm">
-        <a href="index.html" class="flex items-center gap-3 p-3.5 rounded-2xl hover:bg-sky-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-all"><i class="fa-solid fa-house text-sky-500 text-lg w-6 text-center"></i> Inicio</a>
-        <a href="quienes-somos.html" class="flex items-center gap-3 p-3.5 rounded-2xl hover:bg-purple-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-all"><i class="fa-solid fa-brain text-purple-500 text-lg w-6 text-center"></i> Quiénes Somos</a>
-        <a href="clinica.html" class="flex items-center gap-3 p-3.5 rounded-2xl hover:bg-emerald-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-all"><i class="fa-solid fa-hospital-user text-emerald-500 text-lg w-6 text-center"></i> Nuestra Clínica</a>
-        <a href="materiales.html" class="flex items-center gap-3 p-3.5 rounded-2xl hover:bg-cyan-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-all"><i class="fa-solid fa-shapes text-cyan-500 text-lg w-6 text-center"></i> Nuestros Materiales</a>
-        <a href="catalogo.html" class="flex items-center gap-3 p-3.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-all"><i class="fa-solid fa-cart-shopping text-pink-500 text-lg w-6 text-center"></i> Catálogo</a>
-        <a href="cursos.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-amber-200 dark:bg-amber-500/30 text-amber-950 dark:text-amber-200 shadow-sm"><i class="fa-solid fa-sun text-amber-600 text-lg w-6 text-center"></i> Nuestros Cursos</a>
+        <a href="index.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-sky-100/80 dark:bg-sky-500/20 text-sky-950 dark:text-sky-200 hover:bg-sky-200 transition-all">
+          <i class="fa-solid fa-house text-sky-600 dark:text-sky-300 text-lg w-6 text-center"></i> Inicio
+        </a>
+        <a href="quienes-somos.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-purple-100/80 dark:bg-purple-500/20 text-purple-950 dark:text-purple-200 hover:bg-purple-200 transition-all">
+          <i class="fa-solid fa-brain text-purple-600 dark:text-purple-300 text-lg w-6 text-center"></i> Quiénes Somos
+        </a>
+        <a href="clinica.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-emerald-100/80 dark:bg-emerald-500/20 text-emerald-950 dark:text-emerald-200 hover:bg-emerald-200 transition-all">
+          <i class="fa-solid fa-hospital-user text-emerald-600 dark:text-emerald-300 text-lg w-6 text-center"></i> Nuestra Clínica
+        </a>
+        <a href="materiales.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-cyan-100/80 dark:bg-cyan-500/20 text-cyan-950 dark:text-cyan-200 hover:bg-cyan-200 transition-all">
+          <i class="fa-solid fa-shapes text-cyan-600 dark:text-cyan-300 text-lg w-6 text-center"></i> Nuestros Materiales
+        </a>
+        <a href="catalogo.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-pink-100/80 dark:bg-pink-500/20 text-pink-950 dark:text-pink-200 hover:bg-pink-200 transition-all">
+          <i class="fa-solid fa-cart-shopping text-pink-600 dark:text-pink-300 text-lg w-6 text-center"></i> Catálogo
+        </a>
+        <a href="cursos.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-amber-300 dark:bg-amber-500/40 text-amber-950 dark:text-amber-100 ring-2 ring-amber-500 shadow-sm">
+          <i class="fa-solid fa-sun text-amber-700 dark:text-amber-300 text-lg w-6 text-center"></i> Nuestros Cursos
+        </a>
       </nav>
     </div>
-    <div class="pt-4 border-t dark:border-slate-800 space-y-3">
-      <div class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold">
+
+    <div class="pt-4 mt-6 border-t dark:border-slate-800 space-y-3">
+      <div class="text-[11px] text-slate-600 dark:text-slate-400 font-bold space-y-1">
         <p><i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
-        <p class="mt-1"><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz CAES, Clínica 505</p>
+        <p><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz CAES, Clínica 505</p>
       </div>
       <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20una%20cita" target="_blank" class="block w-full py-3.5 rounded-2xl bg-gradient-vivid text-white text-center font-black text-xs shadow-lg">
         <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Reserva tu Cita
@@ -98,46 +120,46 @@
     </div>
   </div>
 
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b-2 border-sky-100 dark:border-slate-800 shadow-sm transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+  <!-- NAVBAR CON LAS 3 LÍNEAS SIEMPRE VISIBLES Y TODOS LOS BOTONES COLOREADOS -->
+  <header class="sticky top-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b-2 border-sky-100 dark:border-slate-800 shadow-sm transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 gap-2">
       <div class="flex items-center gap-3">
-        <button onclick="toggleMobileMenu()" aria-label="Abrir menú" class="lg:hidden w-11 h-11 rounded-2xl bg-sky-50 dark:bg-slate-800 border-2 border-sky-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center text-xl shadow-sm hover:bg-sky-100 transition-all">
+        <button onclick="toggleMobileMenu()" title="Abrir menú y Modo Oscuro" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-100 to-purple-100 dark:from-slate-800 dark:to-slate-700 border-2 border-sky-300 dark:border-slate-600 text-slate-800 dark:text-white flex items-center justify-center text-xl shadow-sm hover:scale-105 active:scale-95 transition-all">
           <i class="fa-solid fa-bars"></i>
         </button>
         <a href="index.html" class="flex items-center bg-white px-3 py-1.5 rounded-2xl border-2 border-sky-100 shadow-sm">
-          <img src="img/Logo.jpeg" alt="Nova Learning Logo" class="h-11 w-auto object-contain">
+          <img src="img/Logo.jpeg" alt="Nova Learning Logo" class="h-10 sm:h-11 w-auto object-contain">
         </a>
       </div>
 
-      <nav class="hidden lg:flex items-center gap-2 font-extrabold text-slate-700 dark:text-slate-200 text-xs xl:text-sm">
-        <a href="index.html" class="px-3 py-2 rounded-xl hover:bg-sky-100 dark:hover:bg-sky-500/20 hover:text-sky-900 dark:hover:text-sky-300 transition-all flex items-center gap-1.5">
-          <i class="fa-solid fa-house text-sky-500"></i> Inicio
+      <nav class="hidden lg:flex items-center gap-2 font-extrabold text-xs xl:text-sm">
+        <a href="index.html" class="px-3.5 py-2 rounded-xl bg-sky-100/90 dark:bg-sky-500/20 text-sky-950 dark:text-sky-200 hover:bg-sky-200 flex items-center gap-1.5 shadow-sm transition-all">
+          <i class="fa-solid fa-house text-sky-600 dark:text-sky-300"></i> Inicio
         </a>
-        <a href="quienes-somos.html" class="px-3 py-2 rounded-xl hover:bg-purple-100 dark:hover:bg-purple-500/20 hover:text-purple-900 dark:hover:text-purple-300 transition-all flex items-center gap-1.5">
-          <i class="fa-solid fa-brain text-purple-500"></i> Quiénes Somos
+        <a href="quienes-somos.html" class="px-3.5 py-2 rounded-xl bg-purple-100/90 dark:bg-purple-500/20 text-purple-950 dark:text-purple-200 hover:bg-purple-200 flex items-center gap-1.5 shadow-sm transition-all">
+          <i class="fa-solid fa-brain text-purple-600 dark:text-purple-300"></i> Quiénes Somos
         </a>
-        <a href="clinica.html" class="px-3 py-2 rounded-xl hover:bg-emerald-100 dark:hover:bg-emerald-500/20 hover:text-emerald-900 dark:hover:text-emerald-300 transition-all flex items-center gap-1.5">
-          <i class="fa-solid fa-hospital-user text-emerald-500"></i> Nuestra Clínica
+        <a href="clinica.html" class="px-3.5 py-2 rounded-xl bg-emerald-100/90 dark:bg-emerald-500/20 text-emerald-950 dark:text-emerald-200 hover:bg-emerald-200 flex items-center gap-1.5 shadow-sm transition-all">
+          <i class="fa-solid fa-hospital-user text-emerald-600 dark:text-emerald-300"></i> Nuestra Clínica
         </a>
-        <a href="materiales.html" class="px-3 py-2 rounded-xl hover:bg-cyan-100 dark:hover:bg-cyan-500/20 hover:text-cyan-900 dark:hover:text-cyan-300 transition-all flex items-center gap-1.5">
-          <i class="fa-solid fa-shapes text-cyan-500"></i> Nuestros Materiales
+        <a href="materiales.html" class="px-3.5 py-2 rounded-xl bg-cyan-100/90 dark:bg-cyan-500/20 text-cyan-950 dark:text-cyan-200 hover:bg-cyan-200 flex items-center gap-1.5 shadow-sm transition-all">
+          <i class="fa-solid fa-shapes text-cyan-600 dark:text-cyan-300"></i> Nuestros Materiales
         </a>
-        <a href="catalogo.html" class="px-3 py-2 rounded-xl hover:bg-pink-100 dark:hover:bg-pink-500/20 hover:text-pink-900 dark:hover:text-pink-300 transition-all flex items-center gap-1.5">
-          <i class="fa-solid fa-cart-shopping text-pink-500"></i> Catálogo
+        <a href="catalogo.html" class="px-3.5 py-2 rounded-xl bg-pink-100/90 dark:bg-pink-500/20 text-pink-950 dark:text-pink-200 hover:bg-pink-200 flex items-center gap-1.5 shadow-sm transition-all">
+          <i class="fa-solid fa-cart-shopping text-pink-600 dark:text-pink-300"></i> Catálogo
         </a>
-        <a href="cursos.html" class="px-3.5 py-2 rounded-xl bg-amber-300 dark:bg-amber-500/30 text-amber-950 dark:text-amber-200 flex items-center gap-1.5 shadow-sm transition-all">
+        <a href="cursos.html" class="px-3.5 py-2 rounded-xl bg-amber-300 dark:bg-amber-500/40 text-amber-950 dark:text-amber-100 ring-2 ring-amber-500 flex items-center gap-1.5 shadow-sm transition-all">
           <i class="fa-solid fa-sun text-amber-700 dark:text-amber-300"></i> Nuestros Cursos
         </a>
       </nav>
 
-      <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20inscribirme%20en%20WINTERLAB" target="_blank" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg hover:opacity-95 transition-all flex items-center gap-2">
+      <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20inscribirme%20en%20WINTERLAB" target="_blank" class="px-4 sm:px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg hover:opacity-95 transition-all flex items-center gap-2 shrink-0">
         <i class="fa-solid fa-calendar-check"></i> <span>Inscribirse</span>
       </a>
     </div>
   </header>
 
-  <!-- SECCIÓN 1: HERO WINTERLAB CON INFOGRAFÍA OFICIAL -->
+  <!-- SECCIÓN 1: HERO WINTERLAB CON INFOGRAFÍA OFICIAL + APOYO EN PATERNIDAD 1 A 1 -->
   <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center mb-10">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-300 text-amber-950 font-black text-xs uppercase tracking-wider shadow-sm mb-3">
@@ -168,13 +190,15 @@
     <!-- AFICHE OFICIAL + ¿QUÉ INCLUYE? + INVERSIÓN -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-16">
       <div class="lg:col-span-5 flex flex-col items-center">
-        <div class="bg-white dark:bg-slate-800 p-3 rounded-[2.25rem] border-4 border-sky-200 dark:border-slate-700 shadow-2xl max-w-md w-full">
+        <div onclick="openPosterModal()" class="cursor-pointer group relative bg-white dark:bg-slate-800 p-3 rounded-[2.25rem] border-4 border-sky-200 dark:border-slate-700 shadow-2xl max-w-md w-full card-playful">
           <img src="img/Winter lab.jpeg" alt="Infografía Oficial WinterLab Nova Learning" class="w-full h-auto rounded-3xl object-contain">
+          <div class="mt-2 text-center text-xs font-extrabold text-nova-purple dark:text-cyan-300">
+            <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Clic en la imagen para ver en pantalla completa
+          </div>
         </div>
       </div>
 
       <div class="lg:col-span-7 space-y-6">
-        <!-- ¿Qué incluye el WinterLab? -->
         <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-sky-200 dark:border-slate-700 shadow-xl">
           <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-2">
             <i class="fa-solid fa-star text-amber-400"></i> ¿Qué incluye nuestro WinterLab?
@@ -184,7 +208,7 @@
               <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-brain"></i></div>
               <div>
                 <h4 class="font-extrabold text-slate-900 dark:text-white">Desarrollo Evolutivo</h4>
-                <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">Actividades diseñadas según la etapa y desarrollo evolutivo de cada participante.</p>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">Actividades diseñadas según la etapa y desarrollo evolutivo de cada niño.</p>
               </div>
             </div>
             <div class="p-4 rounded-2xl bg-sky-50 dark:bg-slate-700/60 border border-sky-200 dark:border-slate-600 flex items-start gap-3">
@@ -202,10 +226,10 @@
               </div>
             </div>
             <div class="p-4 rounded-2xl bg-emerald-50 dark:bg-slate-700/60 border border-emerald-200 dark:border-slate-600 flex items-start gap-3">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-gears"></i></div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-hands-holding-child"></i></div>
               <div>
-                <h4 class="font-extrabold text-slate-900 dark:text-white">Todo Incluido</h4>
-                <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">Todos los materiales y proyectos temáticos semanales incluidos.</p>
+                <h4 class="font-extrabold text-slate-900 dark:text-white">Materiales + Apoyo 1 a 1 a Padres</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">Todos los materiales incluidos y acompañamiento 1 a 1 en paternidad para los padres.</p>
               </div>
             </div>
           </div>
@@ -230,7 +254,7 @@
               <strong class="text-amber-300 text-2xl font-black">Q2,500</strong>
             </div>
             <div class="bg-amber-300 text-slate-950 p-3.5 rounded-2xl shadow-md">
-              <span class="text-[11px] font-extrabold block">Curso completo (7 sem)</span>
+              <span class="text-[11px] font-extrabold block">Curso 7 sem.</span>
               <strong class="text-2xl font-black">Q4,400</strong>
             </div>
           </div>
@@ -244,114 +268,163 @@
       </div>
     </div>
 
-    <!-- LOS 11 LABORATORIOS DEL WINTERLAB -->
-    <div class="mb-14">
+    <!-- LOS 11 LABORATORIOS DEL WINTERLAB (CLIC PARA VER PLAN SEMANAL) -->
+    <div class="mb-12">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="bg-sky-200 dark:bg-sky-500/20 text-sky-950 dark:text-sky-300 font-black text-xs uppercase px-4 py-1.5 rounded-full">
-          <i class="fa-solid fa-cubes mr-1"></i> 11 Experiencias Temáticas
+          <i class="fa-solid fa-cubes mr-1"></i> 11 Experiencias Temáticas Oficiales
         </span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">
-          Laboratorios y Clubes de nuestro WinterLab
+          Los 11 Laboratorios y Clubes de nuestro WinterLab
         </h2>
-        <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">
-          Cada laboratorio está diseñado para despertar talentos, fortalecer funciones ejecutivas y aprender creando:
-        </p>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">Haz clic en cualquiera de las tarjetas o botones de abajo para ver cómo lo trabajamos de lunes a viernes:</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-purple-200 dark:border-slate-700 shadow-md card-playful">
+        <div onclick="selectAndScroll('sensoryStudio')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-purple-200 dark:border-slate-700 shadow-md card-playful">
           <div class="w-11 h-11 rounded-2xl bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-300 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-hands-bubbles"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Nova Sensory Studio</h4>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">1. Nova Sensory Studio</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Un laboratorio de los sentidos para explorar texturas, calma y autorregulación.</p>
         </div>
 
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-emerald-200 dark:border-slate-700 shadow-md card-playful">
+        <div onclick="selectAndScroll('littleEcologists')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-emerald-200 dark:border-slate-700 shadow-md card-playful">
           <div class="w-11 h-11 rounded-2xl bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-seedling"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Little Ecologists</h4>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">2. Little Ecologists</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Naturaleza, ciencia y sostenibilidad creando mini ecosistemas vivos.</p>
         </div>
 
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-amber-200 dark:border-slate-700 shadow-md card-playful">
+        <div onclick="selectAndScroll('inventorsOfLight')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-amber-200 dark:border-slate-700 shadow-md card-playful">
           <div class="w-11 h-11 rounded-2xl bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-300 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-lightbulb"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Inventors of Light</h4>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">3. Inventors of Light</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Arte, luz y electricidad combinados para construir proyectos luminosos.</p>
         </div>
 
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-pink-200 dark:border-slate-700 shadow-md card-playful">
+        <div onclick="selectAndScroll('photoLab')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-pink-200 dark:border-slate-700 shadow-md card-playful">
           <div class="w-11 h-11 rounded-2xl bg-pink-100 dark:bg-pink-500/20 text-pink-600 dark:text-pink-300 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-camera-retro"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Nova Photo Lab</h4>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">4. Nova Photo Lab</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Fotografía, encuadre, atención al detalle y narración visual creativa.</p>
         </div>
 
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-sky-200 dark:border-slate-700 shadow-md card-playful">
+        <div onclick="selectAndScroll('productDesign')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-sky-200 dark:border-slate-700 shadow-md card-playful">
           <div class="w-11 h-11 rounded-2xl bg-sky-100 dark:bg-sky-500/20 text-sky-600 dark:text-sky-300 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-compass-drafting"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Nova Product Design</h4>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">5. Nova Product Design</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Diseñadores de productos: desde la idea y el boceto hasta el prototipo.</p>
         </div>
 
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-indigo-200 dark:border-slate-700 shadow-md card-playful">
+        <div onclick="selectAndScroll('lifeSkills')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-indigo-200 dark:border-slate-700 shadow-md card-playful">
           <div class="w-11 h-11 rounded-2xl bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-list-check"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Life Skills Club</h4>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">6. Life Skills Club</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Habilidades prácticas para la vida diaria, independencia y autonomía.</p>
         </div>
 
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-teal-200 dark:border-slate-700 shadow-md card-playful">
+        <div onclick="selectAndScroll('comunica')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-teal-200 dark:border-slate-700 shadow-md card-playful">
           <div class="w-11 h-11 rounded-2xl bg-teal-100 dark:bg-teal-500/20 text-teal-600 dark:text-teal-300 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-comments"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Comunica</h4>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">7. Comunica</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Más allá de las palabras: expresión, empatía, escucha activa y diálogo.</p>
         </div>
 
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-orange-200 dark:border-slate-700 shadow-md card-playful">
+        <div onclick="selectAndScroll('planningClub')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-orange-200 dark:border-slate-700 shadow-md card-playful">
           <div class="w-11 h-11 rounded-2xl bg-orange-100 dark:bg-orange-500/20 text-orange-600 dark:text-orange-300 flex items-center justify-center text-xl mb-3"><i class="fa-regular fa-calendar-days"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">The Planning Club</h4>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">8. The Planning Club</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Organización, gestión del tiempo, metas y planificación estratégica.</p>
         </div>
 
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-rose-200 dark:border-slate-700 shadow-md card-playful">
+        <div onclick="selectAndScroll('rhythmLab')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-rose-200 dark:border-slate-700 shadow-md card-playful">
           <div class="w-11 h-11 rounded-2xl bg-rose-100 dark:bg-rose-500/20 text-rose-600 dark:text-rose-300 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-drum"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Rhythm & Movement Lab</h4>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">9. Rhythm & Movement Lab</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Ritmo, movimiento, coordinación motriz y expresión corporal.</p>
         </div>
 
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-cyan-200 dark:border-slate-700 shadow-md card-playful">
+        <div onclick="selectAndScroll('everydayScience')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-cyan-200 dark:border-slate-700 shadow-md card-playful">
           <div class="w-11 h-11 rounded-2xl bg-cyan-100 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-flask"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Everyday Science</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Ciencia en la vida cotidiana mediante reacciones y experimentos asombrosos.</p>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">10. Everyday Science</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Ciencia en la vida cotidiana mediante reacciones y experimentos.</p>
         </div>
 
-        <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-violet-200 dark:border-slate-700 shadow-md card-playful sm:col-span-2">
+        <div onclick="selectAndScroll('bigArtProject')" class="cursor-pointer bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-violet-200 dark:border-slate-700 shadow-md card-playful sm:col-span-2">
           <div class="w-11 h-11 rounded-2xl bg-violet-100 dark:bg-violet-500/20 text-violet-600 dark:text-violet-300 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-palette"></i></div>
-          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">The Big Art Project</h4>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">11. The Big Art Project</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Arte colaborativo de gran formato, expresión plástica, vitrales y texturas sensoriales.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 2: EXPLORADOR INTERACTIVO DE PROYECTOS SEMANALES (MATUS) -->
-  <section class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <!-- SECCIÓN 2: EXPLORADOR INTERACTIVO DE LOS 11 LABORATORIOS (LUNES A VIERNES - MATUS) -->
+  <section id="explorador-matus" class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center mb-8">
-      <span class="bg-pink-200 dark:bg-pink-500/20 text-pink-900 dark:text-pink-300 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Proyectos Paso a Paso (Metodología MATUS)</span>
-      <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">Explora Cómo Trabajamos de Lunes a Viernes</h2>
-      <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Selecciona un laboratorio de muestra para ver su cronograma diario y el proyecto que llevan a casa:</p>
+      <span class="bg-pink-200 dark:bg-pink-500/20 text-pink-900 dark:text-pink-300 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Los 11 Laboratorios Paso a Paso (Metodología MATUS)</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">Explora el Plan de Lunes a Viernes de Cada Laboratorio</h2>
     </div>
 
-    <div class="flex flex-wrap justify-center gap-3 mb-10">
-      <button onclick="renderProject('sensoryStudio')" id="btn-sensoryStudio" class="proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-md">Nova Sensory Studio</button>
-      <button onclick="renderProject('littleEcologists')" id="btn-littleEcologists" class="proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-sm">Little Ecologists</button>
-      <button onclick="renderProject('inventorsOfLight')" id="btn-inventorsOfLight" class="proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-sm">Inventors of Light</button>
-      <button onclick="renderProject('bigArtProject')" id="btn-bigArtProject" class="proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-sm">The Big Art Project</button>
-      <button onclick="renderProject('sensoryCreators')" id="btn-sensoryCreators" class="proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-sm">Sensory Creators</button>
+    <!-- 11 Botones Interactivos -->
+    <div class="flex flex-wrap justify-center gap-2.5 mb-10">
+      <button onclick="renderProject('sensoryStudio')" id="btn-sensoryStudio" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-md">1. Nova Sensory Studio</button>
+      <button onclick="renderProject('littleEcologists')" id="btn-littleEcologists" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm">2. Little Ecologists</button>
+      <button onclick="renderProject('inventorsOfLight')" id="btn-inventorsOfLight" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm">3. Inventors of Light</button>
+      <button onclick="renderProject('photoLab')" id="btn-photoLab" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm">4. Nova Photo Lab</button>
+      <button onclick="renderProject('productDesign')" id="btn-productDesign" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm">5. Nova Product Design</button>
+      <button onclick="renderProject('lifeSkills')" id="btn-lifeSkills" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm">6. Life Skills Club</button>
+      <button onclick="renderProject('comunica')" id="btn-comunica" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm">7. Comunica</button>
+      <button onclick="renderProject('planningClub')" id="btn-planningClub" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm">8. The Planning Club</button>
+      <button onclick="renderProject('rhythmLab')" id="btn-rhythmLab" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm">9. Rhythm & Movement Lab</button>
+      <button onclick="renderProject('everydayScience')" id="btn-everydayScience" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm">10. Everyday Science</button>
+      <button onclick="renderProject('bigArtProject')" id="btn-bigArtProject" class="proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm">11. The Big Art Project</button>
     </div>
 
     <div id="projectDetailContainer" class="transition-all duration-300"></div>
   </section>
 
-  <!-- SECCIÓN 3: TALLERES PERMANENTES DE CLÍNICA -->
+  <!-- SECCIÓN 3: RUTINA DIARIA Y NORMAS DE CONVIVENCIA -->
+  <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 bg-white dark:bg-slate-800 p-8 rounded-3xl border-2 border-purple-200 dark:border-slate-700 shadow-xl">
+        <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-6"><i class="fa-regular fa-clock text-nova-purple dark:text-cyan-300 mr-2"></i> Rutina Diaria WinterLab (9:00 am – 12:30 pm)</h3>
+        <div class="space-y-2.5 text-xs sm:text-sm">
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-pink-50 dark:bg-slate-700/60"><span class="font-black text-pink-600 dark:text-pink-300 w-28 shrink-0">9:00 – 9:20</span><span class="font-bold">Bienvenida, conexión y motivación</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-sky-50 dark:bg-slate-700/60"><span class="font-black text-sky-600 dark:text-sky-300 w-28 shrink-0">9:20 – 9:50</span><span class="font-bold">Exploración e investigación del laboratorio</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-emerald-50 dark:bg-slate-700/60"><span class="font-black text-emerald-600 dark:text-emerald-300 w-28 shrink-0">9:50 – 10:00</span><span class="font-bold">Reto activo de funciones ejecutivas</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-amber-50 dark:bg-slate-700/60"><span class="font-black text-amber-600 dark:text-amber-300 w-28 shrink-0">10:00 – 10:20</span><span class="font-bold">Refacción nutritiva e higiene</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-purple-50 dark:bg-slate-700/60"><span class="font-black text-purple-600 dark:text-purple-300 w-28 shrink-0">10:20 – 11:20</span><span class="font-bold">Manos a la obra: Construcción del proyecto</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-indigo-50 dark:bg-slate-700/60"><span class="font-black text-indigo-600 dark:text-indigo-300 w-28 shrink-0">11:20 – 11:50</span><span class="font-bold">Prueba, práctica y mejora continua</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-rose-50 dark:bg-slate-700/60"><span class="font-black text-rose-600 dark:text-rose-300 w-28 shrink-0">11:50 – 12:15</span><span class="font-bold">Desafío grupal / Presentación de avances</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-teal-50 dark:bg-slate-700/60"><span class="font-black text-teal-600 dark:text-teal-300 w-28 shrink-0">12:15 – 12:30</span><span class="font-bold">Reflexión metacognitiva, orden y cierre</span></div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 bg-white dark:bg-slate-800 p-8 rounded-3xl border-2 border-sky-200 dark:border-slate-700 shadow-xl">
+        <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-6"><i class="fa-solid fa-shield-heart text-nova-teal mr-2"></i> Normas de Convivencia y Bienestar</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div class="bg-sky-50 dark:bg-slate-700/60 p-5 rounded-3xl space-y-2">
+            <h4 class="font-display font-bold text-sky-900 dark:text-sky-300 text-base"><i class="fa-regular fa-clock mr-1"></i> Puntualidad</h4>
+            <p>• Ingreso 9:00 am y salida 12:30 pm puntuales.</p>
+            <p>• Entrega únicamente a las personas autorizadas en ficha.</p>
+          </div>
+          <div class="bg-purple-50 dark:bg-slate-700/60 p-5 rounded-3xl space-y-2">
+            <h4 class="font-display font-bold text-purple-900 dark:text-purple-300 text-base"><i class="fa-regular fa-heart mr-1"></i> Convivencia</h4>
+            <p>• Ambiente seguro de respeto, empatía y buen trato.</p>
+            <p>• Si presenta síntomas de gripe o fiebre, reposar en casa.</p>
+          </div>
+          <div class="bg-amber-50 dark:bg-slate-700/60 p-5 rounded-3xl space-y-2">
+            <h4 class="font-display font-bold text-amber-900 dark:text-amber-300 text-base"><i class="fa-solid fa-bag-shopping mr-1"></i> Qué traer</h4>
+            <p>• Lonchera con refacción saludable y pachón con agua identificado.</p>
+            <p>• Ropa cómoda que permita crear y experimentar libremente.</p>
+          </div>
+          <div class="bg-emerald-50 dark:bg-slate-700/60 p-5 rounded-3xl space-y-2">
+            <h4 class="font-display font-bold text-emerald-900 dark:text-emerald-300 text-base"><i class="fa-solid fa-hands-holding-child mr-1"></i> Apoyo 1 a 1 a Padres</h4>
+            <p>• Todos los materiales están incluidos.</p>
+            <p>• Incluye retroalimentación y acompañamiento 1 a 1 a los padres.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: TALLERES PERMANENTES TODO EL AÑO -->
   <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center max-w-3xl mx-auto mb-10">
       <span class="bg-purple-200 dark:bg-purple-500/20 text-purple-950 dark:text-purple-300 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full">
-        <i class="fa-solid fa-graduation-cap mr-1"></i> Programas Vespertinos Permanentes
+        <i class="fa-solid fa-graduation-cap mr-1"></i> Programas Vespertinos Permanentes (Lun - Sáb 2:00 PM a 6:30 PM)
       </span>
       <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-3">
         Nuestros Talleres Especializados Todo el Año
@@ -362,74 +435,40 @@
       <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-sky-200 dark:border-sky-500/30 shadow-xl card-playful">
         <div class="w-12 h-12 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-xl font-black mb-4 shadow-md"><i class="fa-solid fa-comments"></i></div>
         <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Taller de Lenguaje</h3>
-        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Comunicación funcional, vocabulario, comprensión lectora y expresión oral mediante dinámicas multisensoriales.</p>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Comunicación funcional, vocabulario, comprensión lectora y expresión oral multisensorial.</p>
       </div>
 
       <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-purple-200 dark:border-purple-500/30 shadow-xl card-playful">
         <div class="w-12 h-12 rounded-2xl bg-purple-600 text-white flex items-center justify-center text-xl font-black mb-4 shadow-md"><i class="fa-solid fa-calculator"></i></div>
         <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Taller de Matemática</h3>
-        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Razonamiento lógico, noción numérica, visión espacial y resolución práctica de retos con material concreto.</p>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Razonamiento lógico, noción numérica, visión espacial y resolución de retos con material concreto.</p>
       </div>
 
       <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-emerald-200 dark:border-emerald-500/30 shadow-xl card-playful">
         <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-xl font-black mb-4 shadow-md"><i class="fa-solid fa-flask"></i></div>
         <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Taller de Ciencias</h3>
-        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Asombro científico, formulación de hipótesis, experimentación guiada y descubrimiento de la naturaleza.</p>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Asombro científico, formulación de hipótesis, experimentación guiada y naturaleza.</p>
       </div>
 
       <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-amber-200 dark:border-amber-500/30 shadow-xl card-playful">
         <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-xl font-black mb-4 shadow-md"><i class="fa-solid fa-brain"></i></div>
         <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Funciones Ejecutivas</h3>
-        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Entrenamiento en atención sostenida, memoria de trabajo, planificación, organización y autocontrol.</p>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Entrenamiento en atención sostenida, memoria de trabajo, planificación y autocontrol.</p>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 4: HORARIO DIARIO Y REGLAMENTO -->
-  <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <div class="lg:col-span-6 bg-white dark:bg-slate-800 p-8 rounded-3xl border-2 border-purple-200 dark:border-slate-700 shadow-xl">
-        <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-6"><i class="fa-regular fa-clock text-nova-purple dark:text-cyan-300 mr-2"></i> Rutina Diaria WinterLab (9:00 am – 12:30 pm)</h3>
-        <div class="space-y-2.5 text-xs sm:text-sm">
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-pink-50 dark:bg-slate-700/60"><span class="font-black text-pink-600 dark:text-pink-300 w-28 shrink-0">9:00 – 9:20</span><span class="font-bold">Bienvenida y motivación</span></div>
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-sky-50 dark:bg-slate-700/60"><span class="font-black text-sky-600 dark:text-sky-300 w-28 shrink-0">9:20 – 9:50</span><span class="font-bold">Exploración e investigación sensorial</span></div>
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-emerald-50 dark:bg-slate-700/60"><span class="font-black text-emerald-600 dark:text-emerald-300 w-28 shrink-0">9:50 – 10:00</span><span class="font-bold">Reto de funciones ejecutivas</span></div>
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-amber-50 dark:bg-slate-700/60"><span class="font-black text-amber-600 dark:text-amber-300 w-28 shrink-0">10:00 – 10:20</span><span class="font-bold">Refacción e higiene</span></div>
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-purple-50 dark:bg-slate-700/60"><span class="font-black text-purple-600 dark:text-purple-300 w-28 shrink-0">10:20 – 11:20</span><span class="font-bold">Construcción del proyecto</span></div>
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-indigo-50 dark:bg-slate-700/60"><span class="font-black text-indigo-600 dark:text-indigo-300 w-28 shrink-0">11:20 – 11:50</span><span class="font-bold">Prueba, práctica y mejora</span></div>
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-rose-50 dark:bg-slate-700/60"><span class="font-black text-rose-600 dark:text-rose-300 w-28 shrink-0">11:50 – 12:15</span><span class="font-bold">Desafío sensorial / Presentación</span></div>
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-teal-50 dark:bg-slate-700/60"><span class="font-black text-teal-600 dark:text-teal-300 w-28 shrink-0">12:15 – 12:30</span><span class="font-bold">Reflexión, organización y cierre</span></div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-6 bg-white dark:bg-slate-800 p-8 rounded-3xl border-2 border-sky-200 dark:border-slate-700 shadow-xl">
-        <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-6"><i class="fa-solid fa-clipboard-Check text-nova-teal mr-2"></i> Normas de Convivencia y Bienestar</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-          <div class="bg-sky-50 dark:bg-slate-700/60 p-5 rounded-3xl space-y-2">
-            <h4 class="font-display font-bold text-sky-900 dark:text-sky-300 text-base"><i class="fa-regular fa-clock mr-1"></i> Puntualidad</h4>
-            <p>• Ingreso 9:00 am y egreso 12:30 pm puntuales.</p>
-            <p>• Entrega únicamente a personas autorizadas.</p>
-          </div>
-          <div class="bg-purple-50 dark:bg-slate-700/60 p-5 rounded-3xl space-y-2">
-            <h4 class="font-display font-bold text-purple-900 dark:text-purple-300 text-base"><i class="fa-regular fa-heart mr-1"></i> Convivencia</h4>
-            <p>• Ambiente de respeto, colaboración y buen trato.</p>
-            <p>• Si presenta malestar o fiebre, permanecer en casa.</p>
-          </div>
-          <div class="bg-amber-50 dark:bg-slate-700/60 p-5 rounded-3xl space-y-2">
-            <h4 class="font-display font-bold text-amber-900 dark:text-amber-300 text-base"><i class="fa-solid fa-bag-shopping mr-1"></i> Qué traer</h4>
-            <p>• Refacción nutritiva y agua pura en pachón con nombre.</p>
-            <p>• Ropa cómoda que permita trabajar con arte y ciencia.</p>
-          </div>
-          <div class="bg-emerald-50 dark:bg-slate-700/60 p-5 rounded-3xl space-y-2">
-            <h4 class="font-display font-bold text-emerald-900 dark:text-emerald-300 text-base"><i class="fa-solid fa-shapes mr-1"></i> Materiales</h4>
-            <p>• Todos los materiales del laboratorio están incluidos.</p>
-            <p>• No enviar juguetes ni dispositivos electrónicos.</p>
-          </div>
-        </div>
-      </div>
+  <!-- MODAL AFICHE COMPLETO -->
+  <div id="posterModal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-4" onclick="closePosterModal()">
+    <div class="relative max-w-3xl w-full flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closePosterModal()" class="mb-3 px-4 py-2 rounded-full bg-white text-slate-900 font-black text-xs shadow-lg">
+        <i class="fa-solid fa-xmark text-rose-600 mr-1"></i> Cerrar vista completa
+      </button>
+      <img src="img/Winter lab.jpeg" alt="Afiche WinterLab" class="max-h-[82vh] w-auto object-contain rounded-3xl border-2 border-white">
     </div>
-  </section>
+  </div>
 
+  <!-- FOOTER -->
   <footer class="bg-slate-900 text-white py-10 text-center text-xs border-t-4 border-nova-teal mt-12 relative z-10">
     <p class="font-display font-bold text-base">Nova Learning - Centro Neuropsicopedagógico</p>
     <p class="text-slate-400 mt-1">Hospital La Paz, CAES, 5° piso, Clínica 505 | Lun - Sáb: 2:00 PM - 6:30 PM | Tel: +502 3980-4600</p>
@@ -437,71 +476,148 @@
 
   <script>
     function toggleMobileMenu() {
-      const sb = document.getElementById('mobileSidebar');
-      const ov = document.getElementById('sidebarOverlay');
-      sb.classList.toggle('-translate-x-full');
-      ov.classList.toggle('hidden');
+      document.getElementById('mobileSidebar').classList.toggle('-translate-x-full');
+      document.getElementById('sidebarOverlay').classList.toggle('hidden');
+    }
+    function openPosterModal() { document.getElementById('posterModal').classList.remove('hidden'); }
+    function closePosterModal() { document.getElementById('posterModal').classList.add('hidden'); }
+
+    function selectAndScroll(key) {
+      renderProject(key);
+      document.getElementById('explorador-matus').scrollIntoView({ behavior: 'smooth' });
     }
 
     const projectsData = {
       sensoryStudio: {
-        label: "Nova Sensory Studio", title: "Nova Sensory Studio", subtitle: "Explora · Crea · Siente · Descubre", projectTitle: "Mi Estación Sensorial",
-        quote: "¡Un mundo de sensaciones en tus manos! Más que manualidades, son herramientas para la vida.",
-        desc: "Cada niño creará su propia estación sensorial portátil en estuche organizador con materiales, texturas, frasco de calma, masas y tarjetas de desafíos.",
+        label: "1. Nova Sensory Studio", title: "Nova Sensory Studio", subtitle: "Un laboratorio de los sentidos", projectTitle: "Mi Estación Sensorial Portátil",
+        quote: "¡Un mundo de sensaciones en tus manos! Herramientas prácticas de calma y autorregulación.",
+        desc: "Cada participante creará su propia estación sensorial en estuche organizador con texturas, frasco de calma, masas elásticas y tarjetas de desafíos táctiles.",
         days: [
-          { day: "LUNES", letter: "M", phase: "Motivar", title: "El gran descubrimiento", desc: "Exploramos una caja misteriosa con texturas, imaginamos nuestra estación y diseñamos un boceto.", activities: ["Explorar y nombrar texturas", "Hacer hipótesis y preguntas", "Diseñar la estación sensorial"], advance: "Boceto y plan de la estación.", color: "pink" },
-          { day: "MARTES", letter: "A", phase: "Analizar", title: "Selección y organización", desc: "Clasificamos materiales y preparamos las divisiones del estuche.", activities: ["Clasificar y comparar materiales", "Planificar la distribución", "Crear etiquetas visuales"], advance: "Materiales seleccionados y estuche organizado.", color: "sky" },
-          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Construcción de componentes", desc: "Creamos el frasco sensorial, preparamos masa y herramientas táctiles.", activities: ["Elaborar el frasco sensorial", "Crear herramienta táctil", "Decorar y personalizar el estuche"], advance: "Componentes principales elaborados.", color: "emerald" },
-          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Organización y práctica", desc: "Completamos nuestra estación, creamos tarjetas de desafíos y practicamos su uso.", activities: ["Personalizar y decorar", "Crear tarjetas de desafíos", "Practicar el uso del kit"], advance: "Estación lista para probar.", color: "amber" },
-          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Presentación y misión final", desc: "Resolvemos nuevos desafíos, explicamos cómo la creamos y nos llevamos el kit a casa.", activities: ["Resolver misión sensorial", "Presentar el proyecto", "Empacar para casa"], advance: "Mi Estación Sensorial lista para llevar a casa.", color: "purple" }
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "Descubrimiento sensorial", desc: "Exploramos cajas misteriosas de texturas y diseñamos el boceto de nuestra estación.", activities: ["Explorar y nombrar sensaciones", "Identificar estímulos de calma", "Boceto del kit personal"], advance: "Plan visual de la estación.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Clasificación táctil", desc: "Comparamos densidades, pesos y texturas para organizar el estuche.", activities: ["Clasificar materiales suaves y rugosos", "Planificar divisiones", "Etiquetas visuales"], advance: "Estuche clasificado.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Creación de elementos", desc: "Elaboramos la botella de la calma, masas sensoriales y tableros táctiles.", activities: ["Mezclar densidades y brillos", "Amasar y calibrar texturas", "Armado de piezas"], advance: "Componentes sensoriales listos.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Práctica de regulación", desc: "Creamos tarjetas de respiración y retos táctiles para usar nuestra estación.", activities: ["Tarjetas de retorno a la calma", "Juegos de atención plena", "Ajustes finales"], advance: "Kit completo con guía de uso.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Exposición y hogar", desc: "Presentamos nuestra estación y cómo usarla en casa y el colegio.", activities: ["Demostración práctica", "Misión sensorial grupal", "Guía para padres"], advance: "Estación Sensorial lista para casa.", color: "purple" }
         ]
       },
       littleEcologists: {
-        label: "Little Ecologists", title: "Little Ecologists", subtitle: "Explora · Descubre · Crea · Cuida", projectTitle: "Mi Mini Eco-World",
-        quote: "¡Pequeñas acciones, grandes cambios! ¡Exploradores hoy, guardianes del mañana!",
-        desc: "Cada niño diseñará y construirá su propio ecosistema en un recipiente combinando plantas, capas de suelo, piedras y elementos naturales.",
+        label: "2. Little Ecologists", title: "Little Ecologists", subtitle: "Naturaleza, ciencia y sostenibilidad", projectTitle: "Mi Mini Eco-World (Terrario Vivo)",
+        quote: "¡Pequeñas acciones, grandes cambios! Exploradores hoy, guardianes del mañana.",
+        desc: "Cada niño diseñará y construirá su propio ecosistema autosostenible combinando plantas naturales, capas de drenaje, sustrato mineral y decoración ecológica.",
         days: [
-          { day: "LUNES", letter: "M", phase: "Motivar", title: "Exploradores de la naturaleza", desc: "Exploramos la naturaleza con lupas, observamos plantas, semillas y rocas.", activities: ["Exploración sensorial natural", "Observación con lupas", "Conversatorio guiado"], advance: "Definimos qué queremos crear en nuestro mini ecosistema.", color: "pink" },
-          { day: "MARTES", letter: "A", phase: "Analizar", title: "El laboratorio de la naturaleza", desc: "Aprendemos sobre el suelo, el agua, la luz y las plantas.", activities: ["Experimentos de filtración y humedad", "Clasificación de materiales", "Planificación del diseño"], advance: "Seleccionamos materiales y diseñamos nuestro mini mundo.", color: "sky" },
-          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Construimos nuestro eco-mundo", desc: "Montamos el recipiente, creamos capas de suelo y plantamos.", activities: ["Construcción del recipiente", "Plantación y decoración", "Uso de herramientas seguras"], advance: "Nuestro mini ecosistema toma forma.", color: "emerald" },
-          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Cuidamos y mejoramos", desc: "Ajustamos detalles y creamos nuestra ficha científica y plan de cuidado.", activities: ["Revisar humedad y estabilidad", "Completar ficha científica", "Personalizar etiqueta"], advance: "Ecosistema terminado y ficha lista.", color: "amber" },
-          { day: "VIERNES", letter: "S", phase: "Sostener", title: "La gran presentación", desc: "Presentamos nuestros mini ecosistemas y explicamos cómo funcionan.", activities: ["Exposición del proyecto", "Misión final de reflexión", "Empaque para llevar a casa"], advance: "Mi Mini Eco-World listo para casa.", color: "purple" }
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "Exploradores botánicos", desc: "Observamos con lupas hojas, raíces, semillas, musgos y rocas minerales.", activities: ["Exploración con lupas", "Ciclo de vida natural", "Diseño del terrario"], advance: "Boceto del ecosistema.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Laboratorio de suelos", desc: "Experimentamos cómo filtran el agua la grava, el carbón activado y la tierra.", activities: ["Pruebas de filtración", "Capas de la tierra", "Selección de plantas"], advance: "Materiales medidos y listos.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Armado del ecosistema", desc: "Construimos cada capa dentro del recipiente y trasplantamos con cuidado.", activities: ["Colocación de drenaje y sustrato", "Siembra botánica", "Decoración con piedras"], advance: "Terrario vivo plantado.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Bitácora de cuidado", desc: "Creamos el manual de riego, luz y sostenibilidad de nuestro ecosistema.", activities: ["Ficha científica de humedad", "Etiqueta ecológica", "Hábitos verdes"], advance: "Ecosistema con bitácora.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Guardianes del planeta", desc: "Presentamos nuestro Mini Eco-World y cómo cuidarlo en familia.", activities: ["Feria ecológica", "Compromiso ambiental", "Empaque seguro"], advance: "Mini Eco-World listo para casa.", color: "purple" }
         ]
       },
       inventorsOfLight: {
-        label: "Inventors of Light", title: "Inventors of Light", subtitle: "Diseña · Experimenta · Crea", projectTitle: "Mi Teatro de Luces",
-        quote: "¡Una semana para descubrir el poder de la luz, la creatividad y la ciencia!",
-        desc: "Cada niño diseñará y construirá su propio teatro de luces, sombras y colores, combinando ciencia, arte y electricidad.",
+        label: "3. Inventors of Light", title: "Inventors of Light", subtitle: "Arte, luz y electricidad", projectTitle: "Lámpara y Teatro Luminoso",
+        quote: "¡Descubre el poder de la luz, los circuitos seguros y la creatividad!",
+        desc: "Los participantes combinarán principios básicos de electricidad segura (LEDs y baterías), óptica, sombras y filtros de color para construir su proyecto luminoso.",
         days: [
-          { day: "LUNES", letter: "M", phase: "Motivar", title: "La luz nos cuenta historias", desc: "Exploramos cómo la luz crea sombras, colores y formas para contar historias.", activities: ["Exploración de sombras y colores", "Juegos de luz y oscuridad", "Observación de fuentes de luz"], advance: "Elegimos el tema y hacemos un boceto.", color: "pink" },
-          { day: "MARTES", letter: "A", phase: "Analizar", title: "La ciencia de la luz", desc: "Experimentamos con filtros de colores, espejos y superficies reflectantes.", activities: ["Experimentos con filtros", "Mezcla de luces y sombras", "Comparación de materiales"], advance: "Definimos la estructura del teatro.", color: "sky" },
-          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Construimos nuestro teatro", desc: "Construimos la base del teatro e incorporamos los elementos de luz.", activities: ["Construcción de la estructura", "Instalación de luces y mecanismos", "Decoración y personalización"], advance: "Teatro en construcción y primeros efectos.", color: "emerald" },
-          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Practicamos y mejoramos", desc: "Probamos nuestro teatro y creamos los personajes y escenas.", activities: ["Prueba de luces y sombras", "Creación de personajes", "Revisión y ajustes finales"], advance: "Teatro listo para la presentación.", color: "amber" },
-          { day: "VIERNES", letter: "S", phase: "Sostener", title: "La gran presentación", desc: "Presentamos nuestro teatro de luces y compartimos nuestra escena.", activities: ["Presentación del proyecto", "Misión final: crear una escena", "Empaque para llevar a casa"], advance: "Teatro de luces personalizado listo.", color: "purple" }
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "La magia de la luz", desc: "Exploramos luces, sombras, prismas y transparencias en mesa de luz.", activities: ["Juegos de refracción y sombras", "Cómo viaja la luz", "Diseño del invento"], advance: "Plano del proyecto luminoso.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Circuitos en acción", desc: "Aprendemos cómo funciona un circuito simple con luces LED, cintas conductoras y baterías.", activities: ["Conectar polos positivo y negativo", "Probar interruptores", "Filtros de color"], advance: "Circuito eléctrico funcional.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Construcción estructural", desc: "Ensamblamos la estructura de madera/cartón e integramos el sistema de iluminación.", activities: ["Armado de estructura", "Instalación del circuito LED", "Pantallas translúcidas"], advance: "Estructura iluminada.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Efectos y pruebas", desc: "Personalizamos detalles artísticos y probamos distintos efectos de proyección.", activities: ["Plantillas de proyección", "Control de encendido", "Mejora de acabados"], advance: "Invento luminoso calibrado.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Festival de la luz", desc: "Apagamos las luces del salón y encendemos todas nuestras creaciones.", activities: ["Exposición luminosa", "Explicación científica", "Entrega del proyecto"], advance: "Proyecto de luz listo para casa.", color: "purple" }
+        ]
+      },
+      photoLab: {
+        label: "4. Nova Photo Lab", title: "Nova Photo Lab", subtitle: "Fotografía y narración visual", projectTitle: "Mi Portafolio y Fotolibro Narrativo",
+        quote: "¡Mirar el mundo con atención plena para contar historias inolvidables!",
+        desc: "Entrenamos la atención visual, el encuadre, la perspectiva y la creatividad construyendo una historia fotográfica impresa y intervenida artísticamente.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "El ojo del fotógrafo", desc: "Descubrimos cómo los encuadres, ángulos y planos cambian una historia.", activities: ["Juegos de enfoque y perspectiva", "Lentes y visores creativos", "Idea de nuestro fotolibro"], advance: "Guion visual (Storyboard).", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Luz, color y emoción", desc: "Analizamos cómo la luz natural, los contrastes y los gestos transmiten emociones.", activities: ["Prácticas de retrato y detalle", "Composición y regla de tercios", "Selección de escenas"], advance: "Primeras capturas fotográficas.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Sesión y producción", desc: "Montamos mini sets creativos, capturamos nuestras fotos e imprimimos las mejores tomas.", activities: ["Dirección de escena", "Captura fotográfica", "Selección e impresión"], advance: "Fotografías impresas.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Edición y narrativa", desc: "Armamos nuestro Fotolibro agregando textos, marcos, texturas y viñetas.", activities: ["Encuadernación creativa", "Redacción de pie de foto", "Decoración de portada"], advance: "Fotolibro ensamblado.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Galería Nova Photo", desc: "Inauguramos nuestra galería fotográfica y narramos nuestra historia visual.", activities: ["Recorrido de galería", "Presentación oral", "Entrega de portafolio"], advance: "Fotolibro Narrativo listo para casa.", color: "purple" }
+        ]
+      },
+      productDesign: {
+        label: "5. Nova Product Design", title: "Nova Product Design", subtitle: "Diseñadores de productos", projectTitle: "Mi Prototipo y Empaque Original",
+        quote: "¡De la imaginación al mundo real! Pensamiento de diseño para jóvenes creadores.",
+        desc: "Aplicamos Design Thinking adaptado a niños y adolescentes: empatizar con una necesidad, idear una solución, construir el prototipo funcional y diseñar su empaque.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "Mente de inventor", desc: "Identificamos retos cotidianos y diseñamos ideas de productos útiles y creativos.", activities: ["Lluvia de ideas (Brainstorming)", "Bocetos en 2D", "Elección del producto"], advance: "Ficha de diseño del producto.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Ingeniería de materiales", desc: "Medimos dimensiones, elegimos materiales resistentes y creamos plantillas.", activities: ["Medición y proporciones", "Pruebas de resistencia", "Corte de piezas base"], advance: "Piezas estructurales listas.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Prototipado 3D", desc: "Construimos y ensamblamos el prototipo físico funcional de nuestro producto.", activities: ["Unión y ensamblaje", "Acabados ergonómicos", "Pintura y detalles"], advance: "Prototipo 3D construido.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Identidad y Packaging", desc: "Creamos el nombre, logotipo y caja/empaque personalizado para nuestro producto.", activities: ["Diseño de marca y logo", "Armado de caja o estuche", "Control de calidad"], advance: "Producto con empaque oficial.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Feria de Lanzamiento", desc: "Presentamos nuestro producto como verdaderos diseñadores e inventores.", activities: ["Pitch de presentación", "Demostración de uso", "Llevar creación a casa"], advance: "Producto y empaque listos.", color: "purple" }
+        ]
+      },
+      lifeSkills: {
+        label: "6. Life Skills Club", title: "Life Skills Club", subtitle: "Habilidades para la vida diaria", projectTitle: "Mi Kit de Autonomía e Independencia",
+        quote: "¡Yo puedo lograrlo! Confianza práctica para desenvolverse en la vida real.",
+        desc: "Fortalecemos la autonomía cotidiana: organización personal, toma de decisiones, finanzas básicas para niños, primeros auxilios básicos y resolución de imprevistos.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "Descubriendo mi independencia", desc: "Exploramos qué habilidades nos hacen sentir seguros y autónomos cada día.", activities: ["Retos de vida práctica", "Autocuidado y rutinas", "Diseño de carpeta de vida"], advance: "Mapa de autonomía personal.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Decisiones e imprevistos", desc: "Aprendemos a resolver problemas cotidianos y administrar recursos con inteligencia.", activities: ["Simulación de compras y ahorro", "Resolución de casos prácticos", "Priorización"], advance: "Herramientas de decisión.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Habilidades manuales útiles", desc: "Practicamos destrezas de la vida diaria: nudos útiles, organización de viaje y botiquín.", activities: ["Armado de mini botiquín", "Organización de pertenencias", "Destrezas prácticas"], advance: "Kit práctico en construcción.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Hábitos en acción", desc: "Creamos nuestros checklists plastificados de rutinas matutinas y vespertinas.", activities: ["Tablero de hábitos diarios", "Simulacros de autonomía", "Autoevaluación"], advance: "Tablero y kit terminados.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Misión Independencia", desc: "Superamos el circuito final de habilidades para la vida y celebramos logros.", activities: ["Circuito de retos reales", "Entrega de diploma Life Skills", "Guía para casa"], advance: "Kit de Autonomía listo para casa.", color: "purple" }
+        ]
+      },
+      comunica: {
+        label: "7. Comunica", title: "Comunica", subtitle: "Más allá de las palabras", projectTitle: "Mi Estudio de Podcast y Expresión",
+        quote: "¡Comunicar con seguridad, empatía, lenguaje corporal y voz propia!",
+        desc: "Desarrollamos habilidades pragmáticas, oratoria, escucha activa, debate respetuoso, lectura de emociones y expresión verbal y no verbal.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "El poder de mi voz", desc: "Juegos de improvisación, modulación de voz y expresión corporal sin miedo.", activities: ["Dinámicas rompehielo", "Lenguaje de los gestos", "Elección de tema propio"], advance: "Idea de programa o charla.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Escucha activa y empatía", desc: "Aprendemos a estructurar ideas claras, hacer buenas preguntas y escuchar al otro.", activities: ["Entrevistas en parejas", "Ordenar inicio, nudo y cierre", "Tarjetas de diálogo"], advance: "Guion de comunicación listo.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Creación de recursos visuales", desc: "Diseñamos nuestro set, micrófono simbólico, tarjetas de apoyo y material visual.", activities: ["Creación de apoyos visuales", "Técnicas de respiración y dicción", "Ensayo guiado"], advance: "Materiales de oratoria listos.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Cabina de práctica", desc: "Practicamos entrevistas, narración de historias y manejo de nervios en grupo seguro.", activities: ["Juego de roles: Radio/Podcast", "Retroalimentación positiva", "Confianza escénica"], advance: "Presentación dominada.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "En Vivo desde Nova", desc: "Realizamos nuestra presentación final comunicando nuestras ideas con seguridad.", activities: ["Charla / Podcast en vivo", "Reconocimiento de fortalezas", "Cierre grupal"], advance: "Kit Comunica listo para casa.", color: "purple" }
+        ]
+      },
+      planningClub: {
+        label: "8. The Planning Club", title: "The Planning Club", subtitle: "Organización y planificación", projectTitle: "Mi Command Center & Planner Personal",
+        quote: "¡Entrena el director de orquesta de tu cerebro: las funciones ejecutivas!",
+        desc: "Un laboratorio enfocado al 100% en funciones ejecutivas: gestión del tiempo, planificación de tareas, memoria de trabajo, priorización y cumplimiento de metas.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "¿Cómo funciona mi tiempo?", desc: "Descubrimos cómo planificar hace que tengamos más tiempo libre y menos estrés.", activities: ["Juegos de estimación de tiempo", "Mis metas del mes", "Diseño de mi Command Center"], advance: "Estructura del planificador.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Dividir grandes retos", desc: "Aprendemos la técnica de dividir una tarea grande en pequeños pasos alcanzables.", activities: ["Técnica paso a paso", "Matriz de prioridades por colores", "Organización visual"], advance: "Sistema de códigos de color.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Construcción del Tablero", desc: "Armamos nuestro tablero magnético/visual con calendario, reloj de rutinas y metas.", activities: ["Armado del tablero organizador", "Creación de fichas móviles", "Sección de logros"], advance: "Tablero de planificación creado.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Entrenamiento ejecutivo", desc: "Ponemos a prueba nuestro planificador superando misiones por tiempo en equipo.", activities: ["Reto contra reloj organizado", "Uso de checklists", "Ajustes personalizados"], advance: "Sistema probado y listo.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Listos para el éxito", desc: "Explicamos cómo ubicaremos nuestro Command Center en nuestra habitación.", activities: ["Exposición de metas", "Guía de uso con los padres", "Cierre de misión"], advance: "Command Center listo para casa.", color: "purple" }
+        ]
+      },
+      rhythmLab: {
+        label: "9. Rhythm & Movement Lab", title: "Rhythm & Movement Lab", subtitle: "Ritmo, movimiento y expresión", projectTitle: "Instrumento de Percusión y Secuencia Rítmica",
+        quote: "¡El ritmo organiza el cerebro, mejora la atención y libera energía positiva!",
+        desc: "Estimulamos la coordinación bilateral, el control inhibitorio, la memoria auditiva y la integración neuro-motriz a través de la percusión corporal y musical.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "El pulso y el movimiento", desc: "Juegos de percusión corporal, velocidad, pausa (control inhibitorio) y coordinación.", activities: ["Retos de ritmo y congelado", "Coordinación cruzada", "Exploración de instrumentos"], advance: "Secuencia rítmica inicial.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Acústica y patrones", desc: "Descubrimos cómo suenan distintos materiales y cómo se escriben los patrones rítmicos.", activities: ["Patrones sonoros visuales", "Sonidos graves y agudos", "Diseño de instrumento"], advance: "Materiales acústicos elegidos.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Luthier por un día", desc: "Construimos y personalizamos nuestro propio instrumento de percusión rítmica.", activities: ["Ensamblaje acústico", "Sellado y pruebas de sonido", "Diseño artístico exterior"], advance: "Instrumento musical creado.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Ensamble y memoria", desc: "Practicamos secuencias grupales combinando movimiento corporal e instrumentos.", activities: ["Coordinación en equipo", "Memoria auditiva y motriz", "Coreografía rítmica"], advance: "Ensamble grupal coordinado.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Gran Jam Session", desc: "Presentamos nuestro ensamble rítmico y nos llevamos nuestro instrumento a casa.", activities: ["Presentación rítmica", "Juegos de eco musical", "Cierre festivo"], advance: "Instrumento listo para casa.", color: "purple" }
+        ]
+      },
+      everydayScience: {
+        label: "10. Everyday Science", title: "Everyday Science", subtitle: "Ciencia en la vida cotidiana", projectTitle: "Mi Maletín y Bitácora de Científico",
+        quote: "¡La ciencia no está solo en los libros, ocurre todos los días a nuestro alrededor!",
+        desc: "Despertamos el pensamiento científico mediante reacciones químicas seguras, física divertida, densidades, fluidos no newtonianos y método científico experimental.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "Preguntas de científico", desc: "Observamos fenómenos sorprendentes y aprendemos a formular hipótesis.", activities: ["Reacciones efervescentes", "¿Por qué ocurre?", "Creación de Bitácora Científica"], advance: "Bitácora y primeras hipótesis.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Líquidos y densidades", desc: "Experimentamos con torres de densidad, tensión superficial y lámparas de lava.", activities: ["Torre de líquidos de colores", "Lámpara de lava casera", "Registro de resultados"], advance: "Lámpara de densidad creada.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Reacciones y polímeros", desc: "Creamos volcanes químicos, nieve instantánea y fluidos que cambian de estado.", activities: ["Fluidos no newtonianos", "Volcán de espuma", "Medición con pipetas"], advance: "Experimentos en maletín.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Física en movimiento", desc: "Exploramos magnetismo, presión del aire y energía con retos experimentales.", activities: ["Cohetes de aire e imanes", "Organización del kit científico", "Tarjetas de experimentos"], advance: "Maletín científico equipado.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Feria Everyday Science", desc: "Cada científico demuestra su experimento favorito y explica la ciencia detrás.", activities: ["Demostración experimental", "Conclusiones científicas", "Entrega de maletín"], advance: "Maletín Científico listo para casa.", color: "purple" }
         ]
       },
       bigArtProject: {
-        label: "The Big Art Project", title: "The Big Art Project", subtitle: "Color · Textura · Crea · Presenta", projectTitle: "Arte Sensorial y Efecto Vitral",
-        quote: "¡Dos obras llenas de color para crear, sentir y compartir!",
-        desc: "Los participantes crearán obras artísticas inspiradas en el color y la textura: frascos sensoriales con capas de colores y un cuadro con efecto vitral.",
+        label: "11. The Big Art Project", title: "The Big Art Project", subtitle: "Arte colaborativo y gran formato", projectTitle: "Obras Sensoriales y Cuadro Efecto Vitral",
+        quote: "¡Obras llenas de color, textura y expresión para crear, sentir y compartir!",
+        desc: "Los participantes explorarán técnicas plásticas de gran formato, pintura texturizada, arte colaborativo, frascos de arena de colores y cuadros con efecto vitral.",
         days: [
-          { day: "LUNES", letter: "M", phase: "Motivar", title: "Exploramos color y textura", desc: "Observamos ejemplos, exploramos materiales y elegimos paleta de colores.", activities: ["Observar ejemplos de obras", "Explorar materiales", "Hacer boceto de los dos proyectos"], advance: "Definimos la idea visual.", color: "pink" },
-          { day: "MARTES", letter: "A", phase: "Analizar", title: "Planificamos materiales", desc: "Clasificamos frascos, arena y preparamos el marco del efecto vitral.", activities: ["Clasificar frascos, sal y colores", "Preparar marco del vitral", "Elegir secuencia de colores"], advance: "Materiales y diseño listos.", color: "sky" },
-          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Creamos frascos sensoriales", desc: "Coloreamos la sal o arena, creamos patrones de capas y sellamos los frascos.", activities: ["Colorear sal o arena con tizas", "Crear patrones de capas", "Llenar y sellar frascos"], advance: "Frascos sensoriales terminados.", color: "emerald" },
-          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Diseñamos efecto vitral", desc: "Dibujamos las secciones con líneas negras y añadimos áreas de color translúcido.", activities: ["Dibujar secciones negras", "Añadir papel translúcido", "Ensamblar cuadro vitral"], advance: "Cuadro vitral casi listo.", color: "amber" },
-          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Presentamos y llevamos a casa", desc: "Hacemos detalles finales y montamos nuestra mini exposición artística.", activities: ["Detalles finales", "Montar mini exposición", "Preparar obras para casa"], advance: "Frascos sensoriales + cuadro vitral listos.", color: "purple" }
-        ]
-      },
-      sensoryCreators: {
-        label: "Sensory Creators", title: "Sensory Creators", subtitle: "Diseña · Crea · Explora · Siente", projectTitle: "Mi Tablero de Sensaciones",
-        quote: "¡Pequeñas manos, grandes ideas! Más que un proyecto, es una experiencia que despierta los sentidos.",
-        desc: "Durante la semana, cada niño diseñará y construirá su propio tablero sensorial interactivo, combinando texturas, colores, formas, sonidos y mecanismos.",
-        days: [
-          { day: "LUNES", letter: "M", phase: "Motivar", title: "La chispa de la idea", desc: "Exploramos tableros sensoriales, conocemos los materiales y descubrimos qué nos gustaría crear.", activities: ["Explorar y experimentar", "Observar y descubrir", "Diseñar nuestro tablero"], advance: "Boceto y plan de diseño.", color: "pink" },
-          { day: "MARTES", letter: "A", phase: "Analizar", title: "Elegimos y organizamos", desc: "Investigamos qué materiales funcionan mejor, comparamos opciones y planificamos cómo usarlos.", activities: ["Clasificar y comparar materiales", "Resolver problemas", "Decidir y organizar"], advance: "Materiales seleccionados y estructura definida.", color: "sky" },
-          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Creamos y construimos", desc: "Construimos la base y comenzamos a incorporar los elementos sensoriales y de movimiento.", activities: ["Seguir instrucciones", "Desarrollar motricidad fina", "Resolver imprevistos"], advance: "Tablero en construcción y primeros componentes.", color: "emerald" },
-          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Probamos y personalizamos", desc: "Completamos detalles, probamos que todo funcione y creamos tarjetas de desafíos.", activities: ["Personalizar y decorar", "Practicar el uso del tablero", "Revisar y mejorar"], advance: "Tablero terminado y tarjetas listas.", color: "amber" },
-          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Compartimos y llevamos a casa", desc: "Presentamos nuestro proyecto, resolvemos una misión final y reflexionamos.", activities: ["Presentación del proyecto", "Misión sensorial final", "Reflexión y cierre"], advance: "Tablero sensorial interactivo listo para casa.", color: "purple" }
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "Exploramos color y textura", desc: "Observamos grandes obras, mezclamos pigmentos y elegimos nuestra paleta.", activities: ["Psicología y mezcla del color", "Texturas sobre lienzo", "Boceto de proyectos"], advance: "Diseño visual definido.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Preparación de soportes", desc: "Preparamos pigmentos minerales, arenas de color y el marco del vitral.", activities: ["Pigmentación de arenas", "Trazado del marco vitral", "Secuencia cromática"], advance: "Materiales artísticos listos.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Arte en capas y relieve", desc: "Creamos nuestras botellas de arte en capas y aplicamos relieve en nuestro cuadro.", activities: ["Capas geométricas de arena", "Delineado en relieve", "Trabajo en gran formato"], advance: "Primera obra terminada.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Luz y efecto vitral", desc: "Aplicamos veladuras translúcidas de color para lograr el efecto vitral luminoso.", activities: ["Pintura translúcida", "Contrastes de luz", "Firma de autor"], advance: "Cuadro vitral terminado.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Exposición de Arte Nova", desc: "Montamos nuestra galería de arte y presentamos nuestras obras terminadas.", activities: ["Curaduría y montaje", "Recorrido artístico", "Obras listas para casa"], advance: "Obras de arte listas para casa.", color: "purple" }
         ]
       }
     };
@@ -510,11 +626,13 @@
       const p = projectsData[key];
       document.querySelectorAll('.proj-tab').forEach(btn => {
         const k = btn.id.replace('btn-', '');
-        btn.innerText = projectsData[k].label;
-        btn.className = "proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-2 border-slate-200 dark:border-slate-700";
+        if (projectsData[k]) {
+          btn.innerText = projectsData[k].label;
+          btn.className = "proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-2 border-slate-200 dark:border-slate-700 hover:border-purple-400";
+        }
       });
-      const activeBtn = document.getElementById(`btn-${key}`);
-      if (activeBtn) activeBtn.className = "proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-lg bg-gradient-vivid text-white scale-105";
+      const activeBtn = document.getElementById('btn-' + key);
+      if (activeBtn) activeBtn.className = "proj-tab px-4 py-2.5 rounded-2xl font-black text-xs transition-all shadow-lg bg-gradient-vivid text-white scale-105";
 
       const colorMap = {
         pink: { header: "bg-pink-500", border: "border-pink-200 dark:border-pink-500/30" },
@@ -565,7 +683,9 @@
     function updateThemeUI() {
       const isDark = document.documentElement.classList.contains('dark');
       const icon = document.getElementById('themeIcon');
-      if (icon) icon.className = isDark ? 'fa-solid fa-sun text-amber-300 text-lg' : 'fa-solid fa-moon text-amber-600 text-lg';
+      const text = document.getElementById('themeText');
+      if (icon) icon.className = isDark ? 'fa-solid fa-sun text-amber-300 text-base' : 'fa-solid fa-moon text-amber-600 text-base';
+      if (text) text.innerText = isDark ? 'Modo Día / Claro' : 'Modo Noche / Oscuro';
     }
     function toggleTheme() {
       document.documentElement.classList.toggle('dark');

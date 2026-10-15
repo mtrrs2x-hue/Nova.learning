@@ -48,15 +48,10 @@
 </head>
 <body class="bg-living-canvas text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
 
-  <!-- BOTÓN FLOTANTE MODO OSCURO -->
-  <button onclick="toggleTheme()" id="themeToggleBtn" title="Cambiar Modo Día / Noche" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-white/95 dark:bg-slate-800/95 backdrop-blur-md text-amber-600 dark:text-amber-300 border-2 border-amber-300 dark:border-slate-600 shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center">
-    <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
-  </button>
-
-  <!-- MENÚ LATERAL DESPLEGABLE (BARRITAS IZQUIERDA) -->
-  <div id="mobileSidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between border-r-2 border-sky-100 dark:border-slate-800">
+  <!-- MENÚ LATERAL DESPLEGABLE (3 LÍNEAS IZQUIERDA + BOTÓN MODO OSCURO ADENTRO) -->
+  <div id="mobileSidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between border-r-2 border-sky-100 dark:border-slate-800 overflow-y-auto">
     <div>
-      <div class="flex items-center justify-between mb-6 pb-4 border-b dark:border-slate-800">
+      <div class="flex items-center justify-between mb-5 pb-4 border-b dark:border-slate-800">
         <div class="flex items-center gap-2">
           <img src="img/Logo.jpeg" alt="Nova Learning" class="h-9 w-auto object-contain bg-white px-2 py-1 rounded-xl border">
           <span class="font-display font-bold text-base text-slate-900 dark:text-white">Navegación</span>
@@ -65,6 +60,18 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
+
+      <!-- INTERRUPTOR DE MODO OSCURO DENTRO DE LAS 3 LÍNEAS -->
+      <div class="mb-5">
+        <button onclick="toggleTheme()" class="w-full p-3.5 rounded-2xl bg-amber-100/90 dark:bg-slate-800 border-2 border-amber-300 dark:border-slate-700 flex items-center justify-between font-extrabold text-xs text-slate-900 dark:text-amber-300 shadow-sm hover:scale-[1.02] transition-all">
+          <span class="flex items-center gap-2.5">
+            <i id="themeIcon" class="fa-solid fa-moon text-amber-600 dark:text-amber-300 text-base"></i>
+            <span id="themeText">Modo Noche / Oscuro</span>
+          </span>
+          <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 text-[10px] font-black uppercase shadow">Cambiar</span>
+        </button>
+      </div>
+
       <nav class="space-y-2.5 font-extrabold text-sm">
         <a href="index.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-sky-100/80 dark:bg-sky-500/20 text-sky-950 dark:text-sky-200 hover:bg-sky-200 transition-all">
           <i class="fa-solid fa-house text-sky-600 dark:text-sky-300 text-lg w-6 text-center"></i> Inicio
@@ -86,7 +93,8 @@
         </a>
       </nav>
     </div>
-    <div class="pt-4 border-t dark:border-slate-800 space-y-3">
+
+    <div class="pt-4 mt-6 border-t dark:border-slate-800 space-y-3">
       <div class="text-[11px] text-slate-600 dark:text-slate-400 font-bold space-y-1">
         <p><i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
         <p><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz CAES, Clínica 505</p>
@@ -112,11 +120,11 @@
     </div>
   </div>
 
-  <!-- NAVBAR CON LAS 3 LÍNEAS SIEMPRE VISIBLES Y TODOS LOS BOTONES COLOREADOS -->
+  <!-- NAVBAR CON LAS 3 LÍNEAS SIEMPRE VISIBLES -->
   <header class="sticky top-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b-2 border-sky-100 dark:border-slate-800 shadow-sm transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 gap-2">
       <div class="flex items-center gap-3">
-        <button onclick="toggleMobileMenu()" title="Abrir menú de secciones" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-100 to-purple-100 dark:from-slate-800 dark:to-slate-700 border-2 border-sky-300 dark:border-slate-600 text-slate-800 dark:text-white flex items-center justify-center text-xl shadow-sm hover:scale-105 active:scale-95 transition-all">
+        <button onclick="toggleMobileMenu()" title="Abrir menú y Modo Oscuro" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-100 to-purple-100 dark:from-slate-800 dark:to-slate-700 border-2 border-sky-300 dark:border-slate-600 text-slate-800 dark:text-white flex items-center justify-center text-xl shadow-sm hover:scale-105 active:scale-95 transition-all">
           <i class="fa-solid fa-bars"></i>
         </button>
         <a href="index.html" class="flex items-center bg-white px-3 py-1.5 rounded-2xl border-2 border-sky-100 shadow-sm">
@@ -152,10 +160,27 @@
   </header>
 
   <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center max-w-3xl mx-auto mb-14">
+    <div class="text-center max-w-3xl mx-auto mb-10">
       <span class="bg-emerald-200 dark:bg-emerald-500/20 text-emerald-950 dark:text-emerald-300 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full"><i class="fa-solid fa-hospital-user mr-1"></i> Espacio Seguro y Profesional</span>
       <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mt-4">Nuestra Clínica y Tarifas</h1>
       <p class="text-slate-600 dark:text-slate-300 font-medium mt-3 text-base">Un entorno cálido, moderno y equipado para la regulación neurosensorial y la intervención psicopedagógica.</p>
+    </div>
+
+    <!-- SELLO DE APOYO EN PATERNIDAD 1 A 1 EN CADA CITA -->
+    <div class="mb-12 bg-gradient-to-r from-emerald-500 via-teal-600 to-purple-700 text-white p-6 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-amber-300 text-slate-950 flex items-center justify-center text-2xl shrink-0 shadow">
+          <i class="fa-solid fa-people-roof"></i>
+        </div>
+        <div>
+          <span class="text-[10px] font-black uppercase bg-white/20 px-2.5 py-0.5 rounded-full">Incluido en Todas Nuestras Terapias</span>
+          <h3 class="font-display font-bold text-xl">Apoyo en Paternidad: Acompañamiento 1 a 1 a los Padres</h3>
+          <p class="text-xs sm:text-sm text-emerald-50 mt-0.5">En cualquier cita o paquete mensual que agendes con nosotros, otorgamos un espacio de acompañamiento 1 a 1 para orientar a los padres con estrategias prácticas en casa.</p>
+        </div>
+      </div>
+      <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20una%20cita%20con%20acompañamiento%201%20a%201%20a%20padres" target="_blank" class="px-5 py-3 rounded-2xl bg-amber-300 text-slate-950 font-black text-xs shrink-0 shadow hover:bg-amber-200">
+        <i class="fa-brands fa-whatsapp mr-1"></i> Agendar con Apoyo 1 a 1
+      </a>
     </div>
 
     <!-- UBICACIÓN Y HORARIO LUNES A SÁBADO -->
@@ -185,9 +210,9 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
       <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-sky-200 dark:border-slate-700 shadow-xl card-playful flex flex-col justify-between">
         <div>
-          <span class="bg-sky-100 dark:bg-sky-500/20 text-sky-900 dark:text-sky-300 px-3 py-1 rounded-full font-black text-xs">1 niño</span>
+          <span class="bg-sky-100 dark:bg-sky-500/20 text-sky-900 dark:text-sky-300 px-3 py-1 rounded-full font-black text-xs">1 niño + Apoyo Padres 1 a 1</span>
           <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mt-3">Atención Individual</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">Sesiones 1 a 1 diseñadas a la medida de las necesidades neuropsicopedagógicas del niño.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">Sesiones 1 a 1 diseñadas a la medida de las necesidades neuropsicopedagógicas del niño y guía a padres.</p>
           <div class="my-5 pt-4 border-t border-slate-100 dark:border-slate-700">
             <span class="text-3xl font-black text-purple-600 dark:text-pink-400">Q500</span> <span class="text-xs text-slate-400 font-bold">/ sesión suelta</span>
             <p class="text-xs font-bold text-nova-teal dark:text-cyan-300 mt-1">• 4 sesiones/mes: Q2,000</p>
@@ -201,7 +226,7 @@
 
       <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-pink-200 dark:border-slate-700 shadow-xl card-playful flex flex-col justify-between">
         <div>
-          <span class="bg-pink-100 dark:bg-pink-500/20 text-pink-900 dark:text-pink-300 px-3 py-1 rounded-full font-black text-xs">2 niños (hermanos)</span>
+          <span class="bg-pink-100 dark:bg-pink-500/20 text-pink-900 dark:text-pink-300 px-3 py-1 rounded-full font-black text-xs">2 hermanos + Apoyo Padres 1 a 1</span>
           <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mt-3">Atención Compartida</h3>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">Espacio colaborativo para hermanos que potencia habilidades cognitivas y vínculo familiar.</p>
           <div class="my-5 pt-4 border-t border-slate-100 dark:border-slate-700">
@@ -217,7 +242,7 @@
 
       <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-amber-200 dark:border-slate-700 shadow-xl card-playful flex flex-col justify-between">
         <div>
-          <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-900 dark:text-amber-300 px-3 py-1 rounded-full font-black text-xs">3 a 6 niños</span>
+          <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-900 dark:text-amber-300 px-3 py-1 rounded-full font-black text-xs">3 a 6 niños + Apoyo Padres 1 a 1</span>
           <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mt-3">Grupo Reducido</h3>
           <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">Interacción guiada para estimular autorregulación social, comunicación y trabajo en equipo.</p>
           <div class="my-5 pt-4 border-t border-slate-100 dark:border-slate-700">
@@ -239,7 +264,7 @@
           <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl"><i class="fa-solid fa-star"></i></div>
           <div>
             <h2 class="font-display font-bold text-2xl">Tabla Comparativa de Tarifas</h2>
-            <p class="text-xs text-pink-100">Planes por sesión individual o paquetes mensuales de seguimiento</p>
+            <p class="text-xs text-pink-100">Todas las modalidades incluyen Acompañamiento 1 a 1 a los Padres</p>
           </div>
         </div>
         <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20mi%20cita%20en%20la%20clínica" target="_blank" class="px-6 py-3 rounded-2xl bg-amber-300 text-slate-950 font-black text-xs sm:text-sm shadow-lg hover:bg-amber-200 flex items-center gap-2">
@@ -302,15 +327,15 @@
 
   <script>
     function toggleMobileMenu() {
-      const sb = document.getElementById('mobileSidebar');
-      const ov = document.getElementById('sidebarOverlay');
-      sb.classList.toggle('-translate-x-full');
-      ov.classList.toggle('hidden');
+      document.getElementById('mobileSidebar').classList.toggle('-translate-x-full');
+      document.getElementById('sidebarOverlay').classList.toggle('hidden');
     }
     function updateThemeUI() {
       const isDark = document.documentElement.classList.contains('dark');
       const icon = document.getElementById('themeIcon');
-      if (icon) icon.className = isDark ? 'fa-solid fa-sun text-amber-300 text-lg' : 'fa-solid fa-moon text-amber-600 text-lg';
+      const text = document.getElementById('themeText');
+      if (icon) icon.className = isDark ? 'fa-solid fa-sun text-amber-300 text-base' : 'fa-solid fa-moon text-amber-600 text-base';
+      if (text) text.innerText = isDark ? 'Modo Día / Claro' : 'Modo Noche / Oscuro';
     }
     function toggleTheme() {
       document.documentElement.classList.toggle('dark');

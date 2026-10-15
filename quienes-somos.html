@@ -48,15 +48,10 @@
 </head>
 <body class="bg-living-canvas text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
 
-  <!-- BOTÓN FLOTANTE MODO OSCURO -->
-  <button onclick="toggleTheme()" id="themeToggleBtn" title="Cambiar Modo Día / Noche" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-white/95 dark:bg-slate-800/95 backdrop-blur-md text-amber-600 dark:text-amber-300 border-2 border-amber-300 dark:border-slate-600 shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center">
-    <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
-  </button>
-
-  <!-- MENÚ LATERAL DESPLEGABLE (BARRITAS IZQUIERDA) -->
-  <div id="mobileSidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between border-r-2 border-sky-100 dark:border-slate-800">
+  <!-- MENÚ LATERAL DESPLEGABLE (3 LÍNEAS IZQUIERDA + BOTÓN MODO OSCURO ADENTRO) -->
+  <div id="mobileSidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between border-r-2 border-sky-100 dark:border-slate-800 overflow-y-auto">
     <div>
-      <div class="flex items-center justify-between mb-6 pb-4 border-b dark:border-slate-800">
+      <div class="flex items-center justify-between mb-5 pb-4 border-b dark:border-slate-800">
         <div class="flex items-center gap-2">
           <img src="img/Logo.jpeg" alt="Nova Learning" class="h-9 w-auto object-contain bg-white px-2 py-1 rounded-xl border">
           <span class="font-display font-bold text-base text-slate-900 dark:text-white">Navegación</span>
@@ -65,6 +60,18 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
+
+      <!-- INTERRUPTOR DE MODO OSCURO DENTRO DE LAS 3 LÍNEAS -->
+      <div class="mb-5">
+        <button onclick="toggleTheme()" class="w-full p-3.5 rounded-2xl bg-amber-100/90 dark:bg-slate-800 border-2 border-amber-300 dark:border-slate-700 flex items-center justify-between font-extrabold text-xs text-slate-900 dark:text-amber-300 shadow-sm hover:scale-[1.02] transition-all">
+          <span class="flex items-center gap-2.5">
+            <i id="themeIcon" class="fa-solid fa-moon text-amber-600 dark:text-amber-300 text-base"></i>
+            <span id="themeText">Modo Noche / Oscuro</span>
+          </span>
+          <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 text-[10px] font-black uppercase shadow">Cambiar</span>
+        </button>
+      </div>
+
       <nav class="space-y-2.5 font-extrabold text-sm">
         <a href="index.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-sky-100/80 dark:bg-sky-500/20 text-sky-950 dark:text-sky-200 hover:bg-sky-200 transition-all">
           <i class="fa-solid fa-house text-sky-600 dark:text-sky-300 text-lg w-6 text-center"></i> Inicio
@@ -86,7 +93,8 @@
         </a>
       </nav>
     </div>
-    <div class="pt-4 border-t dark:border-slate-800 space-y-3">
+
+    <div class="pt-4 mt-6 border-t dark:border-slate-800 space-y-3">
       <div class="text-[11px] text-slate-600 dark:text-slate-400 font-bold space-y-1">
         <p><i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
         <p><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz CAES, Clínica 505</p>
@@ -112,11 +120,11 @@
     </div>
   </div>
 
-  <!-- NAVBAR CON LAS 3 LÍNEAS SIEMPRE VISIBLES Y TODOS LOS BOTONES COLOREADOS -->
+  <!-- NAVBAR CON LAS 3 LÍNEAS SIEMPRE VISIBLES -->
   <header class="sticky top-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b-2 border-sky-100 dark:border-slate-800 shadow-sm transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 gap-2">
       <div class="flex items-center gap-3">
-        <button onclick="toggleMobileMenu()" title="Abrir menú de secciones" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-100 to-purple-100 dark:from-slate-800 dark:to-slate-700 border-2 border-sky-300 dark:border-slate-600 text-slate-800 dark:text-white flex items-center justify-center text-xl shadow-sm hover:scale-105 active:scale-95 transition-all">
+        <button onclick="toggleMobileMenu()" title="Abrir menú y Modo Oscuro" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-100 to-purple-100 dark:from-slate-800 dark:to-slate-700 border-2 border-sky-300 dark:border-slate-600 text-slate-800 dark:text-white flex items-center justify-center text-xl shadow-sm hover:scale-105 active:scale-95 transition-all">
           <i class="fa-solid fa-bars"></i>
         </button>
         <a href="index.html" class="flex items-center bg-white px-3 py-1.5 rounded-2xl border-2 border-sky-100 shadow-sm">
@@ -156,27 +164,34 @@
       <span class="bg-gradient-to-r from-sky-200 to-purple-200 dark:from-sky-500/20 dark:to-purple-500/20 text-slate-900 dark:text-white font-extrabold text-xs uppercase px-4 py-1.5 rounded-full shadow-sm"><i class="fa-solid fa-compass mr-1 text-nova-teal"></i> Nuestra Esencia</span>
       <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mt-4">Quiénes Somos</h1>
       <p class="text-slate-600 dark:text-slate-300 font-medium mt-3 text-base leading-relaxed">
-        Nova Learning acompaña el neurodesarrollo y el aprendizaje mediante intervenciones neuropsicopedagógicas, talleres especializados y experiencias significativas centradas en cada niño.
+        Nova Learning acompaña el neurodesarrollo y el aprendizaje mediante intervenciones neuropsicopedagógicas, talleres especializados y apoyo directo en paternidad 1 a 1.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-      <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border-2 border-sky-200 dark:border-sky-500/30 shadow-xl card-playful">
+    <!-- 4 PILARES DE NUESTRA ESENCIA (INCLUYendo APOYO EN PATERNIDAD 1 A 1) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-sky-200 dark:border-sky-500/30 shadow-xl card-playful">
         <div class="w-14 h-14 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-2xl font-black mb-5 shadow-md"><i class="fa-solid fa-bullseye"></i></div>
         <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2">Misión</h3>
         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Potenciar el desarrollo integral mediante intervención neuropsicopedagógica personalizada orientada a la autonomía y el bienestar emocional.</p>
       </div>
 
-      <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border-2 border-purple-200 dark:border-purple-500/30 shadow-xl card-playful">
+      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-purple-200 dark:border-purple-500/30 shadow-xl card-playful">
         <div class="w-14 h-14 rounded-2xl bg-purple-600 text-white flex items-center justify-center text-2xl font-black mb-5 shadow-md"><i class="fa-solid fa-eye"></i></div>
         <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2">Visión</h3>
         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Consolidarse como referente en Guatemala en neuropsicopedagogía aplicada con un modelo humano, cálido, científico y sostenible.</p>
       </div>
 
-      <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border-2 border-pink-200 dark:border-pink-500/30 shadow-xl card-playful">
+      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-pink-200 dark:border-pink-500/30 shadow-xl card-playful">
         <div class="w-14 h-14 rounded-2xl bg-pink-500 text-white flex items-center justify-center text-2xl font-black mb-5 shadow-md"><i class="fa-solid fa-heart-pulse"></i></div>
         <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2">Propósito</h3>
         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Crear las condiciones óptimas para que cada persona pueda aprender, regularse y participar con mayor confianza y autonomía en su entorno.</p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-emerald-200 dark:border-emerald-500/30 shadow-xl card-playful">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-2xl font-black mb-5 shadow-md"><i class="fa-solid fa-hands-holding-child"></i></div>
+        <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2">Apoyo en Paternidad</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Nuestra base familiar: en cualquier compra de material o cita que se tenga con nosotros, otorgamos un <strong>acompañamiento 1 a 1 a los padres</strong>.</p>
       </div>
     </div>
 
@@ -216,7 +231,7 @@
         <div class="p-6 bg-gradient-to-b from-purple-600 to-indigo-700 text-white rounded-3xl text-center card-playful shadow-lg">
           <div class="w-12 h-12 mx-auto rounded-2xl bg-white text-purple-600 font-display font-bold text-2xl flex items-center justify-center mb-3 shadow">S</div>
           <h4 class="font-display font-bold text-lg mb-1">Sostener</h4>
-          <p class="text-xs text-purple-100">Transferir lo aprendido a casa y al colegio con continuidad.</p>
+          <p class="text-xs text-purple-100">Transferir lo aprendido a casa y al colegio con acompañamiento 1 a 1 a padres.</p>
         </div>
       </div>
     </div>
@@ -229,15 +244,15 @@
 
   <script>
     function toggleMobileMenu() {
-      const sb = document.getElementById('mobileSidebar');
-      const ov = document.getElementById('sidebarOverlay');
-      sb.classList.toggle('-translate-x-full');
-      ov.classList.toggle('hidden');
+      document.getElementById('mobileSidebar').classList.toggle('-translate-x-full');
+      document.getElementById('sidebarOverlay').classList.toggle('hidden');
     }
     function updateThemeUI() {
       const isDark = document.documentElement.classList.contains('dark');
       const icon = document.getElementById('themeIcon');
-      if (icon) icon.className = isDark ? 'fa-solid fa-sun text-amber-300 text-lg' : 'fa-solid fa-moon text-amber-600 text-lg';
+      const text = document.getElementById('themeText');
+      if (icon) icon.className = isDark ? 'fa-solid fa-sun text-amber-300 text-base' : 'fa-solid fa-moon text-amber-600 text-base';
+      if (text) text.innerText = isDark ? 'Modo Día / Claro' : 'Modo Noche / Oscuro';
     }
     function toggleTheme() {
       document.documentElement.classList.toggle('dark');
