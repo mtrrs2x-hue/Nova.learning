@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Learning - Centro Neuropsicopedagógico</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    if (localStorage.getItem('nova-theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Fredoka"', 'sans-serif']
+          },
+          colors: {
+            nova: { teal: '#00a8b8', tealDark: '#007a87', purple: '#6b21a8', purpleDark: '#4c1d95' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .bg-living-canvas {
+      background-color: #fffaf5;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(56, 189, 248, 0.22) 0px, transparent 45%),
+        radial-gradient(at 88% 12%, rgba(244, 114, 182, 0.20) 0px, transparent 45%),
+        radial-gradient(at 50% 48%, rgba(250, 204, 21, 0.16) 0px, transparent 50%),
+        radial-gradient(at 15% 85%, rgba(52, 211, 153, 0.20) 0px, transparent 45%),
+        radial-gradient(at 85% 88%, rgba(168, 85, 247, 0.20) 0px, transparent 45%),
+        radial-gradient(#00a8b8 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 36px 36px;
+    }
+    .dark .bg-living-canvas {
+      background-color: #0b1120;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(14, 165, 233, 0.18) 0px, transparent 45%),
+        radial-gradient(at 88% 12%, rgba(168, 85, 247, 0.18) 0px, transparent 45%),
+        radial-gradient(at 50% 50%, rgba(236, 72, 153, 0.10) 0px, transparent 50%),
+        radial-gradient(at 20% 85%, rgba(16, 185, 129, 0.14) 0px, transparent 45%),
+        radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 36px 36px;
+    }
+    .bg-gradient-vivid { background: linear-gradient(135deg, #00a8b8 0%, #6b21a8 55%, #ec4899 100%); }
+    .card-playful { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .card-playful:hover { transform: translateY(-6px) scale(1.01); }
+    @keyframes floatBadge { 0%, 100% { transform: translateY(0px) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
+    @keyframes floatReverse { 0%, 100% { transform: translateY(0px) rotate(3deg); } 50% { transform: translateY(9px) rotate(-2deg); } }
+    .anim-float-1 { animation: floatBadge 5s ease-in-out infinite; }
+    .anim-float-2 { animation: floatReverse 6s ease-in-out infinite; }
+  </style>
+</head>
+<body class="bg-living-canvas text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
+
+  <!-- ICONOS FLOTANTES DE FONDO -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute top-28 left-6 w-14 h-14 rounded-2xl bg-sky-200/50 dark:bg-sky-500/10 text-sky-600 dark:text-sky-300 flex items-center justify-center text-2xl anim-float-1 shadow-sm"><i class="fa-solid fa-brain"></i></div>
+    <div class="absolute top-40 right-8 w-14 h-14 rounded-2xl bg-pink-200/50 dark:bg-pink-500/10 text-pink-600 dark:text-pink-300 flex items-center justify-center text-2xl anim-float-2 shadow-sm"><i class="fa-solid fa-puzzle-piece"></i></div>
+    <div class="absolute top-[45%] left-8 w-12 h-12 rounded-full bg-amber-200/50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-300 flex items-center justify-center text-xl anim-float-2"><i class="fa-solid fa-lightbulb"></i></div>
+    <div class="absolute top-[60%] right-10 w-14 h-14 rounded-2xl bg-emerald-200/50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-300 flex items-center justify-center text-2xl anim-float-1"><i class="fa-solid fa-pencil"></i></div>
+    <div class="absolute bottom-24 left-12 w-12 h-12 rounded-2xl bg-purple-200/50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-300 flex items-center justify-center text-xl anim-float-1"><i class="fa-solid fa-shapes"></i></div>
+  </div>
+
+  <!-- BOTÓN FLOTANTE COMPACTO DE MODO OSCURO EN ESQUINA INFERIOR -->
+  <button onclick="toggleTheme()" id="themeToggleBtn" title="Cambiar Modo Día / Noche" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-white/95 dark:bg-slate-800/95 backdrop-blur-md text-amber-600 dark:text-amber-300 border-2 border-amber-300 dark:border-slate-600 shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center">
+    <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+  </button>
+
+  <!-- TOP BAR -->
+  <div class="bg-gradient-vivid text-white text-xs md:text-sm py-2.5 px-4 shadow-md relative z-20">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4 flex-wrap justify-center md:justify-start font-semibold">
+        <span><i class="fa-solid fa-location-dot text-amber-300 mr-1.5"></i> Hospital La Paz, CAES, 5° piso, Clínica 505</span>
+        <span class="hidden md:inline text-white/40">|</span>
+        <span><i class="fa-regular fa-clock text-cyan-200 mr-1.5"></i> Lun - Sáb: 2:30 PM - 6:30 PM</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="hidden sm:inline text-xs text-pink-100 font-medium">¡Un espacio seguro para crecer!</span>
+        <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20información" target="_blank" class="bg-white text-purple-900 hover:bg-amber-300 px-3.5 py-1 rounded-full font-extrabold text-xs transition-all shadow flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i> +502 3980-4600
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR CON LOGO OFICIAL -->
+  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b-2 border-sky-100 dark:border-slate-800 shadow-sm transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center bg-white px-3 py-1.5 rounded-2xl border-2 border-sky-100 shadow-sm">
+        <img src="img/Logo.jpeg" alt="Nova Learning Logo" class="h-11 w-auto object-contain">
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-5 font-extrabold text-slate-700 dark:text-slate-200 text-sm">
+        <a href="index.html" class="px-3.5 py-2 rounded-xl bg-sky-100 dark:bg-sky-500/20 text-sky-900 dark:text-sky-300">Inicio</a>
+        <a href="quienes-somos.html" class="hover:text-nova-teal dark:hover:text-cyan-300 transition-colors px-2 py-1">Quiénes Somos</a>
+        <a href="clinica.html" class="hover:text-nova-teal dark:hover:text-cyan-300 transition-colors px-2 py-1">Nuestra Clínica</a>
+        <a href="materiales.html" class="hover:text-nova-teal dark:hover:text-cyan-300 transition-colors px-2 py-1">Nuestros Materiales</a>
+        <a href="catalogo.html" class="hover:text-nova-teal dark:hover:text-cyan-300 transition-colors px-2 py-1">Catálogo</a>
+        <a href="cursos.html" class="px-3.5 py-2 rounded-xl bg-amber-200/80 dark:bg-amber-500/20 text-amber-950 dark:text-amber-300 hover:bg-amber-300 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-sun text-amber-600 dark:text-amber-400"></i> Nuestros Cursos
+        </a>
+      </nav>
+
+      <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20agendar%20una%20cita" target="_blank" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg hover:opacity-95 transition-all flex items-center gap-2">
+        <i class="fa-solid fa-calendar-check"></i> <span>Agendar Cita</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 1. HERO PRINCIPAL -->
+  <section class="relative pt-10 pb-20 lg:pt-16 lg:pb-24 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-amber-200 via-pink-200 to-sky-200 dark:from-amber-500/20 dark:via-pink-500/20 dark:to-sky-500/20 border-2 border-white dark:border-slate-700 text-slate-900 dark:text-white font-extrabold text-xs uppercase tracking-wider shadow-md">
+            <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Espacio Seguro, Empático y Basado en Neurociencia</span>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.12]">
+            Donde cada mente <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-600 to-pink-500 dark:from-sky-400 dark:via-purple-400 dark:to-pink-400">florece a su propio ritmo.</span>
+          </h1>
+
+          <p class="text-slate-700 dark:text-slate-300 font-medium text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            En <strong>Nova Learning</strong> transformamos el aprendizaje en una experiencia alegre, respetuosa y significativa. Acompañamos a niños, adolescentes y sus familias fortaleciendo funciones ejecutivas, emociones y habilidades para toda la vida.
+          </p>
+
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+            <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20me%20gustaría%20recibir%20orientación%20para%20mi%20hijo/a" target="_blank" class="px-7 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-extrabold text-sm shadow-xl card-playful flex items-center gap-2.5">
+              <i class="fa-brands fa-whatsapp text-xl"></i> Hablar con una Especialista
+            </a>
+            <a href="cursos.html" class="px-7 py-4 rounded-2xl bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-black text-sm shadow-xl card-playful flex items-center gap-2">
+              <i class="fa-solid fa-sun text-lg"></i> Curso de Vacaciones
+            </a>
+            <a href="catalogo.html" class="px-6 py-4 rounded-2xl bg-white dark:bg-slate-800 text-purple-900 dark:text-purple-200 border-2 border-purple-200 dark:border-slate-700 font-extrabold text-sm shadow-md card-playful flex items-center gap-2">
+              <i class="fa-solid fa-wand-magic-sparkles text-pink-500"></i> Ver Catálogo
+            </a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 pt-4 max-w-lg mx-auto lg:mx-0">
+            <div class="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-3.5 rounded-2xl border-2 border-sky-200 dark:border-sky-500/30 text-center shadow-sm">
+              <span class="font-display font-bold text-2xl text-sky-600 dark:text-sky-400 block">1 a 1</span>
+              <span class="text-[11px] font-bold text-slate-600 dark:text-slate-300">Atención cálida y personalizada</span>
+            </div>
+            <div class="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-3.5 rounded-2xl border-2 border-pink-200 dark:border-pink-500/30 text-center shadow-sm">
+              <span class="font-display font-bold text-2xl text-pink-600 dark:text-pink-400 block">MATUS</span>
+              <span class="text-[11px] font-bold text-slate-600 dark:text-slate-300">Metodología propia estructurada</span>
+            </div>
+            <div class="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-3.5 rounded-2xl border-2 border-emerald-200 dark:border-emerald-500/30 text-center shadow-sm">
+              <span class="font-display font-bold text-2xl text-emerald-600 dark:text-emerald-400 block">360°</span>
+              <span class="text-[11px] font-bold text-slate-600 dark:text-slate-300">Conexión familia y colegio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="bg-gradient-to-br from-sky-400 via-purple-500 to-pink-500 p-1.5 rounded-[2.5rem] shadow-2xl">
+            <div class="bg-white dark:bg-slate-900 rounded-[2.25rem] p-6 sm:p-8 relative overflow-hidden">
+              <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-2xl bg-amber-300 text-slate-950 flex items-center justify-center text-2xl font-black shadow">
+                    <i class="fa-solid fa-heart-circle-check text-rose-600"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl leading-none">Terapia con Propósito</h3>
+                    <span class="text-xs font-bold text-nova-teal dark:text-cyan-400">Aprendemos diferente, acompañamos mejor</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3.5 mb-6">
+                <div class="p-4 rounded-3xl bg-gradient-to-br from-sky-100 to-cyan-50 dark:from-sky-950/70 dark:to-slate-800 border-2 border-sky-200 dark:border-sky-800 card-playful">
+                  <div class="w-10 h-10 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-lg mb-2.5 shadow"><i class="fa-solid fa-brain"></i></div>
+                  <h4 class="font-extrabold text-sky-950 dark:text-sky-200 text-sm">Funciones Ejecutivas</h4>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-1">Atención, memoria, organización y autocontrol.</p>
+                </div>
+
+                <div class="p-4 rounded-3xl bg-gradient-to-br from-pink-100 to-rose-50 dark:from-pink-950/70 dark:to-slate-800 border-2 border-pink-200 dark:border-pink-800 card-playful">
+                  <div class="w-10 h-10 rounded-2xl bg-pink-500 text-white flex items-center justify-center text-lg mb-2.5 shadow"><i class="fa-solid fa-hands-holding-child"></i></div>
+                  <h4 class="font-extrabold text-pink-950 dark:text-pink-200 text-sm">Integración Sensorial</h4>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-1">Calma, regulación emocional y exploración táctil.</p>
+                </div>
+
+                <div class="p-4 rounded-3xl bg-gradient-to-br from-amber-100 to-yellow-50 dark:from-amber-950/70 dark:to-slate-800 border-2 border-amber-200 dark:border-amber-800 card-playful">
+                  <div class="w-10 h-10 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-lg mb-2.5 shadow"><i class="fa-solid fa-book-open-reader"></i></div>
+                  <h4 class="font-extrabold text-amber-950 dark:text-amber-200 text-sm">Lenguaje y Lectura</h4>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-1">Comprensión, expresión oral y lectoescritura.</p>
+                </div>
+
+                <div class="p-4 rounded-3xl bg-gradient-to-br from-emerald-100 to-teal-50 dark:from-emerald-950/70 dark:to-slate-800 border-2 border-emerald-200 dark:border-emerald-800 card-playful">
+                  <div class="w-10 h-10 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-lg mb-2.5 shadow"><i class="fa-solid fa-shapes"></i></div>
+                  <h4 class="font-extrabold text-emerald-950 dark:text-emerald-200 text-sm">Lógica y Ciencias</h4>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-1">Razonamiento matemático y curiosidad científica.</p>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-purple-900 to-indigo-950 text-white p-4 rounded-2xl flex items-center justify-between gap-3 shadow-inner">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center text-cyan-300 text-lg shrink-0"><i class="fa-solid fa-hospital"></i></div>
+                  <div class="text-xs">
+                    <span class="font-extrabold text-amber-300 block">Centro Hospitalario La Paz, CAES</span>
+                    <span class="text-slate-200">5° Piso, Clínica 505 · Seguridad y respaldo médico</span>
+                  </div>
+                </div>
+                <a href="clinica.html" class="px-3 py-2 rounded-xl bg-cyan-400 text-slate-950 font-black text-xs shrink-0 hover:bg-cyan-300">Ver Clínica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. CONFIANZA TERAPÉUTICA -->
+  <section class="py-14 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-teal-50 via-white to-purple-50 dark:from-slate-800/90 dark:via-slate-900 dark:to-slate-800/90 rounded-[2.5rem] p-8 sm:p-12 border-2 border-teal-200/80 dark:border-slate-700 shadow-xl">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="bg-emerald-200 dark:bg-emerald-500/20 text-emerald-950 dark:text-emerald-300 font-black text-xs uppercase px-4 py-1.5 rounded-full">
+            <i class="fa-solid fa-shield-heart mr-1"></i> Confianza y Calidez Clínica
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-3">
+            Un ambiente diseñado para que tu hijo se sienta seguro, capaz y feliz
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-sky-200 dark:border-sky-500/30 shadow-md card-playful">
+            <div class="w-12 h-12 rounded-2xl bg-sky-100 dark:bg-sky-500/20 text-sky-600 dark:text-sky-300 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-face-smile-wink"></i></div>
+            <h3 class="font-display font-bold text-slate-900 dark:text-white text-lg mb-2">Sin etiquetas ni presiones</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Respetamos el neurodesarrollo individual. Celebramos sus fortalezas y partimos de lo que sí puede lograr.</p>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-pink-200 dark:border-pink-500/30 shadow-md card-playful">
+            <div class="w-12 h-12 rounded-2xl bg-pink-100 dark:bg-pink-500/20 text-pink-600 dark:text-pink-300 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-gamepad"></i></div>
+            <h3 class="font-display font-bold text-slate-900 dark:text-white text-lg mb-2">Aprender jugando con ciencia</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Cuando hay emoción y juego, el cerebro abre la puerta al aprendizaje. Usamos materiales concretos y retos lúdicos.</p>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-amber-200 dark:border-amber-500/30 shadow-md card-playful">
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-300 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-people-roof"></i></div>
+            <h3 class="font-display font-bold text-slate-900 dark:text-white text-lg mb-2">Comunicación con los padres</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Compartimos avances claros, estrategias prácticas para casa y mantenemos comunicación abierta en cada etapa.</p>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-emerald-200 dark:border-emerald-500/30 shadow-md card-playful">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-user-check"></i></div>
+            <h3 class="font-display font-bold text-slate-900 dark:text-white text-lg mb-2">Hacia la autonomía real</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Nuestra meta es brindarles herramientas visuales y cognitivas para desenvolverse solos con seguridad y éxito.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. VITRINA DEL CATÁLOGO CON TUS FOTOS REALES -->
+  <section class="py-14 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row justify-between items-end mb-10 gap-4">
+        <div>
+          <span class="bg-pink-200 dark:bg-pink-500/20 text-pink-950 dark:text-pink-300 font-black text-xs uppercase px-4 py-1.5 rounded-full">
+            <i class="fa-solid fa-puzzle-piece mr-1"></i> Tienda Terapéutica Oficial
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">
+            Materiales para Estimular en Casa
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm font-medium mt-1">
+            Seleccionados por psicopedagogos para entrenar lógica, motricidad fina y calma sensorial.
+          </p>
+        </div>
+        <a href="catalogo.html" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-pink-500 to-purple-600 text-white font-black text-xs shadow-lg hover:opacity-95 transition-all">
+          Ver Catálogo Completo <i class="fa-solid fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="catalogo.html" class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-sky-200 dark:border-slate-700 shadow-md card-playful flex flex-col justify-between">
+          <div>
+            <div class="h-44 rounded-2xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-3 mb-4 overflow-hidden">
+              <img src="img/Esferas.png" alt="IQ Games" class="max-h-full max-w-full object-contain rounded-xl">
+            </div>
+            <h4 class="font-display font-bold text-slate-900 dark:text-white text-lg">Colección IQ Games</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Retos lógicos, numéricos y espaciales para concentración.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center">
+            <span class="font-black text-sky-600 dark:text-sky-400 text-base">Q200 - Q250</span>
+            <span class="text-xs font-extrabold text-nova-purple dark:text-pink-400">Ver todos →</span>
+          </div>
+        </a>
+
+        <a href="catalogo.html" class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-pink-200 dark:border-slate-700 shadow-md card-playful flex flex-col justify-between">
+          <div>
+            <div class="h-44 rounded-2xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-3 mb-4 overflow-hidden">
+              <img src="img/Fizzies.png" alt="Play-Doh Fizzie" class="max-h-full max-w-full object-contain rounded-xl">
+            </div>
+            <h4 class="font-display font-bold text-slate-900 dark:text-white text-lg">Play-Doh Fizzie, Cloud & Butter</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Masas sensoriales efervescentes, elásticas y perfumadas.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center">
+            <span class="font-black text-pink-600 dark:text-pink-400 text-base">Q50 - Q64</span>
+            <span class="text-xs font-extrabold text-nova-purple dark:text-pink-400">Ver todos →</span>
+          </div>
+        </a>
+
+        <a href="catalogo.html" class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-amber-200 dark:border-slate-700 shadow-md card-playful flex flex-col justify-between">
+          <div>
+            <div class="h-44 rounded-2xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-3 mb-4 overflow-hidden">
+              <img src="img/Sand.png" alt="Sand" class="max-h-full max-w-full object-contain rounded-xl">
+            </div>
+            <h4 class="font-display font-bold text-slate-900 dark:text-white text-lg">Play-Doh Sand & Magic Sand</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Arenas moldeables suaves en varios tamaños y colores.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center">
+            <span class="font-black text-amber-600 dark:text-amber-400 text-base">Q50 - Q175</span>
+            <span class="text-xs font-extrabold text-nova-purple dark:text-pink-400">Ver todos →</span>
+          </div>
+        </a>
+
+        <a href="catalogo.html" class="bg-white dark:bg-slate-800 p-5 rounded-3xl border-2 border-emerald-200 dark:border-slate-700 shadow-md card-playful flex flex-col justify-between">
+          <div>
+            <div class="h-44 rounded-2xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-3 mb-4 overflow-hidden">
+              <img src="img/Magneticos giromag.png" alt="Magnéticos Giromag" class="max-h-full max-w-full object-contain rounded-xl">
+            </div>
+            <h4 class="font-display font-bold text-slate-900 dark:text-white text-lg">Giromag & Pulseras</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Construcción magnética 3D y pulseras táctiles de calma.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center">
+            <span class="font-black text-emerald-600 dark:text-emerald-400 text-base">Q150 - Q320</span>
+            <span class="text-xs font-extrabold text-nova-purple dark:text-pink-400">Ver todos →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-white pt-14 pb-10 border-t-4 border-nova-teal mt-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-slate-800 text-xs">
+        <div class="space-y-3">
+          <div class="inline-block bg-white px-3 py-1.5 rounded-xl">
+            <img src="img/Logo.jpeg" alt="Nova Learning" class="h-9 w-auto object-contain">
+          </div>
+          <p class="text-slate-400 leading-relaxed">Centro Neuropsicopedagógico dedicado a potenciar el desarrollo integral, las funciones ejecutivas y la autonomía.</p>
+        </div>
+        <div class="space-y-2">
+          <h4 class="font-black text-amber-300 text-xs uppercase tracking-wider mb-3">Apartados del Sitio</h4>
+          <ul class="space-y-2 text-slate-300 font-semibold">
+            <li><a href="quienes-somos.html" class="hover:text-cyan-300">Quiénes Somos y Metodología MATUS</a></li>
+            <li><a href="clinica.html" class="hover:text-cyan-300">Nuestra Clínica y Tarifas</a></li>
+            <li><a href="materiales.html" class="hover:text-cyan-300">Nuestros Materiales y Talleres</a></li>
+            <li><a href="catalogo.html" class="hover:text-cyan-300">Catálogo Oficial de Productos</a></li>
+            <li><a href="cursos.html" class="hover:text-amber-300">Curso de Vacaciones</a></li>
+          </ul>
+        </div>
+        <div class="space-y-2">
+          <h4 class="font-black text-amber-300 text-xs uppercase tracking-wider mb-3">Visítanos o Escríbenos</h4>
+          <p class="text-slate-300"><i class="fa-solid fa-location-dot text-cyan-400 mr-2"></i> Hospital La Paz, Carretera a El Salvador (CAES), 5° piso, Clínica 505</p>
+          <p class="text-slate-300"><i class="fa-regular fa-clock text-pink-400 mr-2"></i> Lunes a Sábado: 2:30 PM a 6:30 PM</p>
+          <p class="text-emerald-400 font-black text-sm pt-1"><i class="fa-brands fa-whatsapp mr-1"></i> +502 3980-4600</p>
+        </div>
+      </div>
+      <div class="pt-6 text-center text-[11px] text-slate-500">
+        <p>© 2026 Nova Learning - Centro Neuropsicopedagógico. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function updateThemeUI() {
+      const isDark = document.documentElement.classList.contains('dark');
+      const icon = document.getElementById('themeIcon');
+      if (icon) {
+        icon.className = isDark ? 'fa-solid fa-sun text-amber-300 text-lg' : 'fa-solid fa-moon text-amber-600 text-lg';
+      }
+    }
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('nova-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      updateThemeUI();
+    }
+    updateThemeUI();
+  </script>
+</body>
+</html>

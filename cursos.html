@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Learning - Curso de Vacaciones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    if (localStorage.getItem('nova-theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], display: ['"Fredoka"', 'sans-serif'] },
+          colors: { nova: { teal: '#00a8b8', tealDark: '#007a87', purple: '#6b21a8', purpleDark: '#4c1d95' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    .bg-living-canvas {
+      background-color: #fffaf5;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(56, 189, 248, 0.22) 0px, transparent 45%),
+        radial-gradient(at 88% 12%, rgba(244, 114, 182, 0.20) 0px, transparent 45%),
+        radial-gradient(at 50% 48%, rgba(250, 204, 21, 0.16) 0px, transparent 50%),
+        radial-gradient(at 15% 85%, rgba(52, 211, 153, 0.20) 0px, transparent 45%),
+        radial-gradient(#00a8b8 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 36px 36px;
+    }
+    .dark .bg-living-canvas {
+      background-color: #0b1120;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(14, 165, 233, 0.18) 0px, transparent 45%),
+        radial-gradient(at 88% 12%, rgba(168, 85, 247, 0.18) 0px, transparent 45%),
+        radial-gradient(at 20% 85%, rgba(16, 185, 129, 0.14) 0px, transparent 45%),
+        radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px;
+    }
+    .bg-gradient-vivid { background: linear-gradient(135deg, #00a8b8 0%, #6b21a8 55%, #ec4899 100%); }
+    .card-playful { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .card-playful:hover { transform: translateY(-5px); }
+  </style>
+</head>
+<body class="bg-living-canvas text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
+
+  <!-- BOTÓN FLOTANTE MODO OSCURO -->
+  <button onclick="toggleTheme()" id="themeToggleBtn" title="Cambiar Modo Día / Noche" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-white/95 dark:bg-slate-800/95 backdrop-blur-md text-amber-600 dark:text-amber-300 border-2 border-amber-300 dark:border-slate-600 shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center">
+    <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+  </button>
+
+  <!-- TOP BAR -->
+  <div class="bg-gradient-vivid text-white text-xs md:text-sm py-2.5 px-4 shadow-md relative z-20">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4 flex-wrap justify-center md:justify-start font-semibold">
+        <span><i class="fa-solid fa-location-dot text-amber-300 mr-1.5"></i> Hospital La Paz, CAES, 5° piso, Clínica 505</span>
+        <span class="hidden md:inline text-white/40">|</span>
+        <span><i class="fa-regular fa-clock text-cyan-200 mr-1.5"></i> Lun - Sáb: 2:30 PM - 6:30 PM</span>
+      </div>
+      <a href="https://wa.me/50239804600" target="_blank" class="bg-white text-purple-900 hover:bg-amber-300 px-3.5 py-1 rounded-full font-extrabold text-xs transition-all shadow">
+        <i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i> +502 3980-4600
+      </a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b-2 border-sky-100 dark:border-slate-800 shadow-sm transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center bg-white px-3 py-1.5 rounded-2xl border-2 border-sky-100 shadow-sm">
+        <img src="img/Logo.jpeg" alt="Nova Learning Logo" class="h-11 w-auto object-contain">
+      </a>
+      <nav class="hidden lg:flex items-center gap-5 font-extrabold text-slate-700 dark:text-slate-200 text-sm">
+        <a href="index.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Inicio</a>
+        <a href="quienes-somos.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Quiénes Somos</a>
+        <a href="clinica.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Nuestra Clínica</a>
+        <a href="materiales.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Nuestros Materiales</a>
+        <a href="catalogo.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Catálogo</a>
+        <a href="cursos.html" class="px-3.5 py-2 rounded-xl bg-amber-300 text-slate-950 font-black"><i class="fa-solid fa-sun text-amber-700 mr-1"></i> Nuestros Cursos</a>
+      </nav>
+      <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20inscribirme%20al%20Curso%20de%20Vacaciones" target="_blank" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg">Inscribirse</a>
+    </div>
+  </header>
+
+  <!-- HERO CURSO DE VACACIONES -->
+  <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-300 text-amber-950 font-black text-xs uppercase tracking-wider shadow-sm mb-4">
+      <i class="fa-solid fa-sun text-amber-600"></i> De 9 a 14 años | Cupo Limitado
+    </div>
+    <h1 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 dark:text-white tracking-tight">
+      CURSO DE <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-600 to-pink-500">VACACIONES</span>
+    </h1>
+    <p class="text-slate-700 dark:text-slate-300 font-bold text-base sm:text-lg max-w-2xl mx-auto mt-3">
+      Un espacio para aprender, crear, explorar y desarrollar nuevas habilidades. ¡Pequeñas manos, grandes ideas!
+    </p>
+    <div class="mt-6 flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-black text-slate-800 dark:text-slate-100">
+      <div class="bg-white/90 dark:bg-slate-800 px-4 py-2.5 rounded-2xl shadow-sm border border-sky-200 dark:border-slate-700 flex items-center gap-2">
+        <i class="fa-regular fa-calendar-check text-sky-500 text-lg"></i>
+        <span>2 nov. al 18 dic. (7 semanas)</span>
+      </div>
+      <div class="bg-white/90 dark:bg-slate-800 px-4 py-2.5 rounded-2xl shadow-sm border border-amber-200 dark:border-slate-700 flex items-center gap-2">
+        <i class="fa-regular fa-clock text-amber-500 text-lg"></i>
+        <span>9:00 am a 12:30 pm</span>
+      </div>
+      <div class="bg-white/90 dark:bg-slate-800 px-4 py-2.5 rounded-2xl shadow-sm border border-pink-200 dark:border-slate-700 flex items-center gap-2">
+        <i class="fa-solid fa-location-dot text-rose-500 text-lg"></i>
+        <span>Centro Hospitalario La Paz CAES, Clínica 505</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORADOR INTERACTIVO DE PROYECTOS SEMANALES -->
+  <section class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-8">
+      <span class="bg-pink-200 dark:bg-pink-500/20 text-pink-900 dark:text-pink-300 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Proyectos Paso a Paso (Metodología MATUS)</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">Explora Nuestros Proyectos por Semana</h2>
+      <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Haz clic en cada programa para ver las actividades de Lunes a Viernes y el proyecto que llevarán a casa:</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <button onclick="renderProject('sensoryCreators')" id="btn-sensoryCreators" class="proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-md">Sensory Creators</button>
+      <button onclick="renderProject('sensoryStudio')" id="btn-sensoryStudio" class="proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-sm">Nova Sensory Studio</button>
+      <button onclick="renderProject('littleEcologists')" id="btn-littleEcologists" class="proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-sm">Little Ecologists</button>
+      <button onclick="renderProject('inventorsOfLight')" id="btn-inventorsOfLight" class="proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-sm">Inventors of Light</button>
+      <button onclick="renderProject('bigArtProject')" id="btn-bigArtProject" class="proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-sm">The Big Art Project</button>
+    </div>
+
+    <div id="projectDetailContainer" class="transition-all duration-300"></div>
+  </section>
+
+  <!-- HORARIO DIARIO E INVERSIÓN -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 bg-white dark:bg-slate-800 p-8 rounded-3xl border-2 border-purple-200 dark:border-slate-700 shadow-xl">
+        <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-6"><i class="fa-regular fa-clock text-nova-purple dark:text-cyan-300 mr-2"></i> Horario Diario (9:00 a. m. – 12:30 p. m.)</h3>
+        <div class="space-y-2.5 text-xs sm:text-sm">
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-pink-50 dark:bg-slate-700/60"><span class="font-black text-pink-600 dark:text-pink-300 w-28 shrink-0">9:00 – 9:20</span><span class="font-bold">Bienvenida y motivación</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-sky-50 dark:bg-slate-700/60"><span class="font-black text-sky-600 dark:text-sky-300 w-28 shrink-0">9:20 – 9:50</span><span class="font-bold">Exploración e investigación sensorial</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-emerald-50 dark:bg-slate-700/60"><span class="font-black text-emerald-600 dark:text-emerald-300 w-28 shrink-0">9:50 – 10:00</span><span class="font-bold">Reto de funciones ejecutivas</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-amber-50 dark:bg-slate-700/60"><span class="font-black text-amber-600 dark:text-amber-300 w-28 shrink-0">10:00 – 10:20</span><span class="font-bold">Refacción e higiene</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-purple-50 dark:bg-slate-700/60"><span class="font-black text-purple-600 dark:text-purple-300 w-28 shrink-0">10:20 – 11:20</span><span class="font-bold">Construcción del proyecto</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-indigo-50 dark:bg-slate-700/60"><span class="font-black text-indigo-600 dark:text-indigo-300 w-28 shrink-0">11:20 – 11:50</span><span class="font-bold">Prueba, práctica y mejora</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-rose-50 dark:bg-slate-700/60"><span class="font-black text-rose-600 dark:text-rose-300 w-28 shrink-0">11:50 – 12:15</span><span class="font-bold">Desafío sensorial / Presentación</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-teal-50 dark:bg-slate-700/60"><span class="font-black text-teal-600 dark:text-teal-300 w-28 shrink-0">12:15 – 12:30</span><span class="font-bold">Reflexión, organización y cierre</span></div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 bg-gradient-vivid text-white p-8 rounded-3xl shadow-2xl relative">
+        <div class="absolute -top-3 right-6 bg-amber-300 text-slate-950 font-black text-xs px-4 py-1.5 rounded-full uppercase shadow-md">Cupo Limitado</div>
+        <h3 class="font-display text-3xl font-bold mb-2">Inversión Oficial</h3>
+        <p class="text-pink-100 text-xs mb-6">Incluye acompañamiento por psicopedagogos y todos los materiales:</p>
+        <div class="space-y-3 bg-white/15 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-sm">
+          <div class="flex justify-between items-center border-b border-white/15 pb-2"><span>Una semana:</span><strong class="text-amber-300 text-lg">Q700</strong></div>
+          <div class="flex justify-between items-center border-b border-white/15 pb-2"><span>Dos semanas:</span><strong class="text-amber-300 text-lg">Q1,300</strong></div>
+          <div class="flex justify-between items-center border-b border-white/15 pb-2"><span>Un mes:</span><strong class="text-amber-300 text-lg">Q2,500</strong></div>
+          <div class="flex justify-between items-center pt-1 font-bold"><span class="text-cyan-200">Curso completo (7 semanas):</span><strong class="text-amber-300 text-2xl">Q4,400</strong></div>
+        </div>
+        <p class="text-[11px] text-pink-100 mt-4 leading-relaxed">* La reserva del espacio se realiza con el pago completo. Luego se enviará un formulario de inscripción para completar el registro.</p>
+        <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20un%20cupo%20para%20el%20Curso%20de%20Vacaciones" target="_blank" class="mt-6 block w-full py-4 rounded-2xl bg-amber-300 hover:bg-amber-200 text-slate-950 font-black text-center text-sm shadow-lg transition-all">
+          <i class="fa-brands fa-whatsapp text-lg mr-1"></i> Reservar Cupo por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGLAMENTO -->
+  <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-8 border-2 border-sky-200 dark:border-slate-700 shadow-xl">
+      <div class="text-center mb-10">
+        <span class="bg-pink-100 dark:bg-pink-500/20 text-pink-800 dark:text-pink-300 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full">Convivencia y Bienestar</span>
+        <h2 class="font-display text-3xl font-bold text-slate-900 dark:text-white mt-2">Reglamento del Curso de Vacaciones</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
+        <div class="bg-sky-50 dark:bg-slate-700/60 p-6 rounded-3xl space-y-2">
+          <h4 class="font-display font-bold text-sky-900 dark:text-sky-300 text-base"><i class="fa-regular fa-clock mr-1"></i> Horarios y Puntualidad</h4>
+          <p>• Ingreso y egreso puntuales (máximo 15 min de espera).</p>
+          <p>• Entrega únicamente a personas autorizadas.</p>
+        </div>
+        <div class="bg-purple-50 dark:bg-slate-700/60 p-6 rounded-3xl space-y-2">
+          <h4 class="font-display font-bold text-purple-900 dark:text-purple-300 text-base"><i class="fa-regular fa-heart mr-1"></i> Convivencia</h4>
+          <p>• Ambiente de respeto, colaboración y buen trato.</p>
+          <p>• Si presenta malestar o fiebre, permanecer en casa.</p>
+        </div>
+        <div class="bg-amber-50 dark:bg-slate-700/60 p-6 rounded-3xl space-y-2">
+          <h4 class="font-display font-bold text-amber-900 dark:text-amber-300 text-base"><i class="fa-solid fa-bag-shopping mr-1"></i> Qué debe traer</h4>
+          <p>• Refacción liviana y agua pura en pachón identificado.</p>
+          <p>• Ropa y zapatos cómodos y pertenencias con nombre.</p>
+        </div>
+        <div class="bg-emerald-50 dark:bg-slate-700/60 p-6 rounded-3xl space-y-2">
+          <h4 class="font-display font-bold text-emerald-900 dark:text-emerald-300 text-base"><i class="fa-solid fa-shapes mr-1"></i> Materiales</h4>
+          <p>• Uso cuidadoso de los materiales de cada taller.</p>
+          <p>• No enviar juguetes ni dispositivos electrónicos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-white py-10 text-center text-xs border-t-4 border-nova-teal mt-12 relative z-10">
+    <p class="font-display font-bold text-base">Nova Learning - Centro Neuropsicopedagógico</p>
+    <p class="text-slate-400 mt-1">Hospital La Paz, CAES, 5° piso, Clínica 505 | Tel: +502 3980-4600</p>
+  </footer>
+
+  <script>
+    const projectsData = {
+      sensoryCreators: {
+        label: "Sensory Creators", title: "Sensory Creators", subtitle: "Diseña · Crea · Explora · Siente", projectTitle: "Mi Tablero de Sensaciones",
+        quote: "¡Pequeñas manos, grandes ideas! Más que un proyecto, es una experiencia que despierta los sentidos.",
+        desc: "Durante la semana, cada niño diseñará y construirá su propio tablero sensorial interactivo, combinando texturas, colores, formas, sonidos y mecanismos.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "La chispa de la idea", desc: "Exploramos tableros sensoriales, conocemos los materiales y descubrimos qué nos gustaría crear.", activities: ["Explorar y experimentar", "Observar y descubrir", "Diseñar nuestro tablero"], advance: "Boceto y plan de diseño.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Elegimos y organizamos", desc: "Investigamos qué materiales funcionan mejor, comparamos opciones y planificamos cómo usarlos.", activities: ["Clasificar y comparar materiales", "Resolver problemas", "Decidir y organizar"], advance: "Materiales seleccionados y estructura definida.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Creamos y construimos", desc: "Construimos la base y comenzamos a incorporar los elementos sensoriales y de movimiento.", activities: ["Seguir instrucciones", "Desarrollar motricidad fina", "Resolver imprevistos"], advance: "Tablero en construcción y primeros componentes.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Probamos y personalizamos", desc: "Completamos detalles, probamos que todo funcione y creamos tarjetas de desafíos.", activities: ["Personalizar y decorar", "Practicar el uso del tablero", "Revisar y mejorar"], advance: "Tablero terminado y tarjetas listas.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Compartimos y llevamos a casa", desc: "Presentamos nuestro proyecto, resolvemos una misión final y reflexionamos.", activities: ["Presentación del proyecto", "Misión sensorial final", "Reflexión y cierre"], advance: "Tablero sensorial interactivo listo para casa.", color: "purple" }
+        ]
+      },
+      sensoryStudio: {
+        label: "Nova Sensory Studio", title: "Nova Sensory Studio", subtitle: "Explora · Crea · Siente · Descubre", projectTitle: "Mi Estación Sensorial",
+        quote: "¡Un mundo de sensaciones en tus manos! Más que manualidades, son herramientas para la vida.",
+        desc: "Cada niño creará su propia estación sensorial portátil en estuche organizador con materiales, texturas, frasco de calma, masas y tarjetas de desafíos.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "El gran descubrimiento", desc: "Exploramos una caja misteriosa con texturas, imaginamos nuestra estación y diseñamos un boceto.", activities: ["Explorar y nombrar texturas", "Hacer hipótesis y preguntas", "Diseñar la estación sensorial"], advance: "Boceto y plan de la estación.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Selección y organización", desc: "Clasificamos materiales y preparamos las divisiones del estuche.", activities: ["Clasificar y comparar materiales", "Planificar la distribución", "Crear etiquetas visuales"], advance: "Materiales seleccionados y estuche organizado.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Construcción de componentes", desc: "Creamos el frasco sensorial, preparamos masa y herramientas táctiles.", activities: ["Elaborar el frasco sensorial", "Crear herramienta táctil", "Decorar y personalizar el estuche"], advance: "Componentes principales elaborados.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Organización y práctica", desc: "Completamos nuestra estación, creamos tarjetas de desafíos y practicamos su uso.", activities: ["Personalizar y decorar", "Crear tarjetas de desafíos", "Practicar el uso del kit"], advance: "Estación lista para probar.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Presentación y misión final", desc: "Resolvemos nuevos desafíos, explicamos cómo la creamos y nos llevamos el kit a casa.", activities: ["Resolver misión sensorial", "Presentar el proyecto", "Empacar para casa"], advance: "Mi Estación Sensorial lista para llevar a casa.", color: "purple" }
+        ]
+      },
+      littleEcologists: {
+        label: "Little Ecologists", title: "Little Ecologists", subtitle: "Explora · Descubre · Crea · Cuida", projectTitle: "Mi Mini Eco-World",
+        quote: "¡Pequeñas acciones, grandes cambios! ¡Exploradores hoy, guardianes del mañana!",
+        desc: "Cada niño diseñará y construirá su propio ecosistema en un recipiente combinando plantas, capas de suelo, piedras y elementos naturales.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "Exploradores de la naturaleza", desc: "Exploramos la naturaleza con lupas, observamos plantas, semillas y rocas.", activities: ["Exploración sensorial natural", "Observación con lupas", "Conversatorio guiado"], advance: "Definimos qué queremos crear en nuestro mini ecosistema.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "El laboratorio de la naturaleza", desc: "Aprendemos sobre el suelo, el agua, la luz y las plantas.", activities: ["Experimentos de filtración y humedad", "Clasificación de materiales", "Planificación del diseño"], advance: "Seleccionamos materiales y diseñamos nuestro mini mundo.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Construimos nuestro eco-mundo", desc: "Montamos el recipiente, creamos capas de suelo y plantamos.", activities: ["Construcción del recipiente", "Plantación y decoración", "Uso de herramientas seguras"], advance: "Nuestro mini ecosistema toma forma.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Cuidamos y mejoramos", desc: "Ajustamos detalles y creamos nuestra ficha científica y plan de cuidado.", activities: ["Revisar humedad y estabilidad", "Completar ficha científica", "Personalizar etiqueta"], advance: "Ecosistema terminado y ficha lista.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "La gran presentación", desc: "Presentamos nuestros mini ecosistemas y explicamos cómo funcionan.", activities: ["Exposición del proyecto", "Misión final de reflexión", "Empaque para llevar a casa"], advance: "Mi Mini Eco-World listo para casa.", color: "purple" }
+        ]
+      },
+      inventorsOfLight: {
+        label: "Inventors of Light", title: "Inventors of Light", subtitle: "Diseña · Experimenta · Crea", projectTitle: "Mi Teatro de Luces",
+        quote: "¡Una semana para descubrir el poder de la luz, la creatividad y la ciencia!",
+        desc: "Cada niño diseñará y construirá su propio teatro de luces, sombras y colores, combinando ciencia, arte y tecnología.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "La luz nos cuenta historias", desc: "Exploramos cómo la luz crea sombras, colores y formas para contar historias.", activities: ["Exploración de sombras y colores", "Juegos de luz y oscuridad", "Observación de fuentes de luz"], advance: "Elegimos el tema y hacemos un boceto.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "La ciencia de la luz", desc: "Experimentamos con filtros de colores, espejos y superficies reflectantes.", activities: ["Experimentos con filtros", "Mezcla de luces y sombras", "Comparación de materiales"], advance: "Definimos la estructura del teatro.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Construimos nuestro teatro", desc: "Construimos la base del teatro e incorporamos los elementos de luz.", activities: ["Construcción de la estructura", "Instalación de luces y mecanismos", "Decoración y personalización"], advance: "Teatro en construcción y primeros efectos.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Practicamos y mejoramos", desc: "Probamos nuestro teatro y creamos los personajes y escenas.", activities: ["Prueba de luces y sombras", "Creación de personajes", "Revisión y ajustes finales"], advance: "Teatro listo para la presentación.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "La gran presentación", desc: "Presentamos nuestro teatro de luces y compartimos nuestra escena.", activities: ["Presentación del proyecto", "Misión final: crear una escena", "Empaque para llevar a casa"], advance: "Teatro de luces personalizado listo.", color: "purple" }
+        ]
+      },
+      bigArtProject: {
+        label: "The Big Art Project", title: "The Big Art Project", subtitle: "Color · Textura · Crea · Presenta", projectTitle: "Arte Sensorial y Efecto Vitral",
+        quote: "¡Dos obras llenas de color para crear, sentir y compartir!",
+        desc: "Los participantes crearán dos obras artísticas inspiradas en el color y la textura: frascos sensoriales con capas de colores y un cuadro con efecto vitral.",
+        days: [
+          { day: "LUNES", letter: "M", phase: "Motivar", title: "Exploramos color y textura", desc: "Observamos ejemplos, exploramos materiales y elegimos paleta de colores.", activities: ["Observar ejemplos de obras", "Explorar materiales", "Hacer boceto de los dos proyectos"], advance: "Definimos la idea visual.", color: "pink" },
+          { day: "MARTES", letter: "A", phase: "Analizar", title: "Planificamos materiales", desc: "Clasificamos frascos, arena y preparamos el marco del efecto vitral.", activities: ["Clasificar frascos, sal y colores", "Preparar marco del vitral", "Elegir secuencia de colores"], advance: "Materiales y diseño listos.", color: "sky" },
+          { day: "MIÉRCOLES", letter: "T", phase: "Transformar", title: "Creamos frascos sensoriales", desc: "Coloreamos la sal o arena, creamos patrones de capas y sellamos los frascos.", activities: ["Colorear sal o arena con tizas", "Crear patrones de capas", "Llenar y sellar frascos"], advance: "Frascos sensoriales terminados.", color: "emerald" },
+          { day: "JUEVES", letter: "U", phase: "Habituar", title: "Diseñamos efecto vitral", desc: "Dibujamos las secciones con líneas negras y añadimos áreas de color translúcido.", activities: ["Dibujar secciones negras", "Añadir papel translúcido", "Ensamblar cuadro vitral"], advance: "Cuadro vitral casi listo.", color: "amber" },
+          { day: "VIERNES", letter: "S", phase: "Sostener", title: "Presentamos y llevamos a casa", desc: "Hacemos detalles finales y montamos nuestra mini exposición artística.", activities: ["Detalles finales", "Montar mini exposición", "Preparar obras para casa"], advance: "Frascos sensoriales + cuadro vitral listos.", color: "purple" }
+        ]
+      }
+    };
+
+    function renderProject(key) {
+      const p = projectsData[key];
+      document.querySelectorAll('.proj-tab').forEach(btn => {
+        const k = btn.id.replace('btn-', '');
+        btn.innerText = projectsData[k].label;
+        btn.className = "proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-2 border-slate-200 dark:border-slate-700";
+      });
+      const activeBtn = document.getElementById(`btn-${key}`);
+      if (activeBtn) activeBtn.className = "proj-tab px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-lg bg-gradient-vivid text-white scale-105";
+
+      const colorMap = {
+        pink: { header: "bg-pink-500", border: "border-pink-200 dark:border-pink-500/30" },
+        sky: { header: "bg-sky-500", border: "border-sky-200 dark:border-sky-500/30" },
+        emerald: { header: "bg-emerald-500", border: "border-emerald-200 dark:border-emerald-500/30" },
+        amber: { header: "bg-amber-500", border: "border-amber-200 dark:border-amber-500/30" },
+        purple: { header: "bg-purple-600", border: "border-purple-200 dark:border-purple-500/30" }
+      };
+
+      document.getElementById('projectDetailContainer').innerHTML = `
+        <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] border-2 border-sky-200 dark:border-slate-700 shadow-2xl overflow-hidden">
+          <div class="bg-gradient-to-r from-sky-100 via-purple-100 to-pink-100 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800 p-8 border-b border-slate-200 dark:border-slate-700">
+            <span class="bg-purple-600 text-white font-black text-[11px] uppercase px-3 py-1 rounded-full">${p.subtitle}</span>
+            <h3 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">${p.title}: <span class="text-nova-purple dark:text-amber-300">${p.projectTitle}</span></h3>
+            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 mt-2 max-w-3xl">${p.desc}</p>
+            <p class="text-xs font-extrabold text-pink-700 dark:text-pink-300 mt-2"><i class="fa-solid fa-heart mr-1"></i> ${p.quote}</p>
+          </div>
+
+          <div class="p-6 sm:p-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+              ${p.days.map(d => `
+                <div class="bg-slate-50 dark:bg-slate-900/70 border-2 ${colorMap[d.color].border} rounded-3xl overflow-hidden flex flex-col justify-between card-playful">
+                  <div>
+                    <div class="${colorMap[d.color].header} text-white px-4 py-2.5 flex justify-between items-center">
+                      <span class="font-black text-xs">${d.day}</span>
+                      <span class="w-6 h-6 rounded-full bg-white text-slate-900 font-black text-xs flex items-center justify-center">${d.letter}</span>
+                    </div>
+                    <div class="p-4">
+                      <span class="text-[10px] font-black uppercase text-nova-teal dark:text-cyan-300">${d.phase}</span>
+                      <h5 class="font-display font-bold text-slate-900 dark:text-white text-base mb-1">${d.title}</h5>
+                      <p class="text-[11px] text-slate-600 dark:text-slate-300 mb-3">${d.desc}</p>
+                      <ul class="space-y-1 text-[11px] text-slate-700 dark:text-slate-200 font-medium">
+                        ${d.activities.map(a => `<li>• ${a}</li>`).join('')}
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="p-3 m-3 bg-white dark:bg-slate-800 rounded-2xl border dark:border-slate-700 text-[11px] font-bold">
+                    <i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i> ${d.advance}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function updateThemeUI() {
+      const isDark = document.documentElement.classList.contains('dark');
+      const icon = document.getElementById('themeIcon');
+      if (icon) icon.className = isDark ? 'fa-solid fa-sun text-amber-300 text-lg' : 'fa-solid fa-moon text-amber-600 text-lg';
+    }
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('nova-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      updateThemeUI();
+    }
+
+    renderProject('sensoryCreators');
+    updateThemeUI();
+  </script>
+</body>
+</html>
