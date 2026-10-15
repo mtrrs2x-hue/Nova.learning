@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Learning - Nuestros Materiales</title>
+  <title>Nova Learning - Nuestros Materiales y Pedagogías Activas</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -53,13 +53,44 @@
     <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
   </button>
 
+  <!-- MENÚ LATERAL MÓVIL (BARRITAS IZQUIERDA) -->
+  <div id="mobileSidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between mb-8 pb-4 border-b dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <img src="img/Logo.jpeg" alt="Nova Learning" class="h-8 w-auto object-contain bg-white px-2 py-1 rounded-lg border">
+          <span class="font-display font-bold text-base text-slate-900 dark:text-white">Menú</span>
+        </div>
+        <button onclick="toggleMobileMenu()" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center text-lg"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <nav class="space-y-2.5 font-extrabold text-sm">
+        <a href="index.html" class="flex items-center gap-3 p-3.5 rounded-2xl hover:bg-sky-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-all"><i class="fa-solid fa-house text-sky-500 text-lg w-6 text-center"></i> Inicio</a>
+        <a href="quienes-somos.html" class="flex items-center gap-3 p-3.5 rounded-2xl hover:bg-purple-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-all"><i class="fa-solid fa-brain text-purple-500 text-lg w-6 text-center"></i> Quiénes Somos</a>
+        <a href="clinica.html" class="flex items-center gap-3 p-3.5 rounded-2xl hover:bg-emerald-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-all"><i class="fa-solid fa-hospital-user text-emerald-500 text-lg w-6 text-center"></i> Nuestra Clínica</a>
+        <a href="materiales.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-cyan-100 dark:bg-cyan-500/20 text-cyan-900 dark:text-cyan-300 shadow-sm"><i class="fa-solid fa-shapes text-cyan-600 text-lg w-6 text-center"></i> Nuestros Materiales</a>
+        <a href="catalogo.html" class="flex items-center gap-3 p-3.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-all"><i class="fa-solid fa-cart-shopping text-pink-500 text-lg w-6 text-center"></i> Catálogo</a>
+        <a href="cursos.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-amber-100/80 dark:bg-amber-500/20 text-amber-950 dark:text-amber-300"><i class="fa-solid fa-sun text-amber-600 text-lg w-6 text-center"></i> Nuestros Cursos</a>
+      </nav>
+    </div>
+    <div class="pt-4 border-t dark:border-slate-800 space-y-3">
+      <div class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold">
+        <p><i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
+        <p class="mt-1"><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz CAES, Clínica 505</p>
+      </div>
+      <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20una%20cita" target="_blank" class="block w-full py-3.5 rounded-2xl bg-gradient-vivid text-white text-center font-black text-xs shadow-lg">
+        <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Reserva tu Cita
+      </a>
+    </div>
+  </div>
+  <div id="sidebarOverlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 hidden" onclick="toggleMobileMenu()"></div>
+
   <!-- TOP BAR -->
   <div class="bg-gradient-vivid text-white text-xs md:text-sm py-2.5 px-4 shadow-md relative z-20">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
       <div class="flex items-center gap-4 flex-wrap justify-center md:justify-start font-semibold">
         <span><i class="fa-solid fa-location-dot text-amber-300 mr-1.5"></i> Hospital La Paz, CAES, 5° piso, Clínica 505</span>
         <span class="hidden md:inline text-white/40">|</span>
-        <span><i class="fa-regular fa-clock text-cyan-200 mr-1.5"></i> Lun - Sáb: 2:30 PM - 6:30 PM</span>
+        <span><i class="fa-regular fa-clock text-cyan-200 mr-1.5"></i> Lun - Sáb: 2:00 PM - 6:30 PM</span>
       </div>
       <a href="https://wa.me/50239804600" target="_blank" class="bg-white text-purple-900 hover:bg-amber-300 px-3.5 py-1 rounded-full font-extrabold text-xs transition-all shadow">
         <i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i> +502 3980-4600
@@ -70,73 +101,226 @@
   <!-- NAVBAR -->
   <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b-2 border-sky-100 dark:border-slate-800 shadow-sm transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-      <a href="index.html" class="flex items-center bg-white px-3 py-1.5 rounded-2xl border-2 border-sky-100 shadow-sm">
-        <img src="img/Logo.jpeg" alt="Nova Learning Logo" class="h-11 w-auto object-contain">
-      </a>
-      <nav class="hidden lg:flex items-center gap-5 font-extrabold text-slate-700 dark:text-slate-200 text-sm">
-        <a href="index.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Inicio</a>
-        <a href="quienes-somos.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Quiénes Somos</a>
-        <a href="clinica.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Nuestra Clínica</a>
-        <a href="materiales.html" class="px-3.5 py-2 rounded-xl bg-sky-100 dark:bg-sky-500/20 text-sky-900 dark:text-sky-300">Nuestros Materiales</a>
-        <a href="catalogo.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Catálogo</a>
-        <a href="cursos.html" class="px-3.5 py-2 rounded-xl bg-amber-200/80 dark:bg-amber-500/20 text-amber-950 dark:text-amber-300"><i class="fa-solid fa-sun text-amber-600 mr-1"></i> Nuestros Cursos</a>
+      <div class="flex items-center gap-3">
+        <button onclick="toggleMobileMenu()" aria-label="Abrir menú" class="lg:hidden w-11 h-11 rounded-2xl bg-sky-50 dark:bg-slate-800 border-2 border-sky-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center text-xl shadow-sm hover:bg-sky-100 transition-all">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flex items-center bg-white px-3 py-1.5 rounded-2xl border-2 border-sky-100 shadow-sm">
+          <img src="img/Logo.jpeg" alt="Nova Learning Logo" class="h-11 w-auto object-contain">
+        </a>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-2 font-extrabold text-slate-700 dark:text-slate-200 text-xs xl:text-sm">
+        <a href="index.html" class="px-3 py-2 rounded-xl hover:bg-sky-100 dark:hover:bg-sky-500/20 hover:text-sky-900 dark:hover:text-sky-300 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-house text-sky-500"></i> Inicio
+        </a>
+        <a href="quienes-somos.html" class="px-3 py-2 rounded-xl hover:bg-purple-100 dark:hover:bg-purple-500/20 hover:text-purple-900 dark:hover:text-purple-300 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-brain text-purple-500"></i> Quiénes Somos
+        </a>
+        <a href="clinica.html" class="px-3 py-2 rounded-xl hover:bg-emerald-100 dark:hover:bg-emerald-500/20 hover:text-emerald-900 dark:hover:text-emerald-300 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-hospital-user text-emerald-500"></i> Nuestra Clínica
+        </a>
+        <a href="materiales.html" class="px-3.5 py-2 rounded-xl bg-cyan-200/80 dark:bg-cyan-500/30 text-cyan-950 dark:text-cyan-200 flex items-center gap-1.5 shadow-sm transition-all">
+          <i class="fa-solid fa-shapes text-cyan-600 dark:text-cyan-300"></i> Nuestros Materiales
+        </a>
+        <a href="catalogo.html" class="px-3 py-2 rounded-xl hover:bg-pink-100 dark:hover:bg-pink-500/20 hover:text-pink-900 dark:hover:text-pink-300 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-cart-shopping text-pink-500"></i> Catálogo
+        </a>
+        <a href="cursos.html" class="px-3.5 py-2 rounded-xl bg-amber-200/80 dark:bg-amber-500/20 text-amber-950 dark:text-amber-300 hover:bg-amber-300 transition-all flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-sun text-amber-600 dark:text-amber-400"></i> Nuestros Cursos
+        </a>
       </nav>
-      <a href="https://wa.me/50239804600" target="_blank" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg">Agendar Cita</a>
+
+      <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20una%20cita" target="_blank" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg hover:opacity-95 transition-all flex items-center gap-2">
+        <i class="fa-solid fa-calendar-check"></i> <span>Reserva tu Cita</span>
+      </a>
     </div>
   </header>
 
+  <!-- CABECERA PEDAGOGÍAS ACTIVAS -->
   <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="bg-pink-200 dark:bg-pink-500/20 text-pink-950 dark:text-pink-300 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full"><i class="fa-solid fa-cubes mr-1"></i> Enfoque Terapéutico Activo</span>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mt-4">Nuestros Materiales y Talleres</h1>
-      <p class="text-slate-600 dark:text-slate-300 font-medium mt-3 text-base">Utilizamos el juego estructurado, la experimentación y el material concreto como vehículos para desarrollar procesos cognitivos y funcionales.</p>
+      <span class="bg-pink-200 dark:bg-pink-500/20 text-pink-950 dark:text-pink-300 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full shadow-sm">
+        <i class="fa-solid fa-shapes mr-1"></i> Pedagogías Activas en Intervención Clínica
+      </span>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mt-4 leading-tight">
+        Nuestros Materiales: <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-600 to-pink-500">Aprender Haciendo, Sintiendo y Descubriendo</span>
+      </h1>
+      <p class="text-slate-600 dark:text-slate-300 font-medium mt-4 text-base leading-relaxed">
+        En <strong>Nova Learning</strong> comprendemos que el cerebro infantil y adolescente aprende de la mano a la mente. Por ello, nuestras sesiones integran recursos seleccionados de las <strong>pedagogías activas Montessori, Waldorf y Reggio Emilia</strong>, transformando conceptos abstractos en experiencias concretas, manipulativas y emocionalmente seguras.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
-      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-sky-200 dark:border-sky-500/30 shadow-xl card-playful">
-        <div class="w-14 h-14 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-2xl font-black mb-5 shadow-md"><i class="fa-solid fa-comments"></i></div>
-        <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Taller de Lenguaje</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Comunicación expresiva, vocabulario, comprensión lectora y producción escrita mediante recursos multisensoriales.</p>
+    <!-- LAS 3 CORRIENTES PEDAGÓGICAS COMPLETAS -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+      <!-- Montessori -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-[2.2rem] border-2 border-emerald-200 dark:border-emerald-500/30 shadow-xl card-playful flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 text-white flex items-center justify-center text-2xl font-black shadow-md">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <span class="text-[10px] font-black uppercase bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 px-3 py-1 rounded-full">Mente Absorbente y Orden</span>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-3">Material Montessori</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+            Utilizamos materiales estructurados, graduados y autocorrectivos que permiten aislar cada dificultad y transitar paso a paso desde la manipulación tangible hacia la abstracción mental. El niño descubre el error por sí mismo sin frustración, fortaleciendo su autonomía y autoestima académica.
+          </p>
+        </div>
+        <div class="bg-emerald-50/70 dark:bg-slate-900/60 p-4 rounded-2xl border border-emerald-100 dark:border-slate-700 text-xs space-y-1.5 font-semibold text-slate-700 dark:text-slate-200">
+          <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Control autónomo del error y concentración</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> De lo concreto y manipulativo a lo simbólico</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Orden externo que estructura el orden mental</div>
+        </div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-purple-200 dark:border-purple-500/30 shadow-xl card-playful">
-        <div class="w-14 h-14 rounded-2xl bg-purple-600 text-white flex items-center justify-center text-2xl font-black mb-5 shadow-md"><i class="fa-solid fa-calculator"></i></div>
-        <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Taller de Matemática</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Pensamiento lógico, noción numérica, percepción espacial y resolución práctica de retos con material manipulativo.</p>
+      <!-- Waldorf -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-[2.2rem] border-2 border-amber-200 dark:border-amber-500/30 shadow-xl card-playful flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 text-white flex items-center justify-center text-2xl font-black shadow-md">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <span class="text-[10px] font-black uppercase bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-full">Ritmo, Calidez y Vínculo</span>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-3">Inspiración Waldorf</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+            Incorporamos elementos nobles, sensoriales y no estructurados (maderas naturales, texturas orgánicas, modelado con masas suaves, acuarelas y lanas) que respetan el ritmo madurativo de cada niño, regulan el sistema nervioso y despiertan la imaginación creadora y el vínculo afectivo con el aprendizaje.
+          </p>
+        </div>
+        <div class="bg-amber-50/70 dark:bg-slate-900/60 p-4 rounded-2xl border border-amber-100 dark:border-slate-700 text-xs space-y-1.5 font-semibold text-slate-700 dark:text-slate-200">
+          <div class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Estímulos nobles libres de sobreestimulación</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Integración armónica entre pensar, sentir y hacer</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Fomento del juego simbólico y la creatividad</div>
+        </div>
       </div>
 
-      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-emerald-200 dark:border-emerald-500/30 shadow-xl card-playful">
-        <div class="w-14 h-14 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-2xl font-black mb-5 shadow-md"><i class="fa-solid fa-flask"></i></div>
-        <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Taller de Ciencias</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Exploración de la naturaleza, formulación de hipótesis, experimentación guiada y pensamiento causal.</p>
-      </div>
-
-      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-amber-200 dark:border-amber-500/30 shadow-xl card-playful">
-        <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl font-black mb-5 shadow-md"><i class="fa-solid fa-brain"></i></div>
-        <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Funciones Ejecutivas</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Entrenamiento en atención sostenida, memoria de trabajo, planificación, flexibilidad y control inhibitorio.</p>
+      <!-- Reggio Emilia -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-[2.2rem] border-2 border-purple-200 dark:border-purple-500/30 shadow-xl card-playful flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-white flex items-center justify-center text-2xl font-black shadow-md">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <span class="text-[10px] font-black uppercase bg-purple-100 dark:bg-purple-500/20 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full">El Ambiente como 3er Maestro</span>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-3">Filosofía Reggio Emilia</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+            Diseñamos provocaciones de aprendizaje utilizando mesas de luz, bloques translúcidos, espejos, piezas sueltas (loose parts) y elementos de la naturaleza. Invitamos al niño a investigar, formular hipótesis y expresarse a través de sus "cien lenguajes" verbales, gráficos y constructivos.
+          </p>
+        </div>
+        <div class="bg-purple-50/70 dark:bg-slate-900/60 p-4 rounded-2xl border border-purple-100 dark:border-slate-700 text-xs space-y-1.5 font-semibold text-slate-700 dark:text-slate-200">
+          <div class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-500"></i> Experimentación con luz, color y perspectiva</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-500"></i> Aprendizaje por proyectos y asombro guiado</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-500"></i> Expresión multimodal y pensamiento crítico</div>
+        </div>
       </div>
     </div>
 
-    <!-- BANNER HACIA EL CATÁLOGO -->
+    <!-- LOS 3 EJES CLÍNICOS DE INTERVENCIÓN CON EL MATERIAL -->
+    <div class="bg-white/95 dark:bg-slate-800/95 rounded-[2.5rem] p-8 sm:p-12 border-2 border-sky-200 dark:border-slate-700 shadow-2xl mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="bg-sky-200 dark:bg-sky-500/20 text-sky-950 dark:text-sky-300 font-black text-xs uppercase px-4 py-1.5 rounded-full">
+          <i class="fa-solid fa-bullseye mr-1"></i> Aplicación Neuropsicopedagógica
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-3">
+          Nuestros 3 Ejes de Trabajo con Material Activo
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2">
+          Cada objeto que el niño toca y manipula en nuestra clínica está intencionalmente dirigido a fortalecer tres grandes pilares del desarrollo:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- EJE 1: LÓGICO MATEMÁTICO -->
+        <div class="p-7 rounded-3xl bg-gradient-to-b from-sky-50 to-white dark:from-slate-900 dark:to-slate-800 border-2 border-sky-200 dark:border-slate-700 shadow-md card-playful flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-2xl mb-5 shadow-md">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <span class="text-[11px] font-black uppercase text-sky-600 dark:text-sky-400">Pilar 01</span>
+            <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mt-1 mb-3">Pensamiento Lógico-Matemático</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Construimos el pensamiento matemático desde la comprensión real y no desde la memorización mecánica. Mediante regletas, perlas numéricas, bloques geométricos magnéticos y tableros de patrones, el niño toca las cantidades y visualiza las operaciones.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs font-bold text-slate-700 dark:text-slate-200 pt-4 border-t border-sky-100 dark:border-slate-700">
+            <li><i class="fa-solid fa-puzzle-piece text-sky-500 mr-2"></i> Noción de cantidad, correspondencia y sistema decimal</li>
+            <li><i class="fa-solid fa-puzzle-piece text-sky-500 mr-2"></i> Clasificación, seriación, secuencias y patrones lógicos</li>
+            <li><i class="fa-solid fa-puzzle-piece text-sky-500 mr-2"></i> Razonamiento visoespacial en 2D y 3D y resolución de retos</li>
+          </ul>
+        </div>
+
+        <!-- EJE 2: NEURO-SENSORIAL -->
+        <div class="p-7 rounded-3xl bg-gradient-to-b from-pink-50 to-white dark:from-slate-900 dark:to-slate-800 border-2 border-pink-200 dark:border-slate-700 shadow-md card-playful flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-pink-500 text-white flex items-center justify-center text-2xl mb-5 shadow-md">
+              <i class="fa-solid fa-hands-holding-child"></i>
+            </div>
+            <span class="text-[11px] font-black uppercase text-pink-600 dark:text-pink-400">Pilar 02</span>
+            <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mt-1 mb-3">Integración Neuro-Sensorial</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Un cerebro regulado es un cerebro listo para aprender. Trabajamos con arenas kinéticas, masas de distintas densidades, bandejas de exploración táctil, estímulos visuales de luz y recursos propioceptivos que preparan el tono muscular, la postura y el foco atencional.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs font-bold text-slate-700 dark:text-slate-200 pt-4 border-t border-pink-100 dark:border-slate-700">
+            <li><i class="fa-solid fa-wand-magic-sparkles text-pink-500 mr-2"></i> Autorregulación emocional y reducción de ansiedad motriz</li>
+            <li><i class="fa-solid fa-wand-magic-sparkles text-pink-500 mr-2"></i> Motricidad fina, disociación digital y coordinación óculo-manual</li>
+            <li><i class="fa-solid fa-wand-magic-sparkles text-pink-500 mr-2"></i> Entrenamiento de funciones ejecutivas y atención sostenida</li>
+          </ul>
+        </div>
+
+        <!-- EJE 3: COMUNICACIÓN FUNCIONAL -->
+        <div class="p-7 rounded-3xl bg-gradient-to-b from-emerald-50 to-white dark:from-slate-900 dark:to-slate-800 border-2 border-emerald-200 dark:border-slate-700 shadow-md card-playful flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-2xl mb-5 shadow-md">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <span class="text-[11px] font-black uppercase text-emerald-600 dark:text-emerald-400">Pilar 03</span>
+            <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mt-1 mb-3">Comunicación Funcional</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Impulsamos el lenguaje con sentido práctico para la vida cotidiana y social. Nos apoyamos en letras táctiles de lija, alfabetos móviles, secuencias temporales ilustradas, mini-mundos simbólicos y provocaciones narrativas que invitan a comunicar, comprender y dialogar.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs font-bold text-slate-700 dark:text-slate-200 pt-4 border-t border-emerald-100 dark:border-slate-700">
+            <li><i class="fa-solid fa-comment-dots text-emerald-500 mr-2"></i> Intención comunicativa, vocabulario activo y pragmática social</li>
+            <li><i class="fa-solid fa-comment-dots text-emerald-500 mr-2"></i> Estructuración de frases, discurso narrativo y comprensión</li>
+            <li><i class="fa-solid fa-comment-dots text-emerald-500 mr-2"></i> Conciencia fonológica y lectoescritura multisensorial</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANNER DE CONEXIÓN AL CATÁLOGO Y CITAS -->
     <div class="bg-gradient-vivid text-white rounded-[2.5rem] p-8 sm:p-10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="space-y-2 text-center md:text-left">
-        <span class="bg-amber-300 text-slate-950 font-black text-xs uppercase px-3.5 py-1 rounded-full">Lleva la experiencia a casa</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-bold">¿Quieres conocer los materiales que puedes adquirir?</h2>
-        <p class="text-xs sm:text-sm text-pink-100">Explora nuestra colección de IQ Games, masas sensoriales Play-Doh, Cloud Sand y bloques magnéticos.</p>
+      <div class="space-y-2 text-center md:text-left max-w-2xl">
+        <span class="bg-amber-300 text-slate-950 font-black text-xs uppercase px-3.5 py-1 rounded-full">De la clínica a tu hogar</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold">¿Te gustaría adquirir nuestros recursos o agendar una sesión?</h2>
+        <p class="text-xs sm:text-sm text-pink-100">Visita nuestro catálogo de materiales sensoriales y de ingenio, o escríbenos para conocer cómo podemos acompañar a tu hijo.</p>
       </div>
-      <a href="catalogo.html" class="px-7 py-4 rounded-2xl bg-white text-purple-900 font-black text-sm shadow-lg hover:bg-amber-300 hover:text-slate-950 transition-all shrink-0">
-        Ir al Catálogo Oficial <i class="fa-solid fa-arrow-right ml-1"></i>
-      </a>
+      <div class="flex flex-wrap justify-center gap-3 shrink-0">
+        <a href="catalogo.html" class="px-6 py-4 rounded-2xl bg-white text-purple-900 font-black text-xs sm:text-sm shadow-lg hover:bg-amber-300 hover:text-slate-950 transition-all flex items-center gap-2">
+          <i class="fa-solid fa-cart-shopping"></i> Ir al Catálogo
+        </a>
+        <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20información%20sobre%20sus%20sesiones%20con%20pedagogías%20activas" target="_blank" class="px-6 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs sm:text-sm shadow-lg transition-all flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base"></i> Reserva tu Cita
+        </a>
+      </div>
     </div>
   </section>
 
   <footer class="bg-slate-900 text-white py-10 text-center text-xs border-t-4 border-nova-teal mt-12 relative z-10">
     <p class="font-display font-bold text-base">Nova Learning - Centro Neuropsicopedagógico</p>
-    <p class="text-slate-400 mt-1">Hospital La Paz, CAES, 5° piso, Clínica 505 | Tel: +502 3980-4600</p>
+    <p class="text-slate-400 mt-1">Hospital La Paz, CAES, 5° piso, Clínica 505 | Lun - Sáb: 2:00 PM - 6:30 PM | Tel: +502 3980-4600</p>
   </footer>
 
   <script>
+    function toggleMobileMenu() {
+      const sb = document.getElementById('mobileSidebar');
+      const ov = document.getElementById('sidebarOverlay');
+      sb.classList.toggle('-translate-x-full');
+      ov.classList.toggle('hidden');
+    }
     function updateThemeUI() {
       const isDark = document.documentElement.classList.contains('dark');
       const icon = document.getElementById('themeIcon');
