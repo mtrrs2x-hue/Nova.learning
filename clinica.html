@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Learning - Nuestra Clínica</title>
+  <title>Nova Learning - Nuestra Clínica y Tarifas</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@
       <div class="flex items-center gap-4 flex-wrap justify-center md:justify-start font-semibold">
         <span><i class="fa-solid fa-location-dot text-amber-300 mr-1.5"></i> Hospital La Paz, CAES, 5° piso, Clínica 505</span>
         <span class="hidden md:inline text-white/40">|</span>
-        <span><i class="fa-regular fa-clock text-cyan-200 mr-1.5"></i> Lun - Sáb: 2:30 PM - 6:30 PM</span>
+        <span><i class="fa-regular fa-clock text-cyan-200 mr-1.5"></i> Lun - Vie: 2:00 PM - 6:30 PM</span>
       </div>
       <a href="https://wa.me/50239804600" target="_blank" class="bg-white text-purple-900 hover:bg-amber-300 px-3.5 py-1 rounded-full font-extrabold text-xs transition-all shadow">
         <i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i> +502 3980-4600
@@ -67,21 +67,35 @@
     </div>
   </div>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR CON ÍCONOS REPRESENTATIVOS -->
   <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b-2 border-sky-100 dark:border-slate-800 shadow-sm transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
       <a href="index.html" class="flex items-center bg-white px-3 py-1.5 rounded-2xl border-2 border-sky-100 shadow-sm">
         <img src="img/Logo.jpeg" alt="Nova Learning Logo" class="h-11 w-auto object-contain">
       </a>
-      <nav class="hidden lg:flex items-center gap-5 font-extrabold text-slate-700 dark:text-slate-200 text-sm">
-        <a href="index.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Inicio</a>
-        <a href="quienes-somos.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Quiénes Somos</a>
-        <a href="clinica.html" class="px-3.5 py-2 rounded-xl bg-sky-100 dark:bg-sky-500/20 text-sky-900 dark:text-sky-300">Nuestra Clínica</a>
-        <a href="materiales.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Nuestros Materiales</a>
-        <a href="catalogo.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2 py-1">Catálogo</a>
-        <a href="cursos.html" class="px-3.5 py-2 rounded-xl bg-amber-200/80 dark:bg-amber-500/20 text-amber-950 dark:text-amber-300"><i class="fa-solid fa-sun text-amber-600 mr-1"></i> Nuestros Cursos</a>
+      <nav class="hidden lg:flex items-center gap-2.5 font-extrabold text-slate-700 dark:text-slate-200 text-xs sm:text-sm">
+        <a href="index.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2.5 py-2 rounded-xl transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-house text-sky-500"></i> Inicio
+        </a>
+        <a href="quienes-somos.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2.5 py-2 rounded-xl transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-brain text-purple-500"></i> Quiénes Somos
+        </a>
+        <a href="clinica.html" class="px-3.5 py-2 rounded-xl bg-sky-100 dark:bg-sky-500/20 text-sky-900 dark:text-sky-300 flex items-center gap-1.5">
+          <i class="fa-solid fa-hospital-user text-emerald-600 dark:text-emerald-400"></i> Nuestra Clínica
+        </a>
+        <a href="materiales.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2.5 py-2 rounded-xl transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-shapes text-sky-500"></i> Nuestros Materiales
+        </a>
+        <a href="catalogo.html" class="hover:text-nova-teal dark:hover:text-cyan-300 px-2.5 py-2 rounded-xl transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-cart-shopping text-pink-500"></i> Catálogo
+        </a>
+        <a href="cursos.html" class="px-3.5 py-2 rounded-xl bg-amber-200/80 dark:bg-amber-500/20 text-amber-950 dark:text-amber-300 hover:bg-amber-300 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-sun text-amber-600 dark:text-amber-400"></i> Nuestros Cursos
+        </a>
       </nav>
-      <a href="https://wa.me/50239804600" target="_blank" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg">Agendar Cita</a>
+      <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20una%20cita" target="_blank" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg flex items-center gap-1.5">
+        <i class="fa-solid fa-calendar-check"></i> Reserva tu Cita
+      </a>
     </div>
   </header>
 
@@ -92,6 +106,7 @@
       <p class="text-slate-600 dark:text-slate-300 font-medium mt-3 text-base">Un entorno cálido, moderno y equipado para la regulación neurosensorial y la intervención psicopedagógica.</p>
     </div>
 
+    <!-- UBICACIÓN Y HORARIO CORREGIDO -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
       <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border-2 border-sky-200 dark:border-sky-500/30 shadow-xl card-playful flex items-center gap-5">
         <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 text-white flex items-center justify-center text-3xl font-black shrink-0 shadow-md"><i class="fa-solid fa-hospital"></i></div>
@@ -108,24 +123,75 @@
         <div>
           <span class="text-[10px] font-black uppercase bg-pink-100 dark:bg-pink-500/20 text-pink-800 dark:text-pink-300 px-2.5 py-1 rounded-full">Atención Vespertina</span>
           <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mt-1">Horario de Clínica</h3>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">Lunes a Sábado</p>
-          <p class="text-sm text-nova-teal dark:text-amber-300 font-black mt-0.5">2:30 PM a 6:30 PM</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">Lunes a Viernes</p>
+          <p class="text-sm text-nova-teal dark:text-amber-300 font-black mt-0.5">2:00 PM a 6:30 PM</p>
         </div>
       </div>
     </div>
 
-    <!-- TABLA DE TARIFAS -->
+    <!-- TARJETAS CON BOTÓN DE RESERVA TU CITA -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-sky-200 dark:border-slate-700 shadow-xl card-playful flex flex-col justify-between">
+        <div>
+          <span class="bg-sky-100 dark:bg-sky-500/20 text-sky-900 dark:text-sky-300 px-3 py-1 rounded-full font-black text-xs">1 niño</span>
+          <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mt-3">Atención Individual</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">Sesiones 1 a 1 diseñadas a la medida de las necesidades neuropsicopedagógicas del niño.</p>
+          <div class="my-5 pt-4 border-t border-slate-100 dark:border-slate-700">
+            <span class="text-3xl font-black text-purple-600 dark:text-pink-400">Q500</span> <span class="text-xs text-slate-400 font-bold">/ sesión suelta</span>
+            <p class="text-xs font-bold text-nova-teal dark:text-cyan-300 mt-1">• 4 sesiones/mes: Q2,000</p>
+            <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400">• 8 sesiones/mes: Q4,000</p>
+          </div>
+        </div>
+        <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20quiero%20reservar%20una%20cita%20en%20modalidad%20Atención%20Individual" target="_blank" class="w-full py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs text-center shadow-md transition-all flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base"></i> Reserva tu Cita
+        </a>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-pink-200 dark:border-slate-700 shadow-xl card-playful flex flex-col justify-between">
+        <div>
+          <span class="bg-pink-100 dark:bg-pink-500/20 text-pink-900 dark:text-pink-300 px-3 py-1 rounded-full font-black text-xs">2 niños (hermanos)</span>
+          <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mt-3">Atención Compartida</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">Espacio colaborativo para hermanos que potencia habilidades cognitivas y vínculo familiar.</p>
+          <div class="my-5 pt-4 border-t border-slate-100 dark:border-slate-700">
+            <span class="text-3xl font-black text-purple-600 dark:text-pink-400">Q450 c/u</span> <span class="text-xs text-slate-400 font-bold">/ sesión suelta</span>
+            <p class="text-xs font-bold text-nova-teal dark:text-cyan-300 mt-1">• 4 sesiones/mes: Q1,800 c/u</p>
+            <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400">• 8 sesiones/mes: Q3,600 c/u</p>
+          </div>
+        </div>
+        <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20quiero%20reservar%20una%20cita%20en%20modalidad%20Atención%20Compartida" target="_blank" class="w-full py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs text-center shadow-md transition-all flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base"></i> Reserva tu Cita
+        </a>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border-2 border-amber-200 dark:border-slate-700 shadow-xl card-playful flex flex-col justify-between">
+        <div>
+          <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-900 dark:text-amber-300 px-3 py-1 rounded-full font-black text-xs">3 a 6 niños</span>
+          <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mt-3">Grupo Reducido</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">Interacción guiada para estimular autorregulación social, comunicación y trabajo en equipo.</p>
+          <div class="my-5 pt-4 border-t border-slate-100 dark:border-slate-700">
+            <span class="text-3xl font-black text-purple-600 dark:text-pink-400">Q400 c/u</span> <span class="text-xs text-slate-400 font-bold">/ sesión suelta</span>
+            <p class="text-xs font-bold text-nova-teal dark:text-cyan-300 mt-1">• 4 sesiones/mes: Q1,600 c/u</p>
+            <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400">• 8 sesiones/mes: Q3,200 c/u</p>
+          </div>
+        </div>
+        <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20quiero%20reservar%20una%20cita%20en%20modalidad%20Grupo%20Reducido" target="_blank" class="w-full py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs text-center shadow-md transition-all flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base"></i> Reserva tu Cita
+        </a>
+      </div>
+    </div>
+
+    <!-- TABLA DE TARIFAS CON COLUMNA DE RESERVA -->
     <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] border-2 border-purple-200 dark:border-slate-700 shadow-2xl overflow-hidden">
       <div class="p-6 sm:p-8 bg-gradient-vivid text-white flex flex-col sm:flex-row justify-between items-center gap-4">
         <div class="flex items-center gap-3">
           <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl"><i class="fa-solid fa-star"></i></div>
           <div>
-            <h2 class="font-display font-bold text-2xl">Modalidades y Tarifas Oficiales</h2>
+            <h2 class="font-display font-bold text-2xl">Resumen de Modalidades y Tarifas</h2>
             <p class="text-xs text-pink-100">Planes por sesión individual o paquetes mensuales de seguimiento</p>
           </div>
         </div>
-        <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20consultar%20horarios%20disponibles" target="_blank" class="px-5 py-2.5 rounded-xl bg-amber-300 text-slate-950 font-black text-xs shadow hover:bg-amber-200">
-          Reservar Evaluación
+        <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20mi%20cita%20en%20la%20clínica" target="_blank" class="px-6 py-3 rounded-2xl bg-amber-300 text-slate-950 font-black text-xs sm:text-sm shadow-lg hover:bg-amber-200 flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-emerald-700 text-base"></i> Reserva tu Cita
         </a>
       </div>
       <div class="overflow-x-auto">
@@ -137,6 +203,7 @@
               <th class="p-5">Sesión suelta</th>
               <th class="p-5">4 sesiones / mes</th>
               <th class="p-5">8 sesiones / mes</th>
+              <th class="p-5 text-center">Agendar</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100 dark:divide-slate-700 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
@@ -146,6 +213,9 @@
               <td class="p-5 font-black text-purple-600 dark:text-pink-400 text-base">Q500</td>
               <td class="p-5 font-black text-nova-teal dark:text-cyan-300 text-base">Q2,000</td>
               <td class="p-5 font-black text-emerald-600 dark:text-emerald-400 text-base">Q4,000</td>
+              <td class="p-5 text-center">
+                <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20cita%20para%20Atención%20Individual" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs shadow inline-flex items-center gap-1.5"><i class="fa-brands fa-whatsapp"></i> Reserva tu Cita</a>
+              </td>
             </tr>
             <tr class="hover:bg-pink-50/40 dark:hover:bg-slate-700/40 transition-colors">
               <td class="p-5 font-display font-bold text-base text-slate-900 dark:text-white">Atención Compartida</td>
@@ -153,6 +223,9 @@
               <td class="p-5 font-black text-purple-600 dark:text-pink-400 text-base">Q450 c/u</td>
               <td class="p-5 font-black text-nova-teal dark:text-cyan-300 text-base">Q1,800 c/u</td>
               <td class="p-5 font-black text-emerald-600 dark:text-emerald-400 text-base">Q3,600 c/u</td>
+              <td class="p-5 text-center">
+                <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20cita%20para%20Atención%20Compartida" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs shadow inline-flex items-center gap-1.5"><i class="fa-brands fa-whatsapp"></i> Reserva tu Cita</a>
+              </td>
             </tr>
             <tr class="hover:bg-amber-50/40 dark:hover:bg-slate-700/40 transition-colors">
               <td class="p-5 font-display font-bold text-base text-slate-900 dark:text-white">Grupo Reducido</td>
@@ -160,6 +233,9 @@
               <td class="p-5 font-black text-purple-600 dark:text-pink-400 text-base">Q400 c/u</td>
               <td class="p-5 font-black text-nova-teal dark:text-cyan-300 text-base">Q1,600 c/u</td>
               <td class="p-5 font-black text-emerald-600 dark:text-emerald-400 text-base">Q3,200 c/u</td>
+              <td class="p-5 text-center">
+                <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20cita%20para%20Grupo%20Reducido" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs shadow inline-flex items-center gap-1.5"><i class="fa-brands fa-whatsapp"></i> Reserva tu Cita</a>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -169,7 +245,7 @@
 
   <footer class="bg-slate-900 text-white py-10 text-center text-xs border-t-4 border-nova-teal mt-12 relative z-10">
     <p class="font-display font-bold text-base">Nova Learning - Centro Neuropsicopedagógico</p>
-    <p class="text-slate-400 mt-1">Hospital La Paz, CAES, 5° piso, Clínica 505 | Tel: +502 3980-4600</p>
+    <p class="text-slate-400 mt-1">Hospital La Paz, CAES, 5° piso, Clínica 505 | Lun - Vie: 2:00 PM - 6:30 PM | Tel: +502 3980-4600</p>
   </footer>
 
   <script>
