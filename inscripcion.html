@@ -130,9 +130,9 @@
         <span class="hidden md:inline text-white/40">|</span>
         <span><i class="fa-regular fa-clock text-cyan-200 mr-1.5"></i> Lun - Sáb: 2:00 PM - 6:30 PM</span>
       </div>
-      <a href="https://wa.me/50239804600" target="_blank" class="bg-white text-purple-900 hover:bg-amber-300 px-3.5 py-1 rounded-full font-extrabold text-xs transition-all shadow">
-        <i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i> +502 3980-4600
-      </a>
+      <span class="bg-white/20 text-white px-3.5 py-1 rounded-full font-extrabold text-xs">
+        <i class="fa-solid fa-shield-halved text-amber-300 mr-1"></i> Registro Oficial en Línea
+      </span>
     </div>
   </div>
 
@@ -208,23 +208,26 @@
       </div>
     </div>
 
-    <!-- MENSAJE DE ÉXITO AL ENVIAR (OCULTO POR DEFECTO) -->
+    <!-- MENSAJE DE ÉXITO AL GUARDAR LA FICHA (SIN REDIRECCIÓN A WHATSAPP) -->
     <div id="successAlert" class="hidden mb-8 bg-emerald-500 text-white p-8 rounded-[2.25rem] shadow-2xl text-center space-y-4">
       <div class="w-16 h-16 rounded-full bg-white text-emerald-600 flex items-center justify-center text-3xl mx-auto shadow-lg">
         <i class="fa-solid fa-check"></i>
       </div>
-      <h2 class="font-display text-3xl font-bold">¡Ficha de Inscripción Guardada con Éxito!</h2>
+      <h2 class="font-display text-3xl font-bold">¡Ficha de Inscripción Registrada con Éxito!</h2>
       <p class="text-sm max-w-xl mx-auto text-emerald-50">
-        Hemos registrado los datos en el sistema de <strong>Nova Learning</strong> y se ha abierto una ventana de WhatsApp con el resumen de tu inscripción para confirmar tu cupo e incluir tu <strong>acompañamiento 1 a 1 para padres</strong>.
+        Todos los datos han quedado guardados de forma segura en el sistema oficial de <strong>Nova Learning</strong> para nuestra revisión, incluyendo tu <strong>acompañamiento 1 a 1 para padres</strong>.
       </p>
-      <div class="pt-2">
+      <div class="pt-2 flex flex-wrap justify-center gap-3">
         <button onclick="window.location.reload()" class="px-6 py-3 rounded-2xl bg-white text-emerald-900 font-black text-xs shadow-md hover:bg-amber-300 transition-all">
-          Llenar otra ficha
+          Registrar otro participante
         </button>
+        <a href="cursos.html" class="px-6 py-3 rounded-2xl bg-emerald-700 text-white font-black text-xs shadow-md hover:bg-emerald-800 transition-all">
+          Volver a Nuestros Cursos
+        </a>
       </div>
     </div>
 
-    <!-- FORMULARIO CONECTADO A NETLIFY FORMS + WHATSAPP -->
+    <!-- FORMULARIO CONECTADO EXCLUSIVAMENTE A NETLIFY FORMS -->
     <form id="fichaWinterLabForm" name="inscripcion-winterlab" method="POST" data-netlify="true" onsubmit="handleFormSubmit(event)" class="space-y-8">
       <input type="hidden" name="form-name" value="inscripcion-winterlab">
 
@@ -256,7 +259,7 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Teléfono principal (WhatsApp): *</label>
+                <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Teléfono principal: *</label>
                 <input type="tel" name="encargado_tel_principal" id="encargado_tel_principal" required class="input-ficha" placeholder="+502 0000-0000">
               </div>
               <div>
@@ -379,7 +382,7 @@
           <div class="bg-white dark:bg-slate-800 rounded-[2rem] border-2 border-purple-200 dark:border-slate-700 shadow-xl overflow-hidden">
             <div class="bg-purple-100 dark:bg-purple-950/70 px-6 py-4 flex items-center gap-3 border-b-2 border-purple-200 dark:border-slate-700">
               <div class="w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center text-lg shadow">
-                <i class="fa-solid fa-people-Carry-box"></i>
+                <i class="fa-solid fa-people-carry-box"></i>
               </div>
               <h2 class="font-display font-bold text-xl text-slate-900 dark:text-white">4. Autorizados para recoger al participante</h2>
             </div>
@@ -519,12 +522,12 @@
       <!-- AVISO IMPORTANTE Y BOTÓN DE ENVÍO -->
       <div class="bg-purple-800 text-white p-5 rounded-3xl shadow-lg flex items-center gap-4 text-xs sm:text-sm font-semibold">
         <i class="fa-solid fa-circle-info text-amber-300 text-2xl shrink-0"></i>
-        <p>La entrega del participante se realizará únicamente a las personas autorizadas registradas en esta ficha. Al presionar el botón, la ficha quedará guardada en nuestro sistema y se enviará copia inmediata por WhatsApp.</p>
+        <p>Por favor completar todos los campos requeridos. La entrega del participante se realizará únicamente a las personas autorizadas. Al enviar esta ficha, quedará guardada automáticamente en el sistema de Nova Learning.</p>
       </div>
 
       <div class="text-center pt-2">
-        <button type="submit" class="w-full sm:w-auto px-12 py-5 rounded-3xl bg-gradient-to-r from-emerald-500 via-teal-600 to-sky-600 hover:opacity-95 text-white font-display font-bold text-lg sm:text-xl shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 mx-auto">
-          <i class="fa-solid fa-paper-plane"></i> Guardar Ficha y Confirmar Cupo
+        <button type="submit" id="submitBtn" class="w-full sm:w-auto px-12 py-5 rounded-3xl bg-gradient-to-r from-emerald-500 via-teal-600 to-sky-600 hover:opacity-95 text-white font-display font-bold text-lg sm:text-xl shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 mx-auto">
+          <i class="fa-solid fa-cloud-arrow-up"></i> Guardar Ficha de Inscripción
         </button>
       </div>
 
@@ -538,7 +541,6 @@
   </footer>
 
   <script>
-    // Autocompletar la fecha de hoy en el campo de firma
     document.getElementById('fecha_inscripcion').valueAsDate = new Date();
 
     function toggleMobileMenu() {
@@ -564,51 +566,33 @@
     function handleFormSubmit(e) {
       e.preventDefault();
       const form = document.getElementById('fichaWinterLabForm');
+      const submitBtn = document.getElementById('submitBtn');
       const formData = new FormData(form);
 
-      // 1. Guardar automáticamente en la base de datos de Netlify Forms
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Guardando ficha...';
+
+      // Guardar exclusivamente en Netlify Forms sin abrir WhatsApp
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString()
-      }).catch(err => console.log('Guardado local/Netlify:', err));
-
-      // 2. Construir el resumen completo para enviar también a WhatsApp
-      const encargado = formData.get('encargado_nombre') || '';
-      const dpi = formData.get('encargado_dpi') || '';
-      const tel = formData.get('encargado_tel_principal') || '';
-      const correo = formData.get('encargado_correo') || '';
-      const alumno = formData.get('participante_nombre') || '';
-      const edad = formData.get('participante_edad') || '';
-      const nac = formData.get('participante_nacimiento') || '';
-      const alergias = formData.get('salud_alergias') || 'Ninguna';
-      const condicion = formData.get('salud_condicion') || 'Ninguna';
-      const diag = formData.get('salud_diagnostico') || 'Ninguno';
-      const emerNombre = formData.get('emergencia_nombre') || '';
-      const emerTel = formData.get('emergencia_telefono') || '';
-      const plan = formData.get('duracion_curso') || '';
-      const firma = formData.get('firma_encargado') || '';
-
-      let mensaje = `*NUEVA FICHA DE INSCRIPCIÓN - WINTERLAB*\n\n`;
-      mensaje += `*1. Encargado:* ${encargado}\n`;
-      mensaje += `• DPI: ${dpi} | Tel: ${tel}\n`;
-      mensaje += `• Correo: ${correo}\n\n`;
-      mensaje += `*2. Participante:* ${alumno}\n`;
-      mensaje += `• Edad: ${edad} años (Nac: ${nac})\n\n`;
-      mensaje += `*3. Información Médica:*\n`;
-      mensaje += `• Alergias: ${alergias}\n`;
-      mensaje += `• Condición/Apoyo: ${condicion} / ${diag}\n\n`;
-      mensaje += `*4. Emergencia:* ${emerNombre} (${emerTel})\n\n`;
-      mensaje += `*5. Plan elegido:* ${plan}\n`;
-      mensaje += `*6. Firma Digital:* ${firma}\n\n`;
-      mensaje += `_Solicito confirmar mi cupo y mi acompañamiento 1 a 1 para padres._`;
-
-      // Mostrar mensaje de éxito en pantalla
-      document.getElementById('successAlert').classList.remove('hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      // Abrir WhatsApp con toda la ficha llena
-      window.open(`https://wa.me/50239804600?text=${encodeURIComponent(mensaje)}`, '_blank');
+      })
+      .then(() => {
+        form.reset();
+        document.getElementById('fecha_inscripcion').valueAsDate = new Date();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Guardar Ficha de Inscripción';
+        document.getElementById('successAlert').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(err => {
+        console.log('Registro local:', err);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Guardar Ficha de Inscripción';
+        document.getElementById('successAlert').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     }
   </script>
 </body>
