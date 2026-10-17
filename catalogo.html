@@ -249,7 +249,6 @@
   </footer>
 
   <script>
-    // BASE DE DATOS OFICIAL DE 22 PRODUCTOS (SIN IQ CÍRCULOS, CON RETO GEOMÉTRICO A Q250 Y LOS 6 NUEVOS)
     const productsData = [
       {
         id: 'p1',
@@ -269,7 +268,7 @@
         badge: 'IQ Games',
         name: 'IQ Games - Reto Geométrico',
         tagline: '¡Piensa, encaja y supera el reto!',
-        price: 250.00, // PRECIO ACTUALIZADO A Q250
+        price: 250.00,
         desc: 'Un divertido juego de ingenio que invita a los niños a resolver desafíos mientras desarrollan su pensamiento lógico y descubren nuevas estrategias.',
         ideal: 'Fortalecer la coordinación visomotriz, la percepción espacial, la concentración, la planificación y la resolución de problemas.'
       },
@@ -503,7 +502,6 @@
     let cart = [];
     let currentCategory = 'todos';
 
-    // Función para probar automáticamente las variantes de nombre de archivo si una imagen tiene otra extensión
     function handleImgError(imgEl, id) {
       const prod = productsData.find(p => p.id === id);
       if (!prod) return;
