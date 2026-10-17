@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Learning - Catálogo Oficial</title>
+  <title>Nova Learning - Catálogo Oficial (22 Recursos)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
 </head>
 <body class="bg-living-canvas text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
 
-  <!-- MENÚ LATERAL DESPLEGABLE (3 LÍNEAS IZQUIERDA + BOTÓN MODO OSCURO ADENTRO) -->
+  <!-- MENÚ LATERAL DESPLEGABLE (3 LÍNEAS IZQUIERDA + MODO OSCURO ADENTRO) -->
   <div id="mobileSidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between border-r-2 border-sky-100 dark:border-slate-800 overflow-y-auto">
     <div>
       <div class="flex items-center justify-between mb-5 pb-4 border-b dark:border-slate-800">
@@ -61,7 +61,6 @@
         </button>
       </div>
 
-      <!-- INTERRUPTOR DE MODO OSCURO DENTRO DE LAS 3 LÍNEAS -->
       <div class="mb-5">
         <button onclick="toggleTheme()" class="w-full p-3.5 rounded-2xl bg-amber-100/90 dark:bg-slate-800 border-2 border-amber-300 dark:border-slate-700 flex items-center justify-between font-extrabold text-xs text-slate-900 dark:text-amber-300 shadow-sm hover:scale-[1.02] transition-all">
           <span class="flex items-center gap-2.5">
@@ -98,6 +97,8 @@
       <div class="text-[11px] text-slate-600 dark:text-slate-400 font-bold space-y-1">
         <p><i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
         <p><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz CAES, Clínica 505</p>
+        <p><i class="fa-solid fa-envelope text-sky-500 mr-1"></i> noalearning0@gmail.com</p>
+        <p><i class="fa-brands fa-whatsapp text-emerald-500 mr-1"></i> +502 3980-4600</p>
       </div>
       <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20reservar%20una%20cita" target="_blank" class="block w-full py-3.5 rounded-2xl bg-gradient-vivid text-white text-center font-black text-xs shadow-lg">
         <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Reserva tu Cita
@@ -106,17 +107,22 @@
   </div>
   <div id="sidebarOverlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 hidden" onclick="toggleMobileMenu()"></div>
 
-  <!-- TOP BAR -->
+  <!-- TOP BAR CON CORREO Y TELÉFONO A LA PAR -->
   <div class="bg-gradient-vivid text-white text-xs md:text-sm py-2.5 px-4 shadow-md relative z-20">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-      <div class="flex items-center gap-4 flex-wrap justify-center md:justify-start font-semibold">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3 flex-wrap justify-center lg:justify-start font-semibold">
         <span><i class="fa-solid fa-location-dot text-amber-300 mr-1.5"></i> Hospital La Paz, CAES, 5° piso, Clínica 505</span>
-        <span class="hidden md:inline text-white/40">|</span>
+        <span class="hidden sm:inline text-white/40">|</span>
         <span><i class="fa-regular fa-clock text-cyan-200 mr-1.5"></i> Lun - Sáb: 2:00 PM - 6:30 PM</span>
       </div>
-      <a href="https://wa.me/50239804600" target="_blank" class="bg-white text-purple-900 hover:bg-amber-300 px-3.5 py-1 rounded-full font-extrabold text-xs transition-all shadow">
-        <i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i> +502 3980-4600
-      </a>
+      <div class="flex items-center gap-2.5 flex-wrap justify-center">
+        <a href="mailto:noalearning0@gmail.com" class="bg-white/15 hover:bg-white/25 text-white px-3 py-1 rounded-full font-extrabold text-xs transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-amber-300"></i> noalearning0@gmail.com
+        </a>
+        <a href="https://wa.me/50239804600" target="_blank" class="bg-white text-purple-900 hover:bg-amber-300 px-3.5 py-1 rounded-full font-extrabold text-xs transition-all shadow flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i> +502 3980-4600
+        </a>
+      </div>
     </div>
   </div>
 
@@ -159,10 +165,10 @@
     </div>
   </header>
 
-  <!-- CABECERA Y BANNER DE APOYO EN PATERNIDAD 1 A 1 -->
+  <!-- CABECERA Y SELLO DE APOYO EN PATERNIDAD 1 A 1 -->
   <section class="pt-10 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
     <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-300 text-amber-950 font-black text-xs uppercase tracking-wider shadow-sm mb-3">
-      <i class="fa-solid fa-wand-magic-sparkles"></i> Recursos Terapéuticos Oficiales
+      <i class="fa-solid fa-wand-magic-sparkles"></i> Catálogo Actualizado · 22 Recursos Oficiales
     </span>
     <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
       Catálogo de Recursos <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-600 to-pink-500">Nova Learning</span>
@@ -171,7 +177,6 @@
       Potenciamos habilidades, despertamos curiosidad y construimos aprendizajes para la vida.
     </p>
 
-    <!-- SELLO DE APOYO EN PATERNIDAD 1 A 1 EN CADA COMPRA -->
     <div class="mt-6 max-w-4xl mx-auto bg-gradient-to-r from-emerald-500 via-teal-600 to-purple-700 text-white p-5 rounded-3xl shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
       <div class="flex items-center gap-4">
         <div class="w-12 h-12 rounded-2xl bg-amber-300 text-slate-950 flex items-center justify-center text-2xl shrink-0 shadow">
@@ -190,421 +195,21 @@
   <section class="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
       <div class="flex flex-wrap justify-center gap-2">
-        <button onclick="filterCategory('todos')" id="cat-todos" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-slate-900 dark:bg-sky-500 text-white shadow-sm transition-all">Todos (17)</button>
-        <button onclick="filterCategory('IQ Games')" id="cat-IQ Games" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">IQ Games</button>
-        <button onclick="filterCategory('Masas Sensoriales')" id="cat-Masas Sensoriales" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Masas Sensoriales</button>
-        <button onclick="filterCategory('Arenas Sensoriales')" id="cat-Arenas Sensoriales" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Arenas Mágicas</button>
-        <button onclick="filterCategory('Recursos')" id="cat-Recursos" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Sensorial y Magnéticos</button>
+        <button onclick="filterCategory('todos')" id="cat-todos" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-slate-900 dark:bg-sky-500 text-white shadow-sm transition-all">Todos (22)</button>
+        <button onclick="filterCategory('IQ Games')" id="cat-IQ Games" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">IQ Games y Lógica (7)</button>
+        <button onclick="filterCategory('Juegos de Mesa')" id="cat-Juegos de Mesa" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Atención y Mesa (4)</button>
+        <button onclick="filterCategory('Masas Sensoriales')" id="cat-Masas Sensoriales" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Masas Sensoriales (6)</button>
+        <button onclick="filterCategory('Arenas Sensoriales')" id="cat-Arenas Sensoriales" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Arenas Mágicas (3)</button>
+        <button onclick="filterCategory('Recursos')" id="cat-Recursos" class="cat-btn px-4 py-2 rounded-xl font-black text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Sensorial y Magnéticos (2)</button>
       </div>
       <div class="relative w-full md:w-72">
-        <input type="text" id="searchInput" placeholder="Buscar producto..." onkeyup="applyFilters()" class="w-full pl-10 pr-4 py-2.5 rounded-2xl border-2 border-slate-200 dark:border-slate-700 text-xs font-bold focus:outline-none focus:border-nova-teal bg-white dark:bg-slate-800 text-slate-800 dark:text-white shadow-sm">
+        <input type="text" id="searchInput" placeholder="Buscar juego o material..." onkeyup="applyFilters()" class="w-full pl-10 pr-4 py-2.5 rounded-2xl border-2 border-slate-200 dark:border-slate-700 text-xs font-bold focus:outline-none focus:border-nova-teal bg-white dark:bg-slate-800 text-slate-800 dark:text-white shadow-sm">
         <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
       </div>
     </div>
 
-    <!-- GRID CON LOS 17 PRODUCTOS RENDERIZADOS DIRECTAMENTE EN EL HTML -->
-    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Producto 1 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="IQ Games" data-name="iq games esferas mentales logica">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Esferas.png" alt="IQ Games - Esferas Mentales" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">IQ Games</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Desafía tu mente jugando!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">IQ Games - Esferas Mentales</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Juegos de ingenio que convierten cada reto en una oportunidad para pensar, descubrir y aprender, fortaleciendo habilidades cognitivas de manera divertida.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Estimular el razonamiento lógico, la resolución de problemas, la concentración, la planificación y las funciones ejecutivas.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q200.00</span></div>
-          <button onclick="addDirectToCart('IQ Games - Esferas Mentales', 200)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 2 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="IQ Games" data-name="iq games reto geometrico">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/reto geometrico.png" alt="IQ Games - Reto Geométrico" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">IQ Games</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Piensa, encaja y supera el reto!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">IQ Games - Reto Geométrico</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Un divertido juego de ingenio que invita a los niños a resolver desafíos mientras desarrollan su pensamiento lógico y descubren nuevas estrategias.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Fortalecer la coordinación visomotriz, la percepción espacial, la concentración, la planificación y la resolución de problemas.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q200.00</span></div>
-          <button onclick="addDirectToCart('IQ Games - Reto Geométrico', 200)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 3 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="IQ Games" data-name="iq digits reto de numeros">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Reto de numeros.png" alt="IQ Digits - Reto de Números" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">IQ Games</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Cada pieza cuenta!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">IQ Digits - Reto de Números</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Un juego de ingenio que transforma cada desafío en una oportunidad para pensar, crear estrategias y encontrar soluciones de forma divertida.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Desarrollar el razonamiento lógico, la percepción espacial, la concentración, la planificación y la resolución de problemas.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q250.00</span></div>
-          <button onclick="addDirectToCart('IQ Digits - Reto de Números', 250)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 4 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="IQ Games" data-name="iq games conecta patrones">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Conecta patrones.png" alt="IQ Games - Conecta Patrones" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">IQ Games</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Conecta, descubre y aprende!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">IQ Games - Conecta Patrones</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Un divertido juego de estrategia que invita a los niños a organizar piezas, identificar patrones y resolver desafíos mientras aprenden jugando.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Estimular el pensamiento lógico, la atención, la percepción visual, la planificación y la resolución de problemas.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q200.00</span></div>
-          <button onclick="addDirectToCart('IQ Games - Conecta Patrones', 200)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 5 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="IQ Games" data-name="iq games diseño y logica oxox">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Diseño y logica.png" alt="IQ Games - Diseño y Lógica" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">IQ Games</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Piensa estratégicamente y supera cada reto!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">IQ Games - Diseño y Lógica (OXOX)</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Un juego de lógica que desafía a los niños a combinar piezas, reconocer patrones y encontrar soluciones mientras se divierten.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Fortalecer el razonamiento lógico, la concentración, la planificación, la flexibilidad cognitiva y la resolución de problemas.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q200.00</span></div>
-          <button onclick="addDirectToCart('IQ Games - Diseño y Lógica (OXOX)', 200)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 6 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="IQ Games" data-name="iq puzzler pro circulos">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/IQ circulos.jpg" alt="IQ Puzzler Pro - Círculos" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">IQ Games</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Diseña, piensa y resuelve!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">IQ Puzzler Pro - Círculos</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Un juego de ingenio en 2D y 3D que invita a los niños a combinar piezas, explorar posibilidades y superar desafíos.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Desarrollar el razonamiento lógico, la percepción espacial, la concentración, la planificación y la resolución de problemas.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q250.00</span></div>
-          <button onclick="addDirectToCart('IQ Puzzler Pro - Círculos', 250)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 7 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Masas Sensoriales" data-name="play-doh fizzie masa sensorial">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Fizzies.png" alt="Play-Doh Fizzie" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-pink-100 dark:bg-pink-500/20 text-pink-800 dark:text-pink-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Masas Sensoriales</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Aprender nunca fue tan divertido!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Play-Doh Fizzie (212g)</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Una experiencia llena de descubrimientos que despierta la curiosidad, estimula los sentidos y convierte el aprendizaje en un momento mágico.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Actividades de estimulación sensorial, desarrollo de la motricidad fina y aprendizaje a través del juego y la experimentación.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q60.00</span></div>
-          <button onclick="addDirectToCart('Play-Doh Fizzie (212g)', 60)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 8 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Masas Sensoriales" data-name="play-doh cloud masa suave">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Cloud.png" alt="Play-Doh Cloud" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-pink-100 dark:bg-pink-500/20 text-pink-800 dark:text-pink-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Masas Sensoriales</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Imagina, crea y explora!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Play-Doh Cloud (170g)</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Una masa suave y ligera que invita a los niños a dar vida a sus ideas mientras disfrutan creando, moldeando y experimentando con sus manos.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Estimular la creatividad, fortalecer la motricidad fina, favorecer la coordinación ojo-mano y promover la exploración sensorial.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q50.00</span></div>
-          <button onclick="addDirectToCart('Play-Doh Cloud (170g)', 50)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 9 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Masas Sensoriales" data-name="play-doh butter perfumado">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Butter.png" alt="Play-Doh Butter Perfumado" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-pink-100 dark:bg-pink-500/20 text-pink-800 dark:text-pink-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Masas Sensoriales</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Dale forma a tu imaginación!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Play-Doh Butter Perfumado</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Una masa suave y flexible que convierte cada creación en una aventura llena de color, texturas y creatividad.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Estimular la imaginación, fortalecer la motricidad fina, desarrollar la coordinación ojo-mano y favorecer la exploración sensorial.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q64.00</span></div>
-          <button onclick="addDirectToCart('Play-Doh Butter Perfumado', 64)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 10 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Arenas Sensoriales" data-name="play-doh sand cubeta arena">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Sand.png" alt="Play-Doh Sand" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Arenas Sensoriales</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Explora, siente y crea!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Play-Doh Sand (Cubeta 680g)</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Una experiencia sensorial que invita a los niños a moldear, experimentar y dar vida a sus ideas mientras descubren nuevas texturas.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Estimular la creatividad, fortalecer la motricidad fina, favorecer la coordinación ojo-mano y promover la exploración sensorial.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q110.00</span></div>
-          <button onclick="addDirectToCart('Play-Doh Sand (Cubeta 680g)', 110)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 11 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Masas Sensoriales" data-name="play-doh bubble pop esferas">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Bubble pop.png" alt="Play-Doh Bubble Pop" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-pink-100 dark:bg-pink-500/20 text-pink-800 dark:text-pink-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Masas Sensoriales</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Amasa, explora y diviértete!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Play-Doh Bubble Pop</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Una masa divertida con pequeñas esferas que invita a los niños a experimentar con diferentes texturas, crear formas y disfrutar del color.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Estimular la creatividad, fortalecer la motricidad fina, favorecer la coordinación ojo-mano y promover la exploración sensorial.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q60.00</span></div>
-          <button onclick="addDirectToCart('Play-Doh Bubble Pop', 60)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 12 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Masas Sensoriales" data-name="play-doh super stretch elastica">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Super strech.png" alt="Play-Doh Super Stretch" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-pink-100 dark:bg-pink-500/20 text-pink-800 dark:text-pink-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Masas Sensoriales</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Estira tu imaginación!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Play-Doh Super Stretch (227g)</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Una masa elástica que invita a los niños a estirar, moldear y experimentar, convirtiendo cada movimiento en exploración y creatividad.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Fortalecer la motricidad fina, estimular la creatividad, favorecer la coordinación ojo-mano y explorar sensaciones táctiles.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q55.00</span></div>
-          <button onclick="addDirectToCart('Play-Doh Super Stretch (227g)', 55)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 13 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Masas Sensoriales" data-name="monnky magic cloud masa">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Magic cloud.png" alt="Monnky Magic Cloud" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-pink-100 dark:bg-pink-500/20 text-pink-800 dark:text-pink-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Masas Sensoriales</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Crea, moldea y descubre!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Monnky Magic Cloud</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Una masa moldeable ligera que invita a los niños a transformar sus ideas en creaciones únicas mientras exploran y se divierten.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Estimular la creatividad, fortalecer la motricidad fina, desarrollar la coordinación ojo-mano y favorecer la exploración sensorial.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q150.00</span></div>
-          <button onclick="addDirectToCart('Monnky Magic Cloud', 150)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 14 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Arenas Sensoriales" data-name="cloud sand 3 tamaños arena">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Cloud sand.png" alt="Cloud Sand" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Arenas Sensoriales</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Toca, moldea y deja volar tu imaginación!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Cloud Sand (3 Tamaños)</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">Una arena moldeable de textura suave que invita a los niños a crear, experimentar y descubrir nuevas sensaciones a través del juego.</p>
-            <div class="mb-3 bg-lime-50 dark:bg-slate-700 p-2.5 rounded-2xl border border-lime-200 dark:border-slate-600">
-              <label class="block text-[10px] font-black uppercase text-lime-900 dark:text-lime-300 mb-1">Elige el tamaño:</label>
-              <select id="cloudSandSelect" onchange="document.getElementById('cloudSandPrice').innerText = 'Q' + parseFloat(this.value).toFixed(2)" class="w-full p-2 rounded-xl border border-lime-300 text-xs font-extrabold text-slate-800 bg-white">
-                <option value="50">Pequeña (Q50.00)</option>
-                <option value="150">Mediana (Q150.00)</option>
-                <option value="175">Grande (Q175.00)</option>
-              </select>
-            </div>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Estimular la exploración sensorial, fortalecer la motricidad fina y fomentar la creatividad.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span id="cloudSandPrice" class="text-2xl font-black text-nova-purple dark:text-amber-300">Q50.00</span></div>
-          <button onclick="addCloudSandToCart()" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 15 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Arenas Sensoriales" data-name="magic sand arena magica">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Magic sand.png" alt="Magic Sand" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Arenas Sensoriales</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Moldea, juega y descubre!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Magic Sand (Arena Mágica)</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Una arena de textura especial que permite a los niños construir, moldear y experimentar libremente en una aventura sensorial.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Estimular la creatividad, fortalecer la motricidad fina, favorecer la coordinación ojo-mano y promover la exploración táctil.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q175.00</span></div>
-          <button onclick="addDirectToCart('Magic Sand (Arena Mágica)', 175)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 16 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Recursos" data-name="pulseras sensoriales calma">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Pulseras sensoriales.png" alt="Pulseras Sensoriales" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Recursos</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Pequeños estímulos, grandes descubrimientos!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Pulseras Sensoriales</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Un recurso práctico que permite explorar diferentes texturas y sensaciones a través del tacto, acompañando a los niños en sus actividades diarias.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Favorecer la exploración táctil, apoyar la autorregulación, promover la conciencia sensorial y ofrecer calma y concentración.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q150.00</span></div>
-          <button onclick="addDirectToCart('Pulseras Sensoriales', 150)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-      <!-- Producto 17 -->
-      <div class="product-card bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between" data-category="Recursos" data-name="magneticos giromag construccion">
-        <div>
-          <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4">
-            <img src="img/Magneticos giromag.png" alt="Magnéticos Giromag" class="max-h-full max-w-full object-contain rounded-xl">
-            <span class="absolute top-3 left-3 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 font-black text-[10px] uppercase px-3 py-1 rounded-full">Recursos</span>
-          </div>
-          <div class="p-6">
-            <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">¡Construye, conecta y crea!</p>
-            <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">Magnéticos Giromag</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Un recurso de construcción magnética que permite a los niños explorar formas, crear estructuras y descubrir cómo las piezas se conectan.</p>
-            <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600 text-[11px]">
-              <strong class="font-black text-slate-900 dark:text-white block mb-1"><i class="fa-solid fa-bullseye text-nova-purple mr-1"></i> Ideal para:</strong>
-              <span>Estimular el pensamiento lógico, desarrollar la percepción espacial, fortalecer la creatividad y potenciar la resolución de problemas.</span>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700">
-          <div><span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span><span class="text-2xl font-black text-nova-purple dark:text-amber-300">Q320.00</span></div>
-          <button onclick="addDirectToCart('Magnéticos Giromag', 320)" class="px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-black text-xs shadow-md flex items-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
-        </div>
-      </div>
-
-    </div>
+    <!-- CONTENEDOR DINÁMICO DE LOS 22 PRODUCTOS -->
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
   </section>
 
   <!-- MODAL CARRITO -->
@@ -630,20 +235,342 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER CON CORREO Y NÚMERO A LA PAR -->
   <footer class="bg-slate-900 text-white py-10 text-center text-xs border-t-4 border-nova-teal mt-20 relative z-10">
-    <p class="font-display font-bold text-base">Nova Learning - Centro Neuropsicopedagógico</p>
-    <p class="text-slate-400 mt-1">Hospital La Paz, CAES, 5° piso, Clínica 505 | Lun - Sáb: 2:00 PM - 6:30 PM | Tel: +502 3980-4600</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="font-display font-bold text-base mb-1">Nova Learning - Centro Neuropsicopedagógico</p>
+      <p class="text-slate-400 mb-4"><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz, CAES, 5° piso, Clínica 505 | <i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
+      <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-sm font-black">
+        <a href="mailto:noalearning0@gmail.com" class="text-sky-400 hover:text-sky-300 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-envelope text-lg"></i> noalearning0@gmail.com</a>
+        <span class="text-slate-600">|</span>
+        <a href="https://wa.me/50239804600" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-lg"></i> +502 3980-4600</a>
+      </div>
+    </div>
   </footer>
 
   <script>
-    function toggleMobileMenu() {
-      document.getElementById('mobileSidebar').classList.toggle('-translate-x-full');
-      document.getElementById('sidebarOverlay').classList.toggle('hidden');
+    // BASE DE DATOS OFICIAL DE 22 PRODUCTOS (SIN IQ CÍRCULOS, CON RETO GEOMÉTRICO A Q250 Y LOS 6 NUEVOS)
+    const productsData = [
+      {
+        id: 'p1',
+        imgs: ['Esferas.png', 'esferas.png', 'Esferas.jpeg', 'Esferas.jpg'],
+        category: 'IQ Games',
+        badge: 'IQ Games',
+        name: 'IQ Games - Esferas Mentales',
+        tagline: '¡Desafía tu mente jugando!',
+        price: 200.00,
+        desc: 'Juegos de ingenio que convierten cada reto en una oportunidad para pensar, descubrir y aprender, fortaleciendo habilidades cognitivas de manera divertida.',
+        ideal: 'Estimular el razonamiento lógico, la resolución de problemas, la concentración, la planificación y las funciones ejecutivas.'
+      },
+      {
+        id: 'p2',
+        imgs: ['reto geometrico.png', 'Reto geometrico.png', 'reto geometrico.jpeg', 'reto geometrico.jpg'],
+        category: 'IQ Games',
+        badge: 'IQ Games',
+        name: 'IQ Games - Reto Geométrico',
+        tagline: '¡Piensa, encaja y supera el reto!',
+        price: 250.00, // PRECIO ACTUALIZADO A Q250
+        desc: 'Un divertido juego de ingenio que invita a los niños a resolver desafíos mientras desarrollan su pensamiento lógico y descubren nuevas estrategias.',
+        ideal: 'Fortalecer la coordinación visomotriz, la percepción espacial, la concentración, la planificación y la resolución de problemas.'
+      },
+      {
+        id: 'p3',
+        imgs: ['Reto de numeros.png', 'reto de numeros.png', 'Reto de numeros.jpeg'],
+        category: 'IQ Games',
+        badge: 'IQ Games',
+        name: 'IQ Digits - Reto de Números',
+        tagline: '¡Cada pieza cuenta!',
+        price: 250.00,
+        desc: 'Un juego de ingenio que transforma cada desafío en una oportunidad para pensar, crear estrategias y encontrar soluciones de forma divertida.',
+        ideal: 'Desarrollar el razonamiento lógico, la percepción espacial, la concentración, la planificación y la resolución de problemas.'
+      },
+      {
+        id: 'p4',
+        imgs: ['Conecta patrones.png', 'conecta patrones.png', 'Conecta patrones.jpeg'],
+        category: 'IQ Games',
+        badge: 'IQ Games',
+        name: 'IQ Games - Conecta Patrones',
+        tagline: '¡Conecta, descubre y aprende!',
+        price: 200.00,
+        desc: 'Un divertido juego de estrategia que invita a los niños a organizar piezas, identificar patrones y resolver desafíos mientras aprenden jugando.',
+        ideal: 'Estimular el pensamiento lógico, la atención, la percepción visual, la planificación y la resolución de problemas.'
+      },
+      {
+        id: 'p5',
+        imgs: ['Diseño y logica.png', 'diseño y logica.png', 'Diseño y logica.jpeg'],
+        category: 'IQ Games',
+        badge: 'IQ Games',
+        name: 'IQ Games - Diseño y Lógica (OXOX)',
+        tagline: '¡Piensa estratégicamente y supera cada reto!',
+        price: 200.00,
+        desc: 'Un juego de lógica que desafía a los niños a combinar piezas, reconocer patrones y encontrar soluciones mientras se divierten.',
+        ideal: 'Fortalecer el razonamiento lógico, la concentración, la planificación, la flexibilidad cognitiva y la resolución de problemas.'
+      },
+      {
+        id: 'p6',
+        imgs: ['IQ moleculas.png', 'IQ moleculas.jpeg', 'IQ moleculas.jpg', 'iq moleculas.png', 'iq moleculas.jpeg', 'iq moleculas.jpg', 'IQ Moleculas.png', 'IQ Moleculas.jpeg', 'Moleculas.png', 'moleculas.png', 'moleculas.jpeg'],
+        category: 'IQ Games',
+        badge: '¡Nuevo! IQ Games',
+        name: 'IQ Moléculas',
+        tagline: '¡Conecta cada molécula y supera el desafío!',
+        price: 200.00,
+        desc: 'Un fascinante juego de ingenio en el que cada pieza molecular debe encajar con exactitud en el tablero, entrenando la mente paso a paso.',
+        ideal: 'Potenciar la orientación visoespacial, la flexibilidad cognitiva, la atención sostenida y la planificación ejecutiva.'
+      },
+      {
+        id: 'p7',
+        imgs: ['Sudoku.png', 'Sudoku.jpeg', 'Sudoku.jpg', 'sudoku.png', 'sudoku.jpeg', 'sudoku.jpg'],
+        category: 'IQ Games',
+        badge: '¡Nuevo! Lógica',
+        name: 'Sudoku',
+        tagline: '¡Deducción, orden y agilidad mental!',
+        price: 220.00,
+        desc: 'El desafío ideal de lógica para entrenar el razonamiento deductivo, la anticipación y el pensamiento estructurado de forma manipulativa y visual.',
+        ideal: 'Desarrollar el pensamiento lógico-matemático, la memoria de trabajo, la concentración profunda y el análisis de patrones.'
+      },
+      {
+        id: 'p8',
+        imgs: ['Spot it.png', 'Spot it.jpeg', 'Spot it.jpg', 'spot it.png', 'spot it.jpeg', 'spot it.jpg', 'Spot It.png', 'Spot It.jpeg'],
+        category: 'Juegos de Mesa',
+        badge: '¡Nuevo! Atención',
+        name: 'Spot It',
+        tagline: '¡Agudeza visual y velocidad de procesamiento!',
+        price: 100.00,
+        desc: 'Un dinámico juego de cartas donde siempre existe un único símbolo idéntico entre dos tarjetas. ¡Encuéntralo y nómbralo antes que nadie!',
+        ideal: 'Estimular la discriminación visual, la velocidad de procesamiento cognitivo, los reflejos, el vocabulario y la atención selectiva.'
+      },
+      {
+        id: 'p9',
+        imgs: ['taco cat goat cheese pizza.png', 'taco cat goat cheese pizza.jpeg', 'taco cat goat cheese pizza.jpg', 'Taco cat goat cheese pizza.png', 'Taco cat goat cheese pizza.jpeg', 'Taco cat goat cheese pizza.jpg', 'Taco Cat Goat Cheese Pizza.png', 'taco cat.png', 'Taco cat.png'],
+        category: 'Juegos de Mesa',
+        badge: '¡Nuevo! Funciones Ejecutivas',
+        name: 'Taco Cat Goat Cheese Pizza',
+        tagline: '¡Atención, ritmo y control de impulsos!',
+        price: 80.00,
+        desc: 'Un divertidísimo juego de secuencia verbal y visual donde debes reaccionar únicamente cuando la palabra dicha coincide con la carta jugada.',
+        ideal: 'Entrenar el control inhibitorio, la memoria de trabajo, la coordinación visomotriz, la atención sostenida y la tolerancia a la frustración.'
+      },
+      {
+        id: 'p10',
+        imgs: ['virus.png', 'virus.jpeg', 'virus.jpg', 'Virus.png', 'Virus.jpeg', 'Virus.jpg'],
+        category: 'Juegos de Mesa',
+        badge: '¡Nuevo! Estrategia',
+        name: 'Virus',
+        tagline: '¡Toma decisiones rápidas y protege tu cuerpo!',
+        price: 150.00,
+        desc: 'Un juego ágil y estratégico donde los participantes deben lograr reunir un cuerpo sano utilizando medicinas, vacunas y tácticas inteligentes.',
+        ideal: 'Fortalecer la planificación estratégica, la toma de decisiones, la flexibilidad cognitiva y la interacción social en familia.'
+      },
+      {
+        id: 'p11',
+        imgs: ['virus 2.png', 'virus 2.jpeg', 'virus 2.jpg', 'Virus 2.png', 'Virus 2.jpeg', 'Virus 2.jpg', 'virus2.png', 'Virus2.png'],
+        category: 'Juegos de Mesa',
+        badge: '¡Nuevo! Expansión',
+        name: 'Virus 2',
+        tagline: '¡Nuevas cartas, más retos y mayor estrategia!',
+        price: 110.00,
+        desc: 'Expansión que añade nuevas medicinas experimentales y desafíos que exigen reajustar los planes en cada turno.',
+        ideal: 'Potenciar la flexibilidad mental, la adaptación al cambio, el pensamiento estratégico avanzado y la resolución de problemas.'
+      },
+      {
+        id: 'p12',
+        imgs: ['Fizzies.png', 'fizzies.png'],
+        category: 'Masas Sensoriales',
+        badge: 'Masas Sensoriales',
+        name: 'Play-Doh Fizzie (212g)',
+        tagline: '¡Aprender nunca fue tan divertido!',
+        price: 60.00,
+        desc: 'Una experiencia llena de descubrimientos que despierta la curiosidad, estimula los sentidos y convierte el aprendizaje en un momento mágico.',
+        ideal: 'Actividades de estimulación sensorial, desarrollo de la motricidad fina y aprendizaje a través del juego y la experimentación.'
+      },
+      {
+        id: 'p13',
+        imgs: ['Cloud.png', 'cloud.png'],
+        category: 'Masas Sensoriales',
+        badge: 'Masas Sensoriales',
+        name: 'Play-Doh Cloud (170g)',
+        tagline: '¡Imagina, crea y explora!',
+        price: 50.00,
+        desc: 'Una masa suave y ligera que invita a los niños a dar vida a sus ideas mientras disfrutan creando, moldeando y experimentando con sus manos.',
+        ideal: 'Estimular la creatividad, fortalecer la motricidad fina, favorecer la coordinación ojo-mano y promover la exploración sensorial.'
+      },
+      {
+        id: 'p14',
+        imgs: ['Butter.png', 'butter.png'],
+        category: 'Masas Sensoriales',
+        badge: 'Masas Sensoriales',
+        name: 'Play-Doh Butter Perfumado',
+        tagline: '¡Dale forma a tu imaginación!',
+        price: 64.00,
+        desc: 'Una masa suave y flexible que convierte cada creación en una aventura llena de color, texturas y creatividad.',
+        ideal: 'Estimular la imaginación, fortalecer la motricidad fina, desarrollar la coordinación ojo-mano y favorecer la exploración sensorial.'
+      },
+      {
+        id: 'p15',
+        imgs: ['Sand.png', 'sand.png'],
+        category: 'Arenas Sensoriales',
+        badge: 'Arenas Sensoriales',
+        name: 'Play-Doh Sand (Cubeta 680g)',
+        tagline: '¡Explora, siente y crea!',
+        price: 110.00,
+        desc: 'Una experiencia sensorial que invita a los niños a moldear, experimentar y dar vida a sus ideas mientras descubren nuevas texturas.',
+        ideal: 'Estimular la creatividad, fortalecer la motricidad fina, favorecer la coordinación ojo-mano y promover la exploración sensorial.'
+      },
+      {
+        id: 'p16',
+        imgs: ['Bubble pop.png', 'bubble pop.png'],
+        category: 'Masas Sensoriales',
+        badge: 'Masas Sensoriales',
+        name: 'Play-Doh Bubble Pop',
+        tagline: '¡Amasa, explora y diviértete!',
+        price: 60.00,
+        desc: 'Una masa divertida con pequeñas esferas que invita a los niños a experimentar con diferentes texturas, crear formas y disfrutar del color.',
+        ideal: 'Estimular la creatividad, fortalecer la motricidad fina, favorecer la coordinación ojo-mano y promover la exploración sensorial.'
+      },
+      {
+        id: 'p17',
+        imgs: ['Super strech.png', 'super strech.png', 'Super stretch.png'],
+        category: 'Masas Sensoriales',
+        badge: 'Masas Sensoriales',
+        name: 'Play-Doh Super Stretch (227g)',
+        tagline: '¡Estira tu imaginación!',
+        price: 55.00,
+        desc: 'Una masa elástica que invita a los niños a estirar, moldear y experimentar, convirtiendo cada movimiento en exploración y creatividad.',
+        ideal: 'Fortalecer la motricidad fina, estimular la creatividad, favorecer la coordinación ojo-mano y explorar diferentes sensaciones táctiles.'
+      },
+      {
+        id: 'p18',
+        imgs: ['Magic cloud.png', 'magic cloud.png'],
+        category: 'Masas Sensoriales',
+        badge: 'Masas Sensoriales',
+        name: 'Monnky Magic Cloud',
+        tagline: '¡Crea, moldea y descubre!',
+        price: 150.00,
+        desc: 'Una masa moldeable ligera que invita a los niños a transformar sus ideas en creaciones únicas mientras exploran y se divierten.',
+        ideal: 'Estimular la creatividad, fortalecer la motricidad fina, desarrollar la coordinación ojo-mano y favorecer la exploración sensorial.'
+      },
+      {
+        id: 'p19',
+        imgs: ['Cloud sand.png', 'cloud sand.png'],
+        category: 'Arenas Sensoriales',
+        badge: 'Arenas Sensoriales',
+        name: 'Cloud Sand (3 Tamaños)',
+        tagline: '¡Toca, moldea y deja volar tu imaginación!',
+        price: 50.00,
+        variants: [
+          { label: 'Pequeña (Q50.00)', price: 50.00 },
+          { label: 'Mediana (Q150.00)', price: 150.00 },
+          { label: 'Grande (Q175.00)', price: 175.00 }
+        ],
+        desc: 'Una arena moldeable de textura suave que invita a los niños a crear, experimentar y descubrir nuevas sensaciones a través del juego.',
+        ideal: 'Estimular la exploración sensorial, fortalecer la motricidad fina, desarrollar la coordinación ojo-mano y fomentar la creatividad.'
+      },
+      {
+        id: 'p20',
+        imgs: ['Magic sand.png', 'magic sand.png'],
+        category: 'Arenas Sensoriales',
+        badge: 'Arenas Sensoriales',
+        name: 'Magic Sand (Arena Mágica)',
+        tagline: '¡Moldea, juega y descubre!',
+        price: 175.00,
+        desc: 'Una arena de textura especial que permite a los niños construir, moldear y experimentar libremente en una aventura sensorial.',
+        ideal: 'Estimular la creatividad, fortalecer la motricidad fina, favorecer la coordinación ojo-mano y promover la exploración táctil.'
+      },
+      {
+        id: 'p21',
+        imgs: ['Pulseras sensoriales.png', 'pulseras sensoriales.png'],
+        category: 'Recursos',
+        badge: 'Recursos',
+        name: 'Pulseras Sensoriales',
+        tagline: '¡Pequeños estímulos, grandes descubrimientos!',
+        price: 150.00,
+        desc: 'Un recurso práctico que permite explorar diferentes texturas y sensaciones a través del tacto, acompañando a los niños en sus actividades diarias.',
+        ideal: 'Favorecer la exploración táctil, apoyar la autorregulación, promover la conciencia sensorial y ofrecer calma y concentración.'
+      },
+      {
+        id: 'p22',
+        imgs: ['Magneticos giromag.png', 'magneticos giromag.png'],
+        category: 'Recursos',
+        badge: 'Recursos',
+        name: 'Magnéticos Giromag',
+        tagline: '¡Construye, conecta y crea!',
+        price: 320.00,
+        desc: 'Un recurso de construcción magnética que permite a los niños explorar formas, crear estructuras y descubrir cómo las piezas se conectan.',
+        ideal: 'Estimular el pensamiento lógico, desarrollar la percepción espacial, fortalecer la creatividad y potenciar la resolución de problemas.'
+      }
+    ];
+
+    let cart = [];
+    let currentCategory = 'todos';
+
+    // Función para probar automáticamente las variantes de nombre de archivo si una imagen tiene otra extensión
+    function handleImgError(imgEl, id) {
+      const prod = productsData.find(p => p.id === id);
+      if (!prod) return;
+      let idx = parseInt(imgEl.getAttribute('data-idx') || '0') + 1;
+      if (idx < prod.imgs.length) {
+        imgEl.setAttribute('data-idx', idx);
+        imgEl.src = 'img/' + prod.imgs[idx];
+      }
     }
 
-    let currentCategory = 'todos';
-    let cart = [];
+    function renderProducts(items = productsData) {
+      const grid = document.getElementById('productsGrid');
+      grid.innerHTML = items.map(p => `
+        <div class="bg-white dark:bg-slate-800 rounded-3xl border-2 border-sky-100 dark:border-slate-700 shadow-xl card-playful overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="relative h-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 flex items-center justify-center p-4 overflow-hidden">
+              <img src="img/${p.imgs[0]}" data-idx="0" onerror="handleImgError(this, '${p.id}')" alt="${p.name}" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300 rounded-xl shadow-sm">
+              <div class="absolute top-3 left-3">
+                <span class="bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-sm">${p.badge}</span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <p class="text-xs font-extrabold text-nova-teal dark:text-cyan-300 mb-1">${p.tagline}</p>
+              <h3 class="font-display font-bold text-slate-900 dark:text-white text-xl mb-2">${p.name}</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">${p.desc}</p>
+
+              ${p.variants ? `
+                <div class="mb-4 bg-lime-50 dark:bg-slate-700 p-3 rounded-2xl border border-lime-200 dark:border-slate-600">
+                  <label class="block text-[10px] font-black uppercase text-lime-900 dark:text-lime-300 mb-1">Selecciona el tamaño:</label>
+                  <select id="variant-${p.id}" onchange="updateVariantPrice('${p.id}')" class="w-full p-2 rounded-xl border border-lime-300 text-xs font-extrabold text-slate-800 bg-white focus:outline-none">
+                    ${p.variants.map((v, idx) => `<option value="${idx}">${v.label}</option>`).join('')}
+                  </select>
+                </div>
+              ` : ''}
+
+              <div class="p-3.5 bg-sky-50/70 dark:bg-slate-700/50 rounded-2xl border border-sky-100 dark:border-slate-600">
+                <strong class="text-[11px] font-black text-slate-900 dark:text-white block mb-1">
+                  <i class="fa-solid fa-bullseye text-nova-purple dark:text-pink-400 mr-1"></i> Ideal para:
+                </strong>
+                <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">${p.ideal}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2">
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-700">
+              <div>
+                <span class="text-[10px] font-bold text-slate-400 uppercase block">Inversión</span>
+                <span id="price-${p.id}" class="text-2xl font-black text-nova-purple dark:text-amber-300">Q${p.price.toFixed(2)}</span>
+              </div>
+              <button onclick="addToCart('${p.id}')" class="px-5 py-3 rounded-2xl bg-gradient-vivid hover:opacity-95 text-white font-black text-xs shadow-md transition-all flex items-center gap-1.5">
+                <i class="fa-solid fa-cart-plus"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function updateVariantPrice(prodId) {
+      const prod = productsData.find(p => p.id === prodId);
+      const select = document.getElementById('variant-' + prodId);
+      if (prod && select) {
+        document.getElementById('price-' + prodId).innerText = 'Q' + prod.variants[select.value].price.toFixed(2);
+      }
+    }
 
     function filterCategory(cat) {
       currentCategory = cat;
@@ -657,26 +584,21 @@
 
     function applyFilters() {
       const term = document.getElementById('searchInput').value.toLowerCase();
-      document.querySelectorAll('.product-card').forEach(card => {
-        const cat = card.getAttribute('data-category');
-        const name = card.getAttribute('data-name');
-        const matchCat = (currentCategory === 'todos' || cat === currentCategory);
-        const matchTerm = name.includes(term);
-        card.style.display = (matchCat && matchTerm) ? 'flex' : 'none';
-      });
+      renderProducts(productsData.filter(p => (currentCategory === 'todos' || p.category === currentCategory) && (p.name.toLowerCase().includes(term) || p.desc.toLowerCase().includes(term))));
     }
 
-    function addCloudSandToCart() {
-      const sel = document.getElementById('cloudSandSelect');
-      const price = parseFloat(sel.value);
-      const label = sel.options[sel.selectedIndex].text;
-      addDirectToCart('Cloud Sand - ' + label, price);
-    }
-
-    function addDirectToCart(name, price) {
-      const existing = cart.find(i => i.name === name);
+    function addToCart(id) {
+      const prod = productsData.find(p => p.id === id);
+      let finalName = prod.name, finalPrice = prod.price;
+      if (prod.variants) {
+        const select = document.getElementById('variant-' + id);
+        const v = prod.variants[select ? select.value : 0];
+        finalName = prod.name + ' - ' + v.label;
+        finalPrice = v.price;
+      }
+      const existing = cart.find(i => i.name === finalName);
       if (existing) existing.qty += 1;
-      else cart.push({ name: name, price: price, qty: 1 });
+      else cart.push({ name: finalName, price: finalPrice, qty: 1 });
       updateCartUI();
       openCart();
     }
@@ -721,6 +643,11 @@
       window.open("https://wa.me/50239804600?text=" + encodeURIComponent(text), '_blank');
     }
 
+    function toggleMobileMenu() {
+      document.getElementById('mobileSidebar').classList.toggle('-translate-x-full');
+      document.getElementById('sidebarOverlay').classList.toggle('hidden');
+    }
+
     function updateThemeUI() {
       const isDark = document.documentElement.classList.contains('dark');
       const icon = document.getElementById('themeIcon');
@@ -733,6 +660,8 @@
       localStorage.setItem('nova-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
       updateThemeUI();
     }
+
+    renderProducts();
     updateThemeUI();
   </script>
 </body>
