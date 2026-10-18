@@ -48,7 +48,7 @@
 </head>
 <body class="bg-living-canvas text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
 
-  <!-- MENÚ LATERAL DESPLEGABLE (3 LÍNEAS IZQUIERDA + MODO OSCURO ADENTRO) -->
+  <!-- MENÚ LATERAL DESPLEGABLE -->
   <div id="mobileSidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between border-r-2 border-sky-100 dark:border-slate-800 overflow-y-auto">
     <div>
       <div class="flex items-center justify-between mb-5 pb-4 border-b dark:border-slate-800">
@@ -87,30 +87,61 @@
         <p><i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
         <p><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz CAES, Clínica 505</p>
         <p><i class="fa-solid fa-envelope text-sky-500 mr-1"></i> novalearning0@gmail.com</p>
+        <div class="pt-2 space-y-1.5">
+          <a href="https://www.instagram.com/novalearningbyluisa" target="_blank" class="flex items-center gap-2 p-2 rounded-xl bg-pink-50 dark:bg-slate-800 text-pink-700 dark:text-pink-300 hover:bg-pink-100 transition-all">
+            <i class="fa-brands fa-instagram text-sm w-4 text-center"></i> <span>@novalearningbyluisa</span>
+          </a>
+          <a href="https://www.tiktok.com/@NovaLearningbyLuisaVillatoro" target="_blank" class="flex items-center gap-2 p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 transition-all">
+            <i class="fa-brands fa-tiktok text-sm w-4 text-center"></i> <span class="truncate">@NovaLearningbyLuisaVillatoro</span>
+          </a>
+          <a href="https://www.facebook.com/NovaLearning" target="_blank" class="flex items-center gap-2 p-2 rounded-xl bg-sky-50 dark:bg-slate-800 text-sky-700 dark:text-sky-300 hover:bg-sky-100 transition-all">
+            <i class="fa-brands fa-facebook text-sm w-4 text-center"></i> <span>NovaLearning</span>
+          </a>
+        </div>
+        <p><i class="fa-solid fa-envelope text-sky-500 mr-1"></i> novalearning0@gmail.com</p>
         <p><i class="fa-brands fa-whatsapp text-emerald-500 mr-1"></i> +502 3980-4600</p>
       </div>
-      <a href="inscripcion.html" class="block w-full py-3.5 rounded-2xl bg-gradient-vivid text-white text-center font-black text-xs shadow-lg">
+      <div class="flex flex-wrap gap-2 text-xs font-bold pt-1">
+        <a href="https://www.instagram.com/novalearningbyluisa" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-pink-100 dark:bg-slate-800 text-pink-600 hover:bg-pink-200"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@NovaLearningbyLuisaVillatoro" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-300"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.facebook.com/NovaLearning" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-sky-100 dark:bg-slate-800 text-sky-600 hover:bg-sky-200"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+      <a href="inscripcion.html" class="block w-full py-3.5 rounded-2xl bg-gradient-vivid text-white text-center font-black text-xs shadow-lg mt-2">
         <i class="fa-solid fa-file-signature text-sm mr-1"></i> Inscribirse a WinterLab
       </a>
     </div>
   </div>
   <div id="sidebarOverlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 hidden" onclick="toggleMobileMenu()"></div>
 
-  <!-- TOP BAR CON CORREO Y NÚMERO A LA PAR -->
-  <div class="bg-gradient-vivid text-white text-xs md:text-sm py-2.5 px-4 shadow-md relative z-20">
+  <!-- TOP BAR CON CORREO CORREGIDO, TELÉFONO Y REDES -->
+  <div class="bg-gradient-vivid text-white text-xs py-2.5 px-4 shadow-md relative z-20">
     <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-2">
       <div class="flex items-center gap-3 flex-wrap justify-center lg:justify-start font-semibold">
         <span><i class="fa-solid fa-location-dot text-amber-300 mr-1.5"></i> Hospital La Paz, CAES, Clínica 505</span>
         <span class="hidden sm:inline text-white/40">|</span>
         <span><i class="fa-regular fa-clock text-cyan-200 mr-1.5"></i> Lun - Sáb: 2:00 PM - 6:30 PM</span>
       </div>
-      <div class="flex items-center gap-2.5 flex-wrap justify-center">
+      <div class="flex items-center gap-2 flex-wrap justify-center">
         <a href="mailto:novalearning0@gmail.com" class="bg-white/15 hover:bg-white/25 text-white px-3 py-1 rounded-full font-extrabold text-xs transition-all flex items-center gap-1.5">
           <i class="fa-solid fa-envelope text-amber-300"></i> novalearning0@gmail.com
         </a>
         <a href="https://wa.me/50239804600" target="_blank" class="bg-white text-purple-900 hover:bg-amber-300 px-3.5 py-1 rounded-full font-extrabold text-xs transition-all shadow flex items-center gap-1.5">
           <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i> +502 3980-4600
         </a>
+        <a href="https://www.instagram.com/novalearningbyluisa" target="_blank" class="bg-pink-500/90 hover:bg-pink-600 text-white px-3 py-1 rounded-full font-extrabold text-xs transition-all shadow flex items-center gap-1.5">
+          <i class="fa-brands fa-instagram"></i> @novalearningbyluisa
+        </a>
+        <a href="https://www.tiktok.com/@NovaLearningbyLuisaVillatoro" target="_blank" class="bg-slate-900/90 hover:bg-black text-white px-3 py-1 rounded-full font-extrabold text-xs transition-all shadow flex items-center gap-1.5">
+          <i class="fa-brands fa-tiktok text-cyan-300"></i> @NovaLearningbyLuisaVillatoro
+        </a>
+        <a href="https://www.facebook.com/NovaLearning" target="_blank" class="bg-sky-600/90 hover:bg-sky-700 text-white px-3 py-1 rounded-full font-extrabold text-xs transition-all shadow flex items-center gap-1.5">
+          <i class="fa-brands fa-facebook"></i> NovaLearning
+        </a>
+        <div class="flex items-center gap-1.5 ml-1">
+          <a href="https://www.instagram.com/novalearningbyluisa" target="_blank" title="Instagram: @novalearningbyluisa" class="w-7 h-7 rounded-full bg-white/20 hover:bg-pink-500 flex items-center justify-center text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@NovaLearningbyLuisaVillatoro" target="_blank" title="TikTok: @NovaLearningbyLuisaVillatoro" class="w-7 h-7 rounded-full bg-white/20 hover:bg-slate-900 flex items-center justify-center text-white transition-all"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.facebook.com/NovaLearning" target="_blank" title="Facebook: NovaLearning" class="w-7 h-7 rounded-full bg-white/20 hover:bg-sky-600 flex items-center justify-center text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
       </div>
     </div>
   </div>
@@ -142,7 +173,7 @@
     </div>
   </header>
 
-  <!-- SELECTOR DE PESTAÑAS DE CURSOS (SEPARA CADA CURSO EN SU PROPIO ESPACIO) -->
+  <!-- SELECTOR DE PESTAÑAS DE CURSOS -->
   <section class="pt-10 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
     <span class="bg-amber-200 dark:bg-amber-500/20 text-amber-950 dark:text-amber-300 font-black text-xs uppercase px-4 py-1.5 rounded-full">
       <i class="fa-solid fa-sun mr-1"></i> Nuestros Programas Oficiales
@@ -167,9 +198,8 @@
     </div>
   </section>
 
-  <!-- PESTAÑA 1: WINTERLAB COMPLETO (CON SUS 11 LABORATORIOS SEMANALES ADENTRO) -->
+  <!-- PESTAÑA 1: WINTERLAB COMPLETO -->
   <div id="coursePanel-winterlab" class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    
     <div class="text-center mb-10">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-300 text-amber-950 font-black text-xs uppercase tracking-wider shadow-sm mb-3">
         <i class="fa-solid fa-snowflake text-sky-600"></i> Curso de Vacaciones Oficial | De 7 a 14 años
@@ -196,11 +226,11 @@
       </div>
     </div>
 
-    <!-- 1.1 AFICHE ACTUALIZADO + QUÉ INCLUYE (CON APOYO PSICOPEDAGÓGICO, PEDAGÓGICO Y SOCIOEMOCIONAL) + INVERSIÓN -->
+    <!-- 1.1 AFICHE ACTUALIZADO + QUÉ INCLUYE (CON APOYO PSICOPEDAGÓGICO) + INVERSIÓN -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-14">
       <div class="lg:col-span-5 flex flex-col items-center">
-        <div onclick="openPosterModal('img/Winter lab.jpeg?v=actualizado2')" class="cursor-pointer group relative bg-white dark:bg-slate-800 p-3 rounded-[2.25rem] border-4 border-sky-200 dark:border-slate-700 shadow-2xl max-w-md w-full card-playful">
-          <img src="img/Winter lab.jpeg?v=actualizado2" alt="Infografía Oficial WinterLab Actualizada" class="w-full h-auto rounded-3xl object-contain">
+        <div onclick="openPosterModal(['Winter lab.jpeg','winter lab.jpeg'])" class="cursor-pointer group relative bg-white dark:bg-slate-800 p-3 rounded-[2.25rem] border-4 border-sky-200 dark:border-slate-700 shadow-2xl max-w-md w-full card-playful">
+          <img src="img/Winter lab.jpeg" alt="Infografía Oficial WinterLab" class="w-full h-auto rounded-3xl object-contain">
           <div class="mt-2 text-center text-xs font-extrabold text-nova-purple dark:text-cyan-300">
             <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Clic en la imagen para ver en pantalla completa
           </div>
@@ -318,7 +348,7 @@
       <div class="lg:col-span-6 bg-white dark:bg-slate-800 p-8 rounded-3xl border-2 border-sky-200 dark:border-slate-700 shadow-xl">
         <div class="flex items-center justify-between gap-2 mb-6">
           <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white"><i class="fa-solid fa-shield-heart text-nova-teal mr-2"></i> Reglamento Oficial WinterLab</h3>
-          <button onclick="openPosterModal('img/reglamento.jpeg?v=actualizado2')" class="px-3.5 py-1.5 rounded-full bg-sky-100 dark:bg-slate-700 text-sky-800 dark:text-sky-300 font-black text-xs hover:bg-sky-200 transition-all">
+          <button onclick="openPosterModal(['reglamento.jpeg','Reglamento.jpeg','reglamento.png'])" class="px-3.5 py-1.5 rounded-full bg-sky-100 dark:bg-slate-700 text-sky-800 dark:text-sky-300 font-black text-xs hover:bg-sky-200 transition-all">
             <i class="fa-solid fa-expand mr-1"></i> Ver Afiche
           </button>
         </div>
@@ -351,10 +381,9 @@
         </div>
       </div>
     </div>
-
   </div>
 
-  <!-- PESTAÑA 2: TALLER DE MICROBIOTA (EN SU PROPIO ESPACIO SEPARADO) -->
+  <!-- PESTAÑA 2: TALLER DE MICROBIOTA -->
   <div id="coursePanel-microbiota" class="hidden py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-[2.5rem] p-6 sm:p-10 border-4 border-emerald-300 dark:border-emerald-500/40 shadow-2xl">
       <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
@@ -368,8 +397,8 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-5 flex flex-col items-center">
-          <div onclick="openPosterModal('img/microbiota.jpeg?v=actualizado2')" class="cursor-pointer group relative bg-white dark:bg-slate-800 p-3 rounded-[2.25rem] border-4 border-emerald-200 dark:border-slate-700 shadow-2xl max-w-md w-full card-playful">
-            <img src="img/microbiota.jpeg?v=actualizado2" alt="Taller Microbiota y Funcionamiento Cerebral" class="w-full h-auto rounded-3xl object-contain">
+          <div onclick="openPosterModal(['microbiota.jpeg','Microbiota.jpeg','microbiota.png'])" class="cursor-pointer group relative bg-white dark:bg-slate-800 p-3 rounded-[2.25rem] border-4 border-emerald-200 dark:border-slate-700 shadow-2xl max-w-md w-full card-playful">
+            <img src="img/microbiota.jpeg" alt="Taller Microbiota y Funcionamiento Cerebral" class="w-full h-auto rounded-3xl object-contain">
             <div class="mt-2 text-center text-xs font-extrabold text-emerald-600 dark:text-emerald-300">
               <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Clic para ver infografía en pantalla completa
             </div>
@@ -448,7 +477,7 @@
     </div>
   </div>
 
-  <!-- PESTAÑA 3: TALLERES PERMANENTES TODO EL AÑO -->
+  <!-- PESTAÑA 3: TALLERES PERMANENTES -->
   <div id="coursePanel-talleres" class="hidden py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center max-w-3xl mx-auto mb-10">
       <span class="bg-purple-200 dark:bg-purple-500/20 text-purple-950 dark:text-purple-300 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full">
@@ -492,19 +521,33 @@
       <button onclick="closePosterModal()" class="mb-3 px-4 py-2 rounded-full bg-white text-slate-900 font-black text-xs shadow-lg">
         <i class="fa-solid fa-xmark text-rose-600 mr-1"></i> Cerrar vista completa
       </button>
-      <img id="modalImage" src="img/Winter lab.jpeg?v=actualizado2" alt="Afiche Completo" class="max-h-[82vh] w-auto object-contain rounded-3xl border-2 border-white">
+      <img id="modalImage" src="" alt="Afiche Completo" class="max-h-[82vh] w-auto object-contain rounded-3xl border-2 border-white">
     </div>
   </div>
 
-  <!-- FOOTER UNIFICADO CON CORREO Y NÚMERO A LA PAR -->
-  <footer class="bg-slate-900 text-white py-10 text-center text-xs border-t-4 border-nova-teal mt-16 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="font-display font-bold text-base mb-1">Nova Learning - Centro Neuropsicopedagógico</p>
-      <p class="text-slate-400 mb-4"><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz, CAES, 5° piso, Clínica 505 | <i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
-      <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-sm font-black">
+  <!-- FOOTER UNIFICADO CON CORREO CORREGIDO, TELÉFONO Y REDES SOCIALES -->
+  <footer class="bg-slate-900 text-white py-12 text-center text-xs border-t-4 border-nova-teal mt-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+      <div>
+        <p class="font-display font-bold text-lg mb-1">Nova Learning - Centro Neuropsicopedagógico</p>
+        <p class="text-slate-400"><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz, CAES, 5° piso, Clínica 505 | <i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-sm font-black">
         <a href="mailto:novalearning0@gmail.com" class="text-sky-400 hover:text-sky-300 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-envelope text-lg"></i> novalearning0@gmail.com</a>
         <span class="text-slate-600">|</span>
         <a href="https://wa.me/50239804600" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-lg"></i> +502 3980-4600</a>
+      </div>
+      <!-- Redes Sociales Oficiales -->
+      <div class="flex flex-wrap justify-center gap-3 pt-2">
+        <a href="https://www.instagram.com/novalearningbyluisa" target="_blank" class="px-4 py-2 rounded-full bg-slate-800 hover:bg-pink-600 text-white font-bold text-xs transition-all flex items-center gap-2">
+          <i class="fa-brands fa-instagram text-base text-pink-400"></i> @novalearningbyluisa
+        </a>
+        <a href="https://www.tiktok.com/@NovaLearningbyLuisaVillatoro" target="_blank" class="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-all flex items-center gap-2">
+          <i class="fa-brands fa-tiktok text-base text-cyan-400"></i> @NovaLearningbyLuisaVillatoro
+        </a>
+        <a href="https://www.facebook.com/NovaLearning" target="_blank" class="px-4 py-2 rounded-full bg-slate-800 hover:bg-sky-600 text-white font-bold text-xs transition-all flex items-center gap-2">
+          <i class="fa-brands fa-facebook text-base text-sky-400"></i> NovaLearning
+        </a>
       </div>
     </div>
   </footer>
@@ -539,10 +582,19 @@
       document.getElementById('mobileSidebar').classList.toggle('-translate-x-full');
       document.getElementById('sidebarOverlay').classList.toggle('hidden');
     }
-    function openPosterModal(imageSrc) { 
-      document.getElementById('modalImage').src = imageSrc;
+    
+    function openPosterModal(candidates) {
+      const img = document.getElementById('modalImage');
+      let i = 0;
+      img.onerror = function() {
+        if (i < candidates.length) {
+          img.src = 'img/' + candidates[i++];
+        }
+      };
+      img.src = 'img/' + candidates[i++];
       document.getElementById('posterModal').classList.remove('hidden'); 
     }
+
     function closePosterModal() { document.getElementById('posterModal').classList.add('hidden'); }
 
     const projectsData = {
@@ -643,7 +695,7 @@
         ]
       },
       rhythmLab: {
-        label: "9. Rhythm & Movement Lab", title: "Rhythm & Movement Lab", subtitle: "Ritmo, movimiento y expresión", projectTitle: "Instrumento de Percusión y Secuencia Rítmica",
+        label: "9. Rhythm & Movement Lab", title: "Rhythm & Movement Lab", subtitle: "Ritmo, movimiento y expression", projectTitle: "Instrumento de Percusión y Secuencia Rítmica",
         quote: "¡El ritmo organiza el cerebro, mejora la atención y libera energía positiva!",
         desc: "Estimulamos la coordinación bilateral, el control inhibitorio, la memoria auditiva y la integración neuro-motriz a través de la percusión corporal y musical.",
         days: [
