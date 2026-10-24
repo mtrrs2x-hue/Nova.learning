@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Learning - Tutorías Académicas Personalizadas</title>
+  <meta name="description" content="Reserva tus horas de tutorías académicas en Nova Learning para cualquier materia y tema. Desde Q225 la hora con descuentos progresivos por horas semanales.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    if (localStorage.getItem('nova-theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], display: ['"Fredoka"', 'sans-serif'] },
+          colors: { nova: { teal: '#00a8b8', tealDark: '#007a87', purple: '#6b21a8', purpleDark: '#4c1d95' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    .bg-living-canvas {
+      background-color: #fffaf5;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(56, 189, 248, 0.22) 0px, transparent 45%),
+        radial-gradient(at 88% 12%, rgba(244, 114, 182, 0.20) 0px, transparent 45%),
+        radial-gradient(at 50% 48%, rgba(250, 204, 21, 0.16) 0px, transparent 50%),
+        radial-gradient(at 15% 85%, rgba(52, 211, 153, 0.20) 0px, transparent 45%),
+        radial-gradient(#00a8b8 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 36px 36px;
+    }
+    .dark .bg-living-canvas {
+      background-color: #0b1120;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(14, 165, 233, 0.18) 0px, transparent 45%),
+        radial-gradient(at 88% 12%, rgba(168, 85, 247, 0.18) 0px, transparent 45%),
+        radial-gradient(at 20% 85%, rgba(16, 185, 129, 0.14) 0px, transparent 45%),
+        radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px;
+    }
+    .bg-gradient-vivid { background: linear-gradient(135deg, #00a8b8 0%, #6b21a8 55%, #ec4899 100%); }
+    .card-playful { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .card-playful:hover { transform: translateY(-5px); }
+    .input-nova {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+      border: 2px solid #cbd5e1;
+      background-color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1e293b;
+      transition: all 0.2s;
+    }
+    .dark .input-nova {
+      background-color: #0f172a;
+      border-color: #334155;
+      color: #f8fafc;
+    }
+    .input-nova:focus {
+      outline: none;
+      border-color: #00a8b8;
+      box-shadow: 0 0 0 3px rgba(0, 168, 184, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-living-canvas text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
+
+  <!-- MENÚ LATERAL DESPLEGABLE -->
+  <div id="mobileSidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between border-r-2 border-sky-100 dark:border-slate-800 overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between mb-5 pb-4 border-b dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <img src="img/Logo.jpeg" alt="Nova Learning" class="h-9 w-auto object-contain bg-white px-2 py-1 rounded-xl border">
+          <span class="font-display font-bold text-base text-slate-900 dark:text-white">Navegación</span>
+        </div>
+        <button onclick="toggleMobileMenu()" class="w-9 h-9 rounded-xl bg-rose-100 dark:bg-slate-800 text-rose-600 dark:text-rose-400 flex items-center justify-center text-lg hover:scale-105 transition-all">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="mb-5">
+        <button onclick="toggleTheme()" class="w-full p-3.5 rounded-2xl bg-amber-100/90 dark:bg-slate-800 border-2 border-amber-300 dark:border-slate-700 flex items-center justify-between font-extrabold text-xs text-slate-900 dark:text-amber-300 shadow-sm hover:scale-[1.02] transition-all">
+          <span class="flex items-center gap-2.5">
+            <i id="themeIcon" class="fa-solid fa-moon text-amber-600 dark:text-amber-300 text-base"></i>
+            <span id="themeText">Modo Noche / Oscuro</span>
+          </span>
+          <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 text-[10px] font-black uppercase shadow">Cambiar</span>
+        </button>
+      </div>
+
+      <nav class="space-y-2.5 font-extrabold text-sm">
+        <a href="index.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-sky-100/80 dark:bg-sky-500/20 text-sky-950 dark:text-sky-200 hover:bg-sky-200 transition-all"><i class="fa-solid fa-house text-sky-600 dark:text-sky-300 text-lg w-6 text-center"></i> Inicio</a>
+        <a href="quienes-somos.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-purple-100/80 dark:bg-purple-500/20 text-purple-950 dark:text-purple-200 hover:bg-purple-200 transition-all"><i class="fa-solid fa-brain text-purple-600 dark:text-purple-300 text-lg w-6 text-center"></i> Quiénes Somos</a>
+        <a href="clinica.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-emerald-100/80 dark:bg-emerald-500/20 text-emerald-950 dark:text-emerald-200 hover:bg-emerald-200 transition-all"><i class="fa-solid fa-hospital-user text-emerald-600 dark:text-emerald-300 text-lg w-6 text-center"></i> Nuestra Clínica</a>
+        <a href="tutorias.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-indigo-300 dark:bg-indigo-500/40 text-indigo-950 dark:text-indigo-100 ring-2 ring-indigo-500 shadow-sm"><i class="fa-solid fa-chalkboard-user text-indigo-700 dark:text-indigo-300 text-lg w-6 text-center"></i> Tutorías Académicas</a>
+        <a href="materiales.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-cyan-100/80 dark:bg-cyan-500/20 text-cyan-950 dark:text-cyan-200 hover:bg-cyan-200 transition-all"><i class="fa-solid fa-shapes text-cyan-600 dark:text-cyan-300 text-lg w-6 text-center"></i> Nuestros Materiales</a>
+        <a href="catalogo.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-pink-100/80 dark:bg-pink-500/20 text-pink-950 dark:text-pink-200 hover:bg-pink-200 transition-all"><i class="fa-solid fa-cart-shopping text-pink-600 dark:text-pink-300 text-lg w-6 text-center"></i> Catálogo</a>
+        <a href="cursos.html" class="flex items-center gap-3 p-3.5 rounded-2xl bg-amber-200/90 dark:bg-amber-500/20 text-amber-950 dark:text-amber-200 hover:bg-amber-300 transition-all"><i class="fa-solid fa-sun text-amber-600 dark:text-amber-300 text-lg w-6 text-center"></i> Nuestros Cursos</a>
+      </nav>
+    </div>
+
+    <div class="pt-4 mt-6 border-t dark:border-slate-800 space-y-3">
+      <div class="text-[11px] text-slate-600 dark:text-slate-400 font-bold space-y-1">
+        <p><i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
+        <p><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz CAES, Clínica 505</p>
+        <p><i class="fa-solid fa-envelope text-sky-500 mr-1"></i> novalearning0@gmail.com</p>
+        <div class="pt-2 space-y-1.5">
+          <a href="https://www.instagram.com/novalearningbyluisa" target="_blank" class="flex items-center gap-2 p-2 rounded-xl bg-pink-50 dark:bg-slate-800 text-pink-700 dark:text-pink-300 hover:bg-pink-100 transition-all">
+            <i class="fa-brands fa-instagram text-sm w-4 text-center"></i> <span>@novalearningbyluisa</span>
+          </a>
+          <a href="https://www.tiktok.com/@NovaLearningbyLuisaVillatoro" target="_blank" class="flex items-center gap-2 p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 transition-all">
+            <i class="fa-brands fa-tiktok text-sm w-4 text-center"></i> <span class="truncate">@NovaLearningbyLuisaVillatoro</span>
+          </a>
+          <a href="https://www.facebook.com/NovaLearning" target="_blank" class="flex items-center gap-2 p-2 rounded-xl bg-sky-50 dark:bg-slate-800 text-sky-700 dark:text-sky-300 hover:bg-sky-100 transition-all">
+            <i class="fa-brands fa-facebook text-sm w-4 text-center"></i> <span>NovaLearning</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="sidebarOverlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 hidden" onclick="toggleMobileMenu()"></div>
+
+  <!-- TOP BAR CON CORREO, TELÉFONO Y REDES CON USERNAME -->
+  <div class="bg-gradient-vivid text-white text-xs py-2.5 px-4 shadow-md relative z-20">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3 flex-wrap justify-center lg:justify-start font-semibold">
+        <span><i class="fa-solid fa-location-dot text-amber-300 mr-1"></i> Hospital La Paz, CAES, Clínica 505</span>
+        <span class="hidden sm:inline text-white/40">|</span>
+        <span><i class="fa-regular fa-clock text-cyan-200 mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</span>
+      </div>
+      <div class="flex items-center gap-2 flex-wrap justify-center">
+        <a href="mailto:novalearning0@gmail.com" class="bg-white/15 hover:bg-white/25 text-white px-3 py-1 rounded-full font-extrabold text-xs transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-amber-300"></i> novalearning0@gmail.com
+        </a>
+        <a href="https://wa.me/50239804600" target="_blank" class="bg-white text-purple-900 hover:bg-amber-300 px-3.5 py-1 rounded-full font-extrabold text-xs transition-all shadow flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i> +502 3980-4600
+        </a>
+        <a href="https://www.instagram.com/novalearningbyluisa" target="_blank" class="bg-pink-500/90 hover:bg-pink-600 text-white px-3 py-1 rounded-full font-extrabold text-xs transition-all shadow flex items-center gap-1.5">
+          <i class="fa-brands fa-instagram"></i> @novalearningbyluisa
+        </a>
+        <a href="https://www.tiktok.com/@NovaLearningbyLuisaVillatoro" target="_blank" class="bg-slate-900/90 hover:bg-black text-white px-3 py-1 rounded-full font-extrabold text-xs transition-all shadow flex items-center gap-1.5">
+          <i class="fa-brands fa-tiktok text-cyan-300"></i> @NovaLearningbyLuisaVillatoro
+        </a>
+        <a href="https://www.facebook.com/NovaLearning" target="_blank" class="bg-sky-600/90 hover:bg-sky-700 text-white px-3 py-1 rounded-full font-extrabold text-xs transition-all shadow flex items-center gap-1.5">
+          <i class="fa-brands fa-facebook"></i> NovaLearning
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b-2 border-sky-100 dark:border-slate-800 shadow-sm transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 gap-2">
+      <div class="flex items-center gap-3">
+        <button onclick="toggleMobileMenu()" title="Abrir menú" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-100 to-purple-100 dark:from-slate-800 dark:to-slate-700 border-2 border-sky-300 dark:border-slate-600 text-slate-800 dark:text-white flex items-center justify-center text-xl shadow-sm hover:scale-105 transition-all">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flex items-center bg-white px-3 py-1.5 rounded-2xl border-2 border-sky-100 shadow-sm">
+          <img src="img/Logo.jpeg" alt="Nova Learning Logo" class="h-10 sm:h-11 w-auto object-contain">
+        </a>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-1.5 font-extrabold text-xs">
+        <a href="index.html" class="px-3 py-2 rounded-xl bg-sky-100/90 dark:bg-sky-500/20 text-sky-950 dark:text-sky-200 hover:bg-sky-200 flex items-center gap-1.5 shadow-sm transition-all"><i class="fa-solid fa-house text-sky-600 dark:text-sky-300"></i> Inicio</a>
+        <a href="quienes-somos.html" class="px-3 py-2 rounded-xl bg-purple-100/90 dark:bg-purple-500/20 text-purple-950 dark:text-purple-200 hover:bg-purple-200 flex items-center gap-1.5 shadow-sm transition-all"><i class="fa-solid fa-brain text-purple-600 dark:text-purple-300"></i> Quiénes Somos</a>
+        <a href="clinica.html" class="px-3 py-2 rounded-xl bg-emerald-100/90 dark:bg-emerald-500/20 text-emerald-950 dark:text-emerald-200 hover:bg-emerald-200 flex items-center gap-1.5 shadow-sm transition-all"><i class="fa-solid fa-hospital-user text-emerald-600 dark:text-emerald-300"></i> Nuestra Clínica</a>
+        <a href="tutorias.html" class="px-3 py-2 rounded-xl bg-indigo-300 dark:bg-indigo-500/40 text-indigo-950 dark:text-indigo-100 ring-2 ring-indigo-500 flex items-center gap-1.5 shadow-sm transition-all"><i class="fa-solid fa-chalkboard-user text-indigo-700 dark:text-indigo-300"></i> Tutorías Académicas</a>
+        <a href="materiales.html" class="px-3 py-2 rounded-xl bg-cyan-100/90 dark:bg-cyan-500/20 text-cyan-950 dark:text-cyan-200 hover:bg-cyan-200 flex items-center gap-1.5 shadow-sm transition-all"><i class="fa-solid fa-shapes text-cyan-600 dark:text-cyan-300"></i> Materiales</a>
+        <a href="catalogo.html" class="px-3 py-2 rounded-xl bg-pink-100/90 dark:bg-pink-500/20 text-pink-950 dark:text-pink-200 hover:bg-pink-200 flex items-center gap-1.5 shadow-sm transition-all"><i class="fa-solid fa-cart-shopping text-pink-600 dark:text-pink-300"></i> Catálogo</a>
+        <a href="cursos.html" class="px-3 py-2 rounded-xl bg-amber-200/90 dark:bg-amber-500/20 text-amber-950 dark:text-amber-200 hover:bg-amber-300 flex items-center gap-1.5 shadow-sm transition-all"><i class="fa-solid fa-sun text-amber-600 dark:text-amber-400"></i> Cursos</a>
+      </nav>
+
+      <a href="#reservar-tutoria" class="px-4 sm:px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg hover:opacity-95 transition-all flex items-center gap-2 shrink-0">
+        <i class="fa-solid fa-calendar-plus"></i> <span>Reservar Hora</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO DE TUTORÍAS ACADÉMICAS -->
+  <section class="pt-12 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-200 dark:bg-indigo-500/20 text-indigo-950 dark:text-indigo-300 font-black text-xs uppercase tracking-wider shadow-sm mb-3">
+      <i class="fa-solid fa-graduation-cap"></i> Cualquier Tema · Cualquier Materia · Primaria y Secundaria
+    </span>
+    <h1 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 dark:text-white tracking-tight">
+      Tutorías <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500">Académicas Personalizadas</span>
+    </h1>
+    <p class="text-slate-600 dark:text-slate-300 font-medium text-sm sm:text-lg max-w-3xl mx-auto mt-3 leading-relaxed">
+      Refuerzo escolar, preparación de exámenes, nivelación y acompañamiento en tareas para <strong>cualquier materia y cualquier tema</strong>, con estrategias neuropsicopedagógicas adaptadas al ritmo de cada estudiante.
+    </p>
+  </section>
+
+  <!-- MATERIAS Y ÁREAS DE REFUERZO -->
+  <section class="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+      <div class="bg-white dark:bg-slate-800 p-4 rounded-3xl border-2 border-sky-200 dark:border-slate-700 shadow-md card-playful">
+        <div class="w-11 h-11 mx-auto rounded-2xl bg-sky-500 text-white flex items-center justify-center text-lg mb-2 shadow"><i class="fa-solid fa-square-root-variable"></i></div>
+        <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Matemáticas y Física</h3>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Aritmética, álgebra, geometría y lógica.</p>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-4 rounded-3xl border-2 border-purple-200 dark:border-slate-700 shadow-md card-playful">
+        <div class="w-11 h-11 mx-auto rounded-2xl bg-purple-600 text-white flex items-center justify-center text-lg mb-2 shadow"><i class="fa-solid fa-book-open"></i></div>
+        <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Comunicación y Lenguaje</h3>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Lectoescritura, redacción, gramática y análisis.</p>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-4 rounded-3xl border-2 border-emerald-200 dark:border-slate-700 shadow-md card-playful">
+        <div class="w-11 h-11 mx-auto rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-lg mb-2 shadow"><i class="fa-solid fa-flask-vial"></i></div>
+        <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Ciencias y Química</h3>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Ciencias naturales, biología, química y proyectos.</p>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-4 rounded-3xl border-2 border-amber-200 dark:border-slate-700 shadow-md card-playful">
+        <div class="w-11 h-11 mx-auto rounded-2xl bg-amber-500 text-white flex items-center justify-center text-lg mb-2 shadow"><i class="fa-solid fa-language"></i></div>
+        <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Inglés / Idiomas</h3>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Reading, writing, grammar, vocabulary y speaking.</p>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-4 rounded-3xl border-2 border-rose-200 dark:border-slate-700 shadow-md card-playful">
+        <div class="w-11 h-11 mx-auto rounded-2xl bg-rose-500 text-white flex items-center justify-center text-lg mb-2 shadow"><i class="fa-solid fa-earth-americas"></i></div>
+        <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Estudios Sociales</h3>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Historia, geografía, cívica y comprensión.</p>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-4 rounded-3xl border-2 border-indigo-200 dark:border-slate-700 shadow-md card-playful">
+        <div class="w-11 h-11 mx-auto rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-lg mb-2 shadow"><i class="fa-solid fa-list-check"></i></div>
+        <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Técnicas de Estudio</h3>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Preparación de exámenes, resúmenes y organización.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLA DE PRECIOS PROGRESIVOS POR CANTIDAD DE HORAS A LA SEMANA -->
+  <section class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-6 sm:p-10 border-4 border-indigo-200 dark:border-slate-700 shadow-2xl">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <span class="bg-amber-300 text-slate-950 font-black text-xs uppercase px-4 py-1.5 rounded-full shadow-sm">
+          <i class="fa-solid fa-tags mr-1"></i> Descuento Progresivo por Frecuencia Semanal
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-3">
+          Mientras Más Horas Reserves a la Semana, Menor es el Precio por Hora
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2">
+          La hora individual tiene una inversión de <strong>Q225.00</strong>, y conforme aumentas la cantidad de horas semanales, la tarifa por hora disminuye progresivamente:
+        </p>
+      </div>
+
+      <!-- Tarjetas de escalas de horas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+        <div onclick="selectHours(1)" id="tier-1" class="tier-card cursor-pointer p-5 rounded-3xl border-2 border-indigo-500 bg-indigo-50/70 dark:bg-slate-900 text-center card-playful shadow-md">
+          <span class="text-[11px] font-black uppercase bg-indigo-600 text-white px-3 py-1 rounded-full">1 Hora / semana</span>
+          <div class="my-3">
+            <span class="text-3xl font-black text-slate-900 dark:text-white">Q225</span>
+            <span class="text-xs font-bold text-slate-500 block">por hora</span>
+          </div>
+          <p class="text-xs font-extrabold text-indigo-700 dark:text-indigo-300">Total: Q225 / sem</p>
+          <span class="text-[10px] text-slate-500 block mt-1">Tarifa base por hora</span>
+        </div>
+
+        <div onclick="selectHours(2)" id="tier-2" class="tier-card cursor-pointer p-5 rounded-3xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-center card-playful shadow-sm">
+          <span class="text-[11px] font-black uppercase bg-sky-500 text-white px-3 py-1 rounded-full">2 Horas / semana</span>
+          <div class="my-3">
+            <span class="text-3xl font-black text-slate-900 dark:text-white">Q210</span>
+            <span class="text-xs font-bold text-slate-500 block">por hora</span>
+          </div>
+          <p class="text-xs font-extrabold text-sky-700 dark:text-sky-300">Total: Q420 / sem</p>
+          <span class="text-[10px] text-emerald-600 font-black block mt-1">¡Ahorras Q30 a la semana!</span>
+        </div>
+
+        <div onclick="selectHours(3)" id="tier-3" class="tier-card cursor-pointer p-5 rounded-3xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-center card-playful shadow-sm">
+          <span class="text-[11px] font-black uppercase bg-purple-600 text-white px-3 py-1 rounded-full">3 Horas / semana</span>
+          <div class="my-3">
+            <span class="text-3xl font-black text-slate-900 dark:text-white">Q195</span>
+            <span class="text-xs font-bold text-slate-500 block">por hora</span>
+          </div>
+          <p class="text-xs font-extrabold text-purple-700 dark:text-purple-300">Total: Q585 / sem</p>
+          <span class="text-[10px] text-emerald-600 font-black block mt-1">¡Ahorras Q90 a la semana!</span>
+        </div>
+
+        <div onclick="selectHours(4)" id="tier-4" class="tier-card cursor-pointer p-5 rounded-3xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-center card-playful shadow-sm">
+          <span class="text-[11px] font-black uppercase bg-pink-500 text-white px-3 py-1 rounded-full">4 Horas / semana</span>
+          <div class="my-3">
+            <span class="text-3xl font-black text-slate-900 dark:text-white">Q185</span>
+            <span class="text-xs font-bold text-slate-500 block">por hora</span>
+          </div>
+          <p class="text-xs font-extrabold text-pink-700 dark:text-pink-300">Total: Q740 / sem</p>
+          <span class="text-[10px] text-emerald-600 font-black block mt-1">¡Ahorras Q160 a la semana!</span>
+        </div>
+
+        <div onclick="selectHours(5)" id="tier-5" class="tier-card cursor-pointer p-5 rounded-3xl border-2 border-amber-400 bg-amber-50/70 dark:bg-slate-900 text-center card-playful shadow-md relative">
+          <span class="absolute -top-2.5 right-3 bg-emerald-500 text-white text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow">Mejor Valor</span>
+          <span class="text-[11px] font-black uppercase bg-amber-400 text-slate-950 px-3 py-1 rounded-full">5+ Horas / semana</span>
+          <div class="my-3">
+            <span class="text-3xl font-black text-slate-900 dark:text-white">Q175</span>
+            <span class="text-xs font-bold text-slate-500 block">por hora</span>
+          </div>
+          <p class="text-xs font-extrabold text-amber-800 dark:text-amber-300">Total (5h): Q875 / sem</p>
+          <span class="text-[10px] text-emerald-600 font-black block mt-1">¡Ahorras Q250+ a la semana!</span>
+        </div>
+      </div>
+
+      <!-- COTIZADOR Y RESERVA INTERACTIVA DE HORAS DE TUTORÍA -->
+      <div id="reservar-tutoria" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-gradient-to-br from-indigo-50 via-white to-sky-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 p-6 sm:p-8 rounded-[2rem] border-2 border-indigo-200 dark:border-slate-700">
+        
+        <div class="lg:col-span-7 space-y-4">
+          <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-calendar-check text-nova-teal"></i> Configura y Reserva tus Horas de Tutoría
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">
+            Completa los datos del tema o materia que necesitas reforzar y elige cuántas horas a la semana deseas reservar:
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div>
+              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Nombre del estudiante: *</label>
+              <input type="text" id="tutNombre" class="input-nova" placeholder="Ej. Mateo Morales">
+            </div>
+            <div>
+              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Grado / Edad: *</label>
+              <input type="text" id="tutGrado" class="input-nova" placeholder="Ej. 4to Primaria / 10 años">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div>
+              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Materia o Área Académica: *</label>
+              <input type="text" id="tutMateria" class="input-nova" placeholder="Ej. Matemáticas, Inglés, Química, Lectura...">
+            </div>
+            <div>
+              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Tema específico o necesidad: *</label>
+              <input type="text" id="tutTema" class="input-nova" placeholder="Ej. Fracciones, preparación de examen, tareas...">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div>
+              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Cantidad de horas a la semana: *</label>
+              <select id="tutHoras" onchange="calculateTutoria()" class="input-nova">
+                <option value="1">1 hora a la semana (Q225 / hora)</option>
+                <option value="2">2 horas a la semana (Q210 / hora)</option>
+                <option value="3">3 horas a la semana (Q195 / hora)</option>
+                <option value="4">4 horas a la semana (Q185 / hora)</option>
+                <option value="5">5 horas a la semana (Q175 / hora)</option>
+                <option value="6">6 horas a la semana (Q175 / hora)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Días y horario preferido (Lun - Sáb 2:00 a 6:30 PM):</label>
+              <input type="text" id="tutHorario" class="input-nova" placeholder="Ej. Martes y Jueves a las 3:00 PM">
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumen de cotización en vivo -->
+        <div class="lg:col-span-5 bg-gradient-vivid text-white p-7 rounded-3xl shadow-2xl space-y-4">
+          <div class="flex items-center justify-between border-b border-white/20 pb-3">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-amber-300">Resumen de tu Plan Semanal</span>
+            <span class="bg-white/20 px-3 py-1 rounded-full text-[11px] font-black" id="summaryHoursBadge">1 Hora / sem</span>
+          </div>
+
+          <div class="flex items-baseline justify-between">
+            <span class="text-xs text-pink-100">Tarifa aplicada por hora:</span>
+            <strong class="text-2xl font-black text-amber-300" id="summaryRate">Q225.00</strong>
+          </div>
+
+          <div class="flex items-baseline justify-between">
+            <span class="text-xs text-pink-100">Inversión total semanal:</span>
+            <strong class="text-4xl font-display font-bold text-white" id="summaryTotal">Q225.00</strong>
+          </div>
+
+          <div id="summarySavingsBox" class="hidden p-3 rounded-2xl bg-emerald-500/30 border border-emerald-300/40 text-xs font-extrabold text-emerald-100 text-center">
+            <i class="fa-solid fa-piggy-bank mr-1"></i> <span id="summarySavingsText">¡Ahorras Q30.00 cada semana!</span>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white/15 text-[11px] space-y-1 text-pink-50">
+            <p><i class="fa-solid fa-check-circle text-amber-300 mr-1"></i> Incluye materiales de apoyo y guía psicopedagógica.</p>
+            <p><i class="fa-solid fa-check-circle text-amber-300 mr-1"></i> Incluye retroalimentación y apoyo 1 a 1 a los padres.</p>
+          </div>
+
+          <button onclick="reservarTutoriaWhatsApp()" class="w-full py-4 rounded-2xl bg-amber-300 hover:bg-amber-200 text-slate-950 font-black text-sm shadow-xl transition-all flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-xl text-emerald-700"></i> Reservar Horas por WhatsApp
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CON REDES Y USERNAMES VISIBLES -->
+  <footer class="bg-slate-900 text-white py-10 text-center text-xs border-t-4 border-nova-teal mt-16 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="font-display font-bold text-base mb-1">Nova Learning - Centro Neuropsicopedagógico</p>
+      <div class="flex flex-wrap justify-center gap-2.5 my-3">
+        <a href="https://www.instagram.com/novalearningbyluisa" target="_blank" class="px-3.5 py-1.5 rounded-full bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs flex items-center gap-1.5 shadow">
+          <i class="fa-brands fa-instagram"></i> @novalearningbyluisa
+        </a>
+        <a href="https://www.tiktok.com/@NovaLearningbyLuisaVillatoro" target="_blank" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-bold text-xs flex items-center gap-1.5 shadow">
+          <i class="fa-brands fa-tiktok text-cyan-400"></i> @NovaLearningbyLuisaVillatoro
+        </a>
+        <a href="https://www.facebook.com/NovaLearning" target="_blank" class="px-3.5 py-1.5 rounded-full bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs flex items-center gap-1.5 shadow">
+          <i class="fa-brands fa-facebook"></i> NovaLearning
+        </a>
+      </div>
+      <p class="text-slate-400 mb-4"><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Hospital La Paz, CAES, 5° piso, Clínica 505 | <i class="fa-regular fa-clock text-nova-teal mr-1"></i> Lun - Sáb: 2:00 PM - 6:30 PM</p>
+      <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-sm font-black">
+        <a href="mailto:novalearning0@gmail.com" class="text-sky-400 hover:text-sky-300 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-envelope text-lg"></i> novalearning0@gmail.com</a>
+        <span class="text-slate-600">|</span>
+        <a href="https://wa.me/50239804600" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-lg"></i> +502 3980-4600</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hourlyRates = {
+      1: 225,
+      2: 210,
+      3: 195,
+      4: 185,
+      5: 175,
+      6: 175
+    };
+
+    function selectHours(h) {
+      document.getElementById('tutHoras').value = h;
+      calculateTutoria();
+    }
+
+    function calculateTutoria() {
+      const h = parseInt(document.getElementById('tutHoras').value || '1');
+      const rate = hourlyRates[h] || 175;
+      const total = h * rate;
+      const normalTotal = h * 225;
+      const savings = normalTotal - total;
+
+      document.getElementById('summaryHoursBadge').innerText = h + (h === 1 ? ' Hora / sem' : ' Horas / sem');
+      document.getElementById('summaryRate').innerText = 'Q' + rate.toFixed(2);
+      document.getElementById('summaryTotal').innerText = 'Q' + total.toFixed(2);
+
+      const savBox = document.getElementById('summarySavingsBox');
+      if (savings > 0) {
+        savBox.classList.remove('hidden');
+        document.getElementById('summarySavingsText').innerText = `¡Ahorras Q${savings.toFixed(2)} por semana con esta frecuencia!`;
+      } else {
+        savBox.classList.add('hidden');
+      }
+
+      document.querySelectorAll('.tier-card').forEach(c => {
+        c.className = "tier-card cursor-pointer p-5 rounded-3xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-center card-playful shadow-sm";
+      });
+      const activeTier = document.getElementById('tier-' + (h >= 5 ? 5 : h));
+      if (activeTier) {
+        activeTier.className = "tier-card cursor-pointer p-5 rounded-3xl border-2 border-indigo-500 bg-indigo-50/70 dark:bg-slate-900 text-center card-playful shadow-md relative";
+      }
+    }
+
+    function reservarTutoriaWhatsApp() {
+      const nombre = document.getElementById('tutNombre').value.trim() || 'Por confirmar';
+      const grado = document.getElementById('tutGrado').value.trim() || 'Por confirmar';
+      const materia = document.getElementById('tutMateria').value.trim() || 'General';
+      const tema = document.getElementById('tutTema').value.trim() || 'Refuerzo académico';
+      const h = parseInt(document.getElementById('tutHoras').value || '1');
+      const horario = document.getElementById('tutHorario').value.trim() || 'Por definir';
+      const rate = hourlyRates[h] || 175;
+      const total = h * rate;
+
+      const msg = `Hola Nova Learning, deseo reservar horas de *Tutorías Académicas*:\n\n` +
+                  `• *Estudiante:* ${nombre}\n` +
+                  `• *Grado/Edad:* ${grado}\n` +
+                  `• *Materia:* ${materia}\n` +
+                  `• *Tema a reforzar:* ${tema}\n` +
+                  `• *Frecuencia:* ${h} hora(s) a la semana (Q${rate}.00 c/u)\n` +
+                  `• *Total semanal:* Q${total}.00\n` +
+                  `• *Horario preferido:* ${horario}`;
+
+      window.open("https://wa.me/50239804600?text=" + encodeURIComponent(msg), '_blank');
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileSidebar').classList.toggle('-translate-x-full');
+      document.getElementById('sidebarOverlay').classList.toggle('hidden');
+    }
+    function updateThemeUI() {
+      const isDark = document.documentElement.classList.contains('dark');
+      const icon = document.getElementById('themeIcon');
+      const text = document.getElementById('themeText');
+      if (icon) icon.className = isDark ? 'fa-solid fa-sun text-amber-300 text-base' : 'fa-solid fa-moon text-amber-600 text-base';
+      if (text) text.innerText = isDark ? 'Modo Día / Claro' : 'Modo Noche / Oscuro';
+    }
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('nova-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      updateThemeUI();
+    }
+    updateThemeUI();
+  </script>
+</body>
+</html>
