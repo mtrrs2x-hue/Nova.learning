@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Learning - Nuestra Clínica, Plan Terapéutico y Tarifas</title>
-  <meta name="description" content="Conoce nuestro proceso de entrevista y plan terapéutico (3 sesiones por Q1,800), tarifas por frecuencia semanal, recomendaciones y recorrido interactivo en Hospital La Paz CAES.">
+  <title>Nova Learning - Nuestra Clínica, Plan Terapéutico y Citas</title>
+  <meta name="description" content="Agenda tu cita terapéutica directamente en nuestro calendario. Proceso de entrevista y plan terapéutico (3 sesiones por Q1,800) en Hospital La Paz CAES.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- CALENDLY WIDGET OFICIAL -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script>
     if (localStorage.getItem('nova-theme') === 'dark') {
       document.documentElement.classList.add('dark');
@@ -100,6 +103,9 @@
           </a>
         </div>
       </div>
+      <button onclick="openCalendlyCita()" class="w-full py-3.5 rounded-2xl bg-gradient-vivid text-white text-center font-black text-xs shadow-lg">
+        <i class="fa-solid fa-calendar-check text-sm mr-1"></i> Agendar Cita Terapéutica
+      </button>
     </div>
   </div>
   <div id="sidebarOverlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 hidden" onclick="toggleMobileMenu()"></div>
@@ -154,9 +160,9 @@
         <a href="cursos.html" class="px-3 py-2 rounded-xl bg-amber-200/90 dark:bg-amber-500/20 text-amber-950 dark:text-amber-200 hover:bg-amber-300 flex items-center gap-1.5 shadow-sm transition-all"><i class="fa-solid fa-sun text-amber-600 dark:text-amber-400"></i> Cursos</a>
       </nav>
 
-      <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20iniciar%20el%20proceso%20de%20Entrevista%20y%20Plan%20Terapéutico" target="_blank" class="px-4 sm:px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg hover:opacity-95 transition-all flex items-center gap-2 shrink-0">
+      <button onclick="openCalendlyCita()" class="px-4 sm:px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg hover:opacity-95 transition-all flex items-center gap-2 shrink-0">
         <i class="fa-solid fa-calendar-check"></i> <span>Agendar Cita</span>
-      </a>
+      </button>
     </div>
   </header>
 
@@ -173,9 +179,7 @@
     </p>
   </section>
 
-  <!-- ===================================================================== -->
-  <!-- SECCIÓN 1: ENTREVISTA Y PLAN TERAPÉUTICO + TARIFAS DE SESIONES        -->
-  <!-- ===================================================================== -->
+  <!-- SECCIÓN 1: ENTREVISTA Y PLAN TERAPÉUTICO + TARIFAS DE SESIONES -->
   <section class="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-6 sm:p-10 border-4 border-purple-200 dark:border-slate-700 shadow-2xl space-y-10">
       
@@ -232,9 +236,9 @@
               <span class="text-slate-600 dark:text-slate-300">50% al iniciar el proceso y 50% al concluir las 3 sesiones.</span>
             </div>
           </div>
-          <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20agendar%20el%20Proceso%20Inicial%20de%20Entrevista%20y%20Plan%20Terapéutico%20(3%20sesiones%20por%20Q1,800)" target="_blank" class="px-6 py-4 rounded-2xl bg-purple-700 hover:bg-purple-800 text-white font-black text-xs sm:text-sm shadow-lg transition-all shrink-0">
-            <i class="fa-brands fa-whatsapp text-base mr-1"></i> Iniciar Proceso Inicial
-          </a>
+          <button onclick="openCalendlyCita()" class="px-6 py-4 rounded-2xl bg-purple-700 hover:bg-purple-800 text-white font-black text-xs sm:text-sm shadow-lg transition-all shrink-0 flex items-center gap-2">
+            <i class="fa-solid fa-calendar-plus text-base"></i> Agendar en Calendario
+          </button>
         </div>
       </div>
 
@@ -253,14 +257,14 @@
             <span class="text-xs font-black uppercase text-purple-800 dark:text-purple-300 block mb-2">Cita individual</span>
             <div class="text-4xl font-display font-bold text-slate-900 dark:text-white my-2">Q550</div>
             <span class="text-xs font-bold text-slate-500 block mb-4">por sesión</span>
-            <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20información%20sobre%20Cita%20Individual%20(Q550)" target="_blank" class="block w-full py-2.5 rounded-xl bg-purple-600 text-white font-black text-xs">Reservar</a>
+            <button onclick="openCalendlyCita()" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-black text-xs shadow transition-all"><i class="fa-regular fa-calendar-check mr-1"></i> Agendar Horario</button>
           </div>
 
           <div class="p-6 rounded-3xl bg-teal-50/90 dark:bg-slate-900 border-2 border-teal-300 dark:border-teal-600 text-center card-playful shadow-md">
             <span class="text-xs font-black uppercase text-teal-900 dark:text-teal-300 block mb-2">1 o 2 sesiones por semana</span>
             <div class="text-4xl font-display font-bold text-slate-900 dark:text-white my-2">Q450</div>
             <span class="text-xs font-bold text-slate-500 block mb-4">por sesión</span>
-            <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20información%20sobre%20el%20plan%20de%201%20o%202%20sesiones%20por%20semana%20(Q450%20c/u)" target="_blank" class="block w-full py-2.5 rounded-xl bg-nova-teal text-white font-black text-xs">Reservar</a>
+            <button onclick="openCalendlyCita()" class="w-full py-3 rounded-xl bg-nova-teal hover:bg-teal-600 text-white font-black text-xs shadow transition-all"><i class="fa-regular fa-calendar-check mr-1"></i> Agendar Horario</button>
           </div>
 
           <div class="p-6 rounded-3xl bg-pink-50/90 dark:bg-slate-900 border-2 border-pink-300 dark:border-pink-600 text-center card-playful shadow-md relative">
@@ -268,7 +272,7 @@
             <span class="text-xs font-black uppercase text-pink-900 dark:text-pink-300 block mb-2">3 sesiones por semana</span>
             <div class="text-4xl font-display font-bold text-slate-900 dark:text-white my-2">Q350</div>
             <span class="text-xs font-bold text-slate-500 block mb-4">por sesión</span>
-            <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20información%20sobre%20el%20plan%20de%203%20sesiones%20por%20semana%20(Q350%20c/u)" target="_blank" class="block w-full py-2.5 rounded-xl bg-pink-600 text-white font-black text-xs">Reservar</a>
+            <button onclick="openCalendlyCita()" class="w-full py-3 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-black text-xs shadow transition-all"><i class="fa-regular fa-calendar-check mr-1"></i> Agendar Horario</button>
           </div>
         </div>
 
@@ -289,9 +293,7 @@
     </div>
   </section>
 
-  <!-- ===================================================================== -->
-  <!-- SECCIÓN 2: ¿CÓMO ASISTIR A TU SESIÓN DE TERAPIA? Y POLÍTICAS          -->
-  <!-- ===================================================================== -->
+  <!-- SECCIÓN 2: ¿CÓMO ASISTIR A TU SESIÓN DE TERAPIA? Y POLÍTICAS -->
   <section class="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-6 sm:p-10 border-4 border-sky-200 dark:border-slate-700 shadow-2xl space-y-8">
       
@@ -345,7 +347,7 @@
           </div>
 
           <div class="p-5 rounded-3xl bg-amber-50/80 dark:bg-slate-900 border border-amber-200 dark:border-slate-700 flex items-start gap-3.5">
-            <i class="fa-solid fa-temperature-Empty text-2xl text-rose-500 mt-1"></i>
+            <i class="fa-solid fa-head-side-cough text-2xl text-rose-500 mt-1"></i>
             <div>
               <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">No asistas si presentas síntomas</h4>
               <p class="text-slate-600 dark:text-slate-300 mt-1">Si presentas fiebre, gripe, tos fuerte, vómitos, diarrea o malestar general, es mejor reprogramar la sesión.</p>
@@ -399,9 +401,7 @@
     </div>
   </section>
 
-  <!-- ===================================================================== -->
-  <!-- SECCIÓN 3: RECORRIDO VIRTUAL INTERACTIVO DE LA CLÍNICA (10 FOTOS)     -->
-  <!-- ===================================================================== -->
+  <!-- SECCIÓN 3: RECORRIDO VIRTUAL INTERACTIVO DE LA CLÍNICA (10 FOTOS) -->
   <section class="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="bg-white/90 dark:bg-slate-800/90 rounded-[2.5rem] p-6 sm:p-10 border-4 border-emerald-200 dark:border-slate-700 shadow-2xl">
       
@@ -467,15 +467,33 @@
             <button onclick="nextSlide()" class="px-5 py-3 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black text-xs shadow hover:opacity-90 transition-all">
               Siguiente foto <i class="fa-solid fa-arrow-right ml-1"></i>
             </button>
-            <a href="https://wa.me/50239804600?text=Hola%20Nova%20Learning,%20deseo%20agendar%20una%20cita%20en%20la%20clínica" target="_blank" class="px-5 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs shadow transition-all flex items-center gap-1.5">
-              <i class="fa-brands fa-whatsapp text-base"></i> Agendar Cita
-            </a>
+            <button onclick="openCalendlyCita()" class="px-5 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs shadow transition-all flex items-center gap-1.5">
+              <i class="fa-solid fa-calendar-check text-base"></i> Agendar Cita en Calendario
+            </button>
           </div>
         </div>
       </div>
 
       <!-- CUADRÍCULA INTERACTIVA DE MINIATURAS (LAS 10 FOTOS) -->
       <div id="clinicGalleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5"></div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: CALENDARIO EN VIVO INCRUSTADO DE CITA TERAPÉUTICA -->
+  <section id="calendario-clinica" class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-6 sm:p-10 border-4 border-purple-200 dark:border-slate-700 shadow-2xl">
+      <div class="text-center max-w-2xl mx-auto mb-6">
+        <span class="bg-purple-100 dark:bg-purple-500/20 text-purple-900 dark:text-purple-300 font-black text-xs uppercase px-4 py-1.5 rounded-full">
+          <i class="fa-regular fa-calendar-check mr-1"></i> Agenda Directamente en Nuestro Google Calendar
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-3">
+          Reserva tu Cita Terapéutica Aquí
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+          Selecciona el día y horario disponible para tu entrevista o sesión terapéutica en Clínica 505:
+        </p>
+      </div>
+      <div class="calendly-inline-widget rounded-3xl overflow-hidden border-2 border-slate-100 dark:border-slate-700" data-url="https://calendly.com/novalearning0/cita-terapeutica?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
     </div>
   </section>
 
@@ -517,6 +535,14 @@
   </footer>
 
   <script>
+    function openCalendlyCita() {
+      if (window.Calendly) {
+        Calendly.initPopupWidget({ url: 'https://calendly.com/novalearning0/cita-terapeutica' });
+      } else {
+        window.open('https://calendly.com/novalearning0/cita-terapeutica', '_blank');
+      }
+    }
+
     const clinicPhotos = [
       {
         id: 0,

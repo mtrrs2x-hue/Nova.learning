@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nova Learning - Tutorías Académicas Personalizadas</title>
-  <meta name="description" content="Reserva tus horas de tutorías académicas en Nova Learning para cualquier materia y tema. Desde Q225 la hora con descuentos progresivos por horas semanales.">
+  <meta name="description" content="Reserva tus horas de tutorías académicas en Nova Learning directamente en nuestro calendario para cualquier materia y tema. Desde Q225 la hora con descuentos progresivos.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- CALENDLY WIDGET OFICIAL -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script>
     if (localStorage.getItem('nova-theme') === 'dark') {
       document.documentElement.classList.add('dark');
@@ -121,6 +124,9 @@
           </a>
         </div>
       </div>
+      <button onclick="openCalendlyTutoria()" class="w-full py-3.5 rounded-2xl bg-gradient-vivid text-white text-center font-black text-xs shadow-lg">
+        <i class="fa-solid fa-calendar-check text-sm mr-1"></i> Agendar en Calendly
+      </button>
     </div>
   </div>
   <div id="sidebarOverlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 hidden" onclick="toggleMobileMenu()"></div>
@@ -175,22 +181,22 @@
         <a href="cursos.html" class="px-3 py-2 rounded-xl bg-amber-200/90 dark:bg-amber-500/20 text-amber-950 dark:text-amber-200 hover:bg-amber-300 flex items-center gap-1.5 shadow-sm transition-all"><i class="fa-solid fa-sun text-amber-600 dark:text-amber-400"></i> Cursos</a>
       </nav>
 
-      <a href="#reservar-tutoria" class="px-4 sm:px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg hover:opacity-95 transition-all flex items-center gap-2 shrink-0">
-        <i class="fa-solid fa-calendar-plus"></i> <span>Reservar Hora</span>
-      </a>
+      <button onclick="openCalendlyTutoria()" class="px-4 sm:px-5 py-3 rounded-2xl bg-gradient-vivid text-white font-extrabold text-xs sm:text-sm shadow-lg hover:opacity-95 transition-all flex items-center gap-2 shrink-0">
+        <i class="fa-solid fa-calendar-plus"></i> <span>Agendar Tutoría</span>
+      </button>
     </div>
   </header>
 
   <!-- HERO DE TUTORÍAS ACADÉMICAS -->
   <section class="pt-12 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-200 dark:bg-indigo-500/20 text-indigo-950 dark:text-indigo-300 font-black text-xs uppercase tracking-wider shadow-sm mb-3">
-      <i class="fa-solid fa-graduation-cap"></i> Cualquier Tema · Cualquier Materia · Primaria y Secundaria
+      <i class="fa-solid fa-graduation-cap"></i> Cualquier Tema · Cualquier Materia · Reserva Directa en Calendario
     </span>
     <h1 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 dark:text-white tracking-tight">
       Tutorías <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500">Académicas Personalizadas</span>
     </h1>
     <p class="text-slate-600 dark:text-slate-300 font-medium text-sm sm:text-lg max-w-3xl mx-auto mt-3 leading-relaxed">
-      Refuerzo escolar, preparación de exámenes, nivelación y acompañamiento en tareas para <strong>cualquier materia y cualquier tema</strong>, con estrategias neuropsicopedagógicas adaptadas al ritmo de cada estudiante.
+      Refuerzo escolar, preparación de exámenes, nivelación y acompañamiento en tareas para <strong>cualquier materia y cualquier tema</strong>. Agenda tus horas directamente en nuestro calendario sincronizado.
     </p>
   </section>
 
@@ -230,7 +236,7 @@
     </div>
   </section>
 
-  <!-- TABLA DE PRECIOS PROGRESIVOS POR CANTIDAD DE HORAS A LA SEMANA -->
+  <!-- TABLA DE PRECIOS PROGRESIVOS + CALCULADORA Y AGENDAMIENTO CALENDLY -->
   <section class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-6 sm:p-10 border-4 border-indigo-200 dark:border-slate-700 shadow-2xl">
       <div class="text-center max-w-3xl mx-auto mb-8">
@@ -299,59 +305,53 @@
         </div>
       </div>
 
-      <!-- COTIZADOR Y RESERVA INTERACTIVA DE HORAS DE TUTORÍA -->
+      <!-- COTIZADOR Y RESERVA EN CALENDLY -->
       <div id="reservar-tutoria" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-gradient-to-br from-indigo-50 via-white to-sky-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 p-6 sm:p-8 rounded-[2rem] border-2 border-indigo-200 dark:border-slate-700">
         
         <div class="lg:col-span-7 space-y-4">
           <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <i class="fa-solid fa-calendar-check text-nova-teal"></i> Configura y Reserva tus Horas de Tutoría
+            <i class="fa-solid fa-calculator text-nova-teal"></i> 1. Calcula tu Plan Semanal de Tutorías
           </h3>
           <p class="text-xs text-slate-600 dark:text-slate-300">
-            Completa los datos del tema o materia que necesitas reforzar y elige cuántas horas a la semana deseas reservar:
+            Elige cuántas horas a la semana deseas reservar y anota la materia o tema para tenerlo listo al agendar en nuestro calendario:
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <div>
-              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Nombre del estudiante: *</label>
+              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Nombre del estudiante:</label>
               <input type="text" id="tutNombre" class="input-nova" placeholder="Ej. Mateo Morales">
             </div>
             <div>
-              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Grado / Edad: *</label>
+              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Grado / Edad:</label>
               <input type="text" id="tutGrado" class="input-nova" placeholder="Ej. 4to Primaria / 10 años">
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <div>
-              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Materia o Área Académica: *</label>
+              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Materia o Área Académica:</label>
               <input type="text" id="tutMateria" class="input-nova" placeholder="Ej. Matemáticas, Inglés, Química, Lectura...">
             </div>
             <div>
-              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Tema específico o necesidad: *</label>
+              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Tema específico a reforzar:</label>
               <input type="text" id="tutTema" class="input-nova" placeholder="Ej. Fracciones, preparación de examen, tareas...">
             </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-            <div>
-              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Cantidad de horas a la semana: *</label>
-              <select id="tutHoras" onchange="calculateTutoria()" class="input-nova">
-                <option value="1">1 hora a la semana (Q225 / hora)</option>
-                <option value="2">2 horas a la semana (Q210 / hora)</option>
-                <option value="3">3 horas a la semana (Q195 / hora)</option>
-                <option value="4">4 horas a la semana (Q185 / hora)</option>
-                <option value="5">5 horas a la semana (Q175 / hora)</option>
-                <option value="6">6 horas a la semana (Q175 / hora)</option>
-              </select>
-            </div>
-            <div>
-              <label class="block font-extrabold mb-1 text-slate-700 dark:text-slate-200">Días y horario preferido (Lun - Sáb 2:00 a 6:30 PM):</label>
-              <input type="text" id="tutHorario" class="input-nova" placeholder="Ej. Martes y Jueves a las 3:00 PM">
-            </div>
+          <div>
+            <label class="block font-extrabold mb-1 text-xs text-slate-700 dark:text-slate-200">Cantidad de horas a la semana:</label>
+            <select id="tutHoras" onchange="calculateTutoria()" class="input-nova">
+              <option value="1">1 hora a la semana (Q225 / hora)</option>
+              <option value="2">2 horas a la semana (Q210 / hora)</option>
+              <option value="3">3 horas a la semana (Q195 / hora)</option>
+              <option value="4">4 horas a la semana (Q185 / hora)</option>
+              <option value="5">5 horas a la semana (Q175 / hora)</option>
+              <option value="6">6 horas a la semana (Q175 / hora)</option>
+            </select>
           </div>
         </div>
 
-        <!-- Resumen de cotización en vivo -->
+        <!-- Resumen de cotización + Botón directo a Calendly -->
         <div class="lg:col-span-5 bg-gradient-vivid text-white p-7 rounded-3xl shadow-2xl space-y-4">
           <div class="flex items-center justify-between border-b border-white/20 pb-3">
             <span class="text-xs font-extrabold uppercase tracking-wider text-amber-300">Resumen de tu Plan Semanal</span>
@@ -372,17 +372,36 @@
             <i class="fa-solid fa-piggy-bank mr-1"></i> <span id="summarySavingsText">¡Ahorras Q30.00 cada semana!</span>
           </div>
 
-          <div class="p-3.5 rounded-2xl bg-white/15 text-[11px] space-y-1 text-pink-50">
-            <p><i class="fa-solid fa-check-circle text-amber-300 mr-1"></i> Incluye materiales de apoyo y guía psicopedagógica.</p>
-            <p><i class="fa-solid fa-check-circle text-amber-300 mr-1"></i> Incluye retroalimentación y apoyo 1 a 1 a los padres.</p>
-          </div>
+          <!-- BOTÓN PRINCIPAL CALENDLY -->
+          <button onclick="openCalendlyTutoria()" class="w-full py-4 rounded-2xl bg-amber-300 hover:bg-amber-200 text-slate-950 font-black text-sm shadow-xl transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-calendar-days text-xl text-purple-900"></i> Elegir Día y Hora en Calendario
+          </button>
 
-          <button onclick="reservarTutoriaWhatsApp()" class="w-full py-4 rounded-2xl bg-amber-300 hover:bg-amber-200 text-slate-950 font-black text-sm shadow-xl transition-all flex items-center justify-center gap-2">
-            <i class="fa-brands fa-whatsapp text-xl text-emerald-700"></i> Reservar Horas por WhatsApp
+          <!-- Botón secundario opcional por si desean enviar el detalle calculado por WhatsApp -->
+          <button onclick="reservarTutoriaWhatsApp()" class="w-full py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5">
+            <i class="fa-brands fa-whatsapp text-emerald-300"></i> ¿Prefieres enviar este resumen por WhatsApp?
           </button>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- CALENDARIO EN VIVO INCRUSTADO DE TUTORÍAS (CALENDLY INLINE) -->
+  <section id="calendario-vivo" class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-6 sm:p-10 border-4 border-sky-200 dark:border-slate-700 shadow-2xl">
+      <div class="text-center max-w-2xl mx-auto mb-6">
+        <span class="bg-sky-100 dark:bg-sky-500/20 text-sky-900 dark:text-sky-300 font-black text-xs uppercase px-4 py-1.5 rounded-full">
+          <i class="fa-regular fa-calendar-check mr-1"></i> Sincronizado en Tiempo Real con Google Calendar
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-3">
+          2. Selecciona tu Horario de Tutoría Directamente Aquí
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+          Elige el día y la hora disponible que mejor se adapte a tu semana y recibe la confirmación inmediata:
+        </p>
+      </div>
+      <div class="calendly-inline-widget rounded-3xl overflow-hidden border-2 border-slate-100 dark:border-slate-700" data-url="https://calendly.com/novalearning0/tutorias?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
     </div>
   </section>
 
@@ -419,6 +438,14 @@
       5: 175,
       6: 175
     };
+
+    function openCalendlyTutoria() {
+      if (window.Calendly) {
+        Calendly.initPopupWidget({ url: 'https://calendly.com/novalearning0/tutorias' });
+      } else {
+        window.open('https://calendly.com/novalearning0/tutorias', '_blank');
+      }
+    }
 
     function selectHours(h) {
       document.getElementById('tutHoras').value = h;
@@ -459,18 +486,16 @@
       const materia = document.getElementById('tutMateria').value.trim() || 'General';
       const tema = document.getElementById('tutTema').value.trim() || 'Refuerzo académico';
       const h = parseInt(document.getElementById('tutHoras').value || '1');
-      const horario = document.getElementById('tutHorario').value.trim() || 'Por definir';
       const rate = hourlyRates[h] || 175;
       const total = h * rate;
 
-      const msg = `Hola Nova Learning, deseo reservar horas de *Tutorías Académicas*:\n\n` +
+      const msg = `Hola Nova Learning, ya revisé el calendario de *Tutorías Académicas* y este es el detalle de mi plan:\n\n` +
                   `• *Estudiante:* ${nombre}\n` +
                   `• *Grado/Edad:* ${grado}\n` +
                   `• *Materia:* ${materia}\n` +
                   `• *Tema a reforzar:* ${tema}\n` +
                   `• *Frecuencia:* ${h} hora(s) a la semana (Q${rate}.00 c/u)\n` +
-                  `• *Total semanal:* Q${total}.00\n` +
-                  `• *Horario preferido:* ${horario}`;
+                  `• *Total semanal:* Q${total}.00`;
 
       window.open("https://wa.me/50239804600?text=" + encodeURIComponent(msg), '_blank');
     }
